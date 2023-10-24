@@ -1,5 +1,6 @@
 package shop.mtcoding.marketkurly.user;
 
-public class UserController {
-    
+public enum Gender {
+    MAN, WOMAN;
+
 }

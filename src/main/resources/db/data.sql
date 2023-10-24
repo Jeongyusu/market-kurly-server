@@ -1,0 +1,1 @@
+INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gender, user_birth) VALUES ('1', 'z2poter', 'ssar@nate.com', '12345678', 'ssar', 'MAN', '1997-08-29');

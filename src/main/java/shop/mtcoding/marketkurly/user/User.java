@@ -25,7 +25,8 @@ public class User {
     private String userEmail;
     private String userPic;
     private LocalDate userBirth;
-    private String userGender;
+    @Enumerated(EnumType.STRING)
+    private Gender userGender;
     private String role;
 
     @CreationTimestamp
@@ -33,7 +34,7 @@ public class User {
 
     @Builder
     public User(Integer id, String userId, String username, String userPassword, String userEmail, String userPic,
-            LocalDate userBirth, String userGender, String role, Timestamp userCreatedAt) {
+            LocalDate userBirth, Gender userGender, String role, Timestamp userCreatedAt) {
         this.id = id;
         this.userId = userId;
         this.username = username;
