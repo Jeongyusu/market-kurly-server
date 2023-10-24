@@ -1,4 +1,4 @@
-package shop.mtcoding.marketkurly.cart;
+package shop.mtcoding.marketkurly.writeablereview;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,35 +12,33 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_tb")
-public class Cart {
+@Table(name = "writeable_review_tb")
+public class WriteableReview {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer optionQuantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     @OneToOne(fetch = FetchType.LAZY)
-    private Option option;
+    private Product product;
 
     @Builder
-    public Cart(Integer id, Integer optionQuantity, User user, Option option) {
+    public WriteableReview(Integer id, User user, Product product) {
         this.id = id;
-        this.optionQuantity = optionQuantity;
         this.user = user;
-        this.option = option;
+        this.product = product;
     }
 
     
-
+    
 }

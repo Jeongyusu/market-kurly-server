@@ -3,10 +3,14 @@ package shop.mtcoding.marketkurly.user;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import lombok.Setter;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import javax.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "user_tb")
@@ -16,15 +20,32 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String userId; // 인증시 필요한 필드
-    private String userPassword;
     private String username;
+    private String userPassword;
     private String userEmail;
+    private String userPic;
+    private LocalDate userBirth;
+    private String userGender;
+    private String role;
+
+    @CreationTimestamp
+    private Timestamp userCreatedAt;
 
     @Builder
-    public User(int id, String email, String password, String username) {
+    public User(Integer id, String userId, String username, String userPassword, String userEmail, String userPic,
+            LocalDate userBirth, String userGender, String role, Timestamp userCreatedAt) {
         this.id = id;
-        this.email = email;
-        this.password = password;
+        this.userId = userId;
         this.username = username;
+        this.userPassword = userPassword;
+        this.userEmail = userEmail;
+        this.userPic = userPic;
+        this.userBirth = userBirth;
+        this.userGender = userGender;
+        this.role = role;
+        this.userCreatedAt = userCreatedAt;
     }
+    
+
+    
 }

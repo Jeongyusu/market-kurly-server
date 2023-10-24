@@ -6,6 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import shop.mtcoding.marketkurly.user.User;
 
 public class JwtTokenUtils {
 
@@ -13,7 +14,7 @@ public class JwtTokenUtils {
         String jwt = JWT.create()
                 .withSubject("metacoding-key")
                 .withClaim("id", user.getId())
-                .withClaim("email", user.getEmail())
+                .withClaim("email", user.getUserEmail())
                 .withExpiresAt(Instant.now().plusMillis(1000 * 60 * 60 * 24 * 7L))
                 .sign(Algorithm.HMAC512("meta"));
         return jwt;

@@ -1,4 +1,4 @@
-package shop.mtcoding.marketkurly.cart;
+package shop.mtcoding.marketkurly.option;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -6,41 +6,38 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
-import shop.mtcoding.marketkurly.user.User;
+import shop.mtcoding.marketkurly.product.Product;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_tb")
-public class Cart {
-
+@Table(name = "option_tb")
+public class Option {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer optionQuantity;
-
+    private String optionName;
+    private Integer optionPrice;
+    private Integer optionStack;
+    
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    private Option option;
+    private Product product;
 
     @Builder
-    public Cart(Integer id, Integer optionQuantity, User user, Option option) {
+    public Option(Integer id, String optionName, Integer optionPrice, Integer optionStack, Product product) {
         this.id = id;
-        this.optionQuantity = optionQuantity;
-        this.user = user;
-        this.option = option;
+        this.optionName = optionName;
+        this.optionPrice = optionPrice;
+        this.optionStack = optionStack;
+        this.product = product;
     }
 
     
-
 }

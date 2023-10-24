@@ -1,44 +1,51 @@
-package shop.mtcoding.marketkurly.cart;
+package shop.mtcoding.marketkurly.order;
 
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.address.Address;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_tb")
-public class Cart {
+@Table(name = "order_tb")
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer optionQuantity;
+    private Integer orderNumber;
+    private String state;
 
+    @CreationTimestamp
+    private Timestamp orderedAt;
+    
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    private Option option;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Address address;
 
     @Builder
-    public Cart(Integer id, Integer optionQuantity, User user, Option option) {
+    public Order(Integer id, Integer orderNumber, String state, Timestamp orderedAt, User user, Address address) {
         this.id = id;
-        this.optionQuantity = optionQuantity;
+        this.orderNumber = orderNumber;
+        this.state = state;
+        this.orderedAt = orderedAt;
         this.user = user;
-        this.option = option;
+        this.address = address;
     }
 
     

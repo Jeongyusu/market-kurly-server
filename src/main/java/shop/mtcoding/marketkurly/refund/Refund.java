@@ -1,46 +1,45 @@
-package shop.mtcoding.marketkurly.cart;
+package shop.mtcoding.marketkurly.refund;
 
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
-import shop.mtcoding.marketkurly.user.User;
+import shop.mtcoding.marketkurly.payment.Payment;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_tb")
-public class Cart {
+@Table(name = "refund_tb")
+public class Refund {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer optionQuantity;
+    private Integer refundPayment;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    @CreationTimestamp
+    private Timestamp refundedAt;
 
     @OneToOne(fetch = FetchType.LAZY)
-    private Option option;
+    private Payment payment;
 
     @Builder
-    public Cart(Integer id, Integer optionQuantity, User user, Option option) {
+    public Refund(Integer id, Integer refundPayment, Timestamp refundedAt, Payment payment) {
         this.id = id;
-        this.optionQuantity = optionQuantity;
-        this.user = user;
-        this.option = option;
+        this.refundPayment = refundPayment;
+        this.refundedAt = refundedAt;
+        this.payment = payment;
     }
-
     
-
+    
 }

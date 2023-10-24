@@ -1,4 +1,4 @@
-package shop.mtcoding.marketkurly.cart;
+package shop.mtcoding.marketkurly.reviewpic;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -6,41 +6,36 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
-import shop.mtcoding.marketkurly.user.User;
+import shop.mtcoding.marketkurly.review.Review;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cart_tb")
-public class Cart {
+@Table(name = "review_pic_tb")
+public class ReviewPic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer optionQuantity;
+    private String reviewPicUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    private Option option;
+    private Review review;
 
     @Builder
-    public Cart(Integer id, Integer optionQuantity, User user, Option option) {
+    public ReviewPic(Integer id, String reviewPicUrl, Review review) {
         this.id = id;
-        this.optionQuantity = optionQuantity;
-        this.user = user;
-        this.option = option;
+        this.reviewPicUrl = reviewPicUrl;
+        this.review = review;
     }
 
     
 
+    
 }
