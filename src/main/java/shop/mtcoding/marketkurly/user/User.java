@@ -27,14 +27,15 @@ public class User {
     private LocalDate userBirth;
     @Enumerated(EnumType.STRING)
     private Gender userGender;
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @CreationTimestamp
     private Timestamp userCreatedAt;
 
     @Builder
     public User(Integer id, String userId, String username, String userPassword, String userEmail, String userPic,
-            LocalDate userBirth, Gender userGender, String role, Timestamp userCreatedAt) {
+            LocalDate userBirth, Gender userGender, Role role, Timestamp userCreatedAt) {
         this.id = id;
         this.userId = userId;
         this.username = username;
@@ -46,7 +47,5 @@ public class User {
         this.role = role;
         this.userCreatedAt = userCreatedAt;
     }
-    
 
-    
 }

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
+import shop.mtcoding.marketkurly._core.errors.exception.Exception500;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
 
 @Service
@@ -20,6 +21,11 @@ public class UserService {
 
     @Transactional
     public void 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
+        try {
+            userJPARepository.save(userJoinDTO.toEntity());
+        } catch (Exception e) {
+            throw new Exception500("unknown server error");
+        }
 
         checkUserId(userJoinDTO.getUserId());
         User user = User.builder()

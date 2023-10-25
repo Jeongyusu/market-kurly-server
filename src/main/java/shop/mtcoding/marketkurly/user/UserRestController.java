@@ -2,10 +2,17 @@ package shop.mtcoding.marketkurly.user;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import lombok.RequiredArgsConstructor;
+import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 
 @RequiredArgsConstructor
 @RestController
@@ -22,9 +29,15 @@ public class UserRestController {
     }
 
     @PostMapping("/api/userJoin")
-    public void 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
+    public ResponseEntity<UserResponse.JoinDTO> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
+        // 회원가입 로직 실행
         userService.회원가입(userJoinDTO);
 
+        // 회원가입이 성공한 경우 JoinDTO를 생성하여 반환
+        UserResponse.JoinDTO joinDTO = new UserResponse.JoinDTO(userJoinDTO.getId(), userJoinDTO.getUsername(),
+                userJoinDTO.getUserPassword());
+
+        return ResponseEntity.ok(joinDTO);
     }
 
     @PostMapping("/api/userId/duplicated")
