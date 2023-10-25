@@ -22,7 +22,7 @@ public class UserRequest {
     @Getter
     @Setter
     public static class UserJoinDTO {
-        private Integer id;
+        private Integer id; // PK
         private String userId;
         private String userPassword;
         private String username;
@@ -39,10 +39,12 @@ public class UserRequest {
 
         public User toEntity() {
             return User.builder()
-                    .id(id)
-                    .userEmail(userEmail)
+                    .userId(userId)
                     .userPassword(userPassword)
                     .username(username)
+                    .userEmail(userEmail)
+                    .userBirth(userBirth)
+                    .userGender(Gender.valueOf(userGender))
                     .build();
         }
 

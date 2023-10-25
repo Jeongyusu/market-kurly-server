@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import javax.management.RuntimeErrorException;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,23 +21,17 @@ public class UserService {
     private final UserJPARepository userJPARepository;
 
     @Transactional
-    public void 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
+    public User 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
         try {
-            userJPARepository.save(userJoinDTO.toEntity());
+            // 1. 아이디 중복 체크
+            checkUserId(userJoinDTO.getUserId());
+
+            // 2. 디비 저장
+            User userPS = userJPARepository.save(userJoinDTO.toEntity());
+            return userPS;
         } catch (Exception e) {
             throw new Exception500("unknown server error");
         }
-
-        checkUserId(userJoinDTO.getUserId());
-        User user = User.builder()
-                .userId(userJoinDTO.getUserId())
-                .userPassword(userJoinDTO.getUserPassword())
-                .username(userJoinDTO.getUsername())
-                .userEmail(userJoinDTO.getUserEmail())
-                .userBirth(userJoinDTO.getUserBirth())
-                .userGender(userJoinDTO.getUserGender())
-                .build();
-        userJPARepository.save(user);
     }
 
     private void checkUserId(String userId) {
@@ -52,12 +47,15 @@ public class UserService {
     }
 
     public UserInfo 로그인(LoginDTO loginDTO) {
+
+        String encPassword = BCrypt.hashpw(loginDTO.getUserPassword(), BCrypt.gensalt());
+
         Optional<User> optUser = userJPARepository.findByUserId(loginDTO.getUserId());
         if (optUser.isEmpty()) {
             throw new Exception400("아이디가 일치하지 않습니다.");
         }
         User user = optUser.get();
-        if (!user.getUserPassword().equals(loginDTO.getUserPassword())) {
+        if (!user.getUserPassword().equals(encPassword)) {
             throw new Exception400("비밀번호가 일치하지 않습니다.");
         }
         return new UserInfo(user.getId(), user.getUserId());

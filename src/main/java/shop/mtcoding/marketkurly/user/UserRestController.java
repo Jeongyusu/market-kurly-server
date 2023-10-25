@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly.user.UserRequest.UserJoinDTO;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -22,6 +25,7 @@ import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 public class UserRestController {
 
     private final UserService userService;
+    private final UserJPARepository userJPARepository;
 
     @GetMapping("/test")
     void test() {
@@ -43,10 +47,11 @@ public class UserRestController {
 
     @PostMapping("/api/userJoin")
     public ResponseEntity<?> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
-        userJoinDTO.setUserPassword(null);
-        userService.회원가입(userJoinDTO);
-        userJoinDTO.setUserPassword(null);
-        return ResponseEntity.ok().body(ApiUtils.success(userJoinDTO));
+        String encPassword = BCrypt.hashpw(userJoinDTO.getUserPassword(), BCrypt.gensalt());
+        userJoinDTO.setUserPassword(encPassword);
+        User userPS = userService.회원가입(userJoinDTO);
+        userPS.setUserPassword(null);
+        return ResponseEntity.ok().body(ApiUtils.success(userPS));
     }
 
     @PostMapping("/api/userId/duplicated")
