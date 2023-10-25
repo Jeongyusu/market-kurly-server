@@ -35,6 +35,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
+	
+    testCompileOnly 'org.projectlombok:lombok:1.18.12' // 테스트환경에서 의존성 추가
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12' // 테스트환경에서 의존성 추가
+
 	// local
 	runtimeOnly 'com.h2database:h2'
 }
