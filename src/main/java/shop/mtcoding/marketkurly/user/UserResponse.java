@@ -2,15 +2,22 @@ package shop.mtcoding.marketkurly.user;
 
 import java.time.LocalDate;
 
-import javax.annotation.Generated;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 public class UserResponse {
+    @Getter
+    @AllArgsConstructor
+    public static class UserFindUsernameDTO {
+        private String username;
+
+        public UserFindUsernameDTO(User user) {
+            this.username = user.getUsername();
+        }
+    }
+
     @Getter
     @AllArgsConstructor
     public static class LoginDTO {
@@ -30,13 +37,13 @@ public class UserResponse {
         private String userGender;
 
         public JoinDTO(User user) {
-            this.id = getId();
-            this.userId = getUserId();
+            this.id = user.getId();
+            this.userId = user.getUserId();
             this.userPassword = null;
-            this.username = getUsername();
-            this.userEmail = getUserEmail();
-            this.userBirth = getUserBirth();
-            this.userGender = getUserGender();
+            this.username = user.getUsername();
+            this.userEmail = user.getUserEmail();
+            this.userBirth = user.getUserBirth();
+            this.userGender = user.getUserGender().name();
         }
 
     }

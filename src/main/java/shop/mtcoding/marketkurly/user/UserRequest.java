@@ -4,13 +4,23 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import shop.mtcoding.marketkurly.user.UserResponse.JoinDTO;
 
 public class UserRequest {
+
+    
+
+    @Getter
+    @NoArgsConstructor
+    @Setter
+    public static class UserFindUsernameDTO {
+        private String username;
+        private String userEmail;
+                   
+    }
+
     @Getter
     @NoArgsConstructor
     public static class LoginDTO {
@@ -32,7 +42,7 @@ public class UserRequest {
         private String userGender;
 
         // enum.valueOf (String)이 String 변수를 읽어서 enum 타입으로 바꿔준다.
-
+        // toUpperCase는 전부 대문자로 바꿔준다
         public Gender getUserGender() {
             return Gender.valueOf(userGender.toUpperCase());
         }

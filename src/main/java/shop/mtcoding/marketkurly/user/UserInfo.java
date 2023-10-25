@@ -8,5 +8,6 @@ import lombok.Getter;
 public class UserInfo {
     
     private int id;
-    private String userId;
+    private String username;
+    private String role;
 }
