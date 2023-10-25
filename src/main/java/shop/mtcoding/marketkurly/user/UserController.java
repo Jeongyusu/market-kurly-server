@@ -16,7 +16,6 @@ public class UserController {
         log.trace("트레이스");
         log.warn("경고");
         log.error("에러");
-
     }
 
 }

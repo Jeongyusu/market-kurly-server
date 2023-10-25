@@ -21,12 +21,13 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String categoryType;
+    private String categoryPic;
 
     @Builder
-    public Category(Integer id, String categoryType) {
+    public Category(Integer id, String categoryType, String categoryPic) {
         this.id = id;
         this.categoryType = categoryType;
+        this.categoryPic = categoryPic;
     }
 
-    
 }
