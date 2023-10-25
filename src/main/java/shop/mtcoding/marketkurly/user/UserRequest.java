@@ -7,6 +7,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import shop.mtcoding.marketkurly.user.UserResponse.JoinDTO;
 
 public class UserRequest {
     @Getter
@@ -18,6 +20,7 @@ public class UserRequest {
 
     @NoArgsConstructor
     @Getter
+    @Setter
     public static class UserJoinDTO {
         private Integer id;
         private String userId;
@@ -36,6 +39,7 @@ public class UserRequest {
 
         public User toEntity() {
             return User.builder()
+                    .id(id)
                     .userEmail(userEmail)
                     .userPassword(userPassword)
                     .username(username)
