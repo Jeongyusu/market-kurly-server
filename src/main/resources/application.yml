@@ -37,8 +37,8 @@ spring:
 
 logging:
   level:
-    '[shop.mtcoding.marketkurly]': DEBUG
-    '[org.hibernate.type]': TRACE
+    "[shop.mtcoding.marketkurly]": DEBUG
+    "[org.hibernate.type]": TRACE
 
 file:
   path: ./images/
