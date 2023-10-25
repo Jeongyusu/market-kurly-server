@@ -1,8 +1,8 @@
-package shop.mtcoding.marketkurly._core.config;
+// package shop.mtcoding.marketkurly._core.config;
 
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+// import org.springframework.boot.web.servlet.FilterRegistrationBean;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
 
 // import shop.mtcoding.marketkurly._core.filter.JwtAuthorizationFilter;
 

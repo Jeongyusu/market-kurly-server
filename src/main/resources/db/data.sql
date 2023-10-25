@@ -1,3 +1,4 @@
+INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gender, user_birth) VALUES ('1', 'z2poter', 'ssar@nate.com', '12345678', 'ssar', 'MAN', '1997-08-29');
 INSERT INTO notice_tb (notice_content, notice_title, notice_type) VALUES ('공지내용', '공지제목', '일반공지');
 
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('1', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '', '/images/1.jpg', '1000');
