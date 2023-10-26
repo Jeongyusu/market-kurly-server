@@ -31,22 +31,17 @@ public class UserRestController {
         log.error("에러");
 
     }
-    
-    
+
     // Get 요청은 Body가 없다.
     // Json데이터는 @RequestBody 어노테이션을 사용해서 받기
     @PostMapping("/api/findUserId")
     public ResponseEntity<?> 아이디찾기(@RequestBody UserRequest.UserFindUsernameDTO userFindUsernameDTO) {
-        System.out.println("--------------------------------------");
-        System.out.println(userFindUsernameDTO.getUsername());
-        System.out.println(userFindUsernameDTO.getUserEmail());
-        System.out.println("--------------------------------------");
-
         String userId = userService.아이디찾기(userFindUsernameDTO);
 
         if (userId != null) {
             System.out.println(ResponseEntity.ok().body(ApiUtils.success(userId)));
-            return ResponseEntity.ok().body(ApiUtils.success(userId.substring(0, 1) + "*".repeat((userId.length() - 1))));
+            return ResponseEntity.ok()
+                    .body(ApiUtils.success(userId.substring(0, 1) + "*".repeat((userId.length() - 1))));
         } else {
             throw new Exception400("입력하신 정보가 일치하지 않습니다");
         }
@@ -58,8 +53,7 @@ public class UserRestController {
         String atk = jwtManager.buildAtk(userInfo.getId(), userInfo.getUsername(), userInfo.getRole());
         return new UserResponse.LoginDTO(atk);
     }
-    
-   
+
     @PostMapping("/api/userJoin")
     public ResponseEntity<?> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
         String encPassword = BCrypt.hashpw(userJoinDTO.getUserPassword(), BCrypt.gensalt());

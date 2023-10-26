@@ -35,6 +35,7 @@ public class UserResponse {
         @DateTimeFormat(pattern = "yyyy-MM-dd")
         private LocalDate userBirth;
         private String userGender;
+        private String role;
 
         public JoinDTO(User user) {
             this.id = user.getId();
@@ -44,6 +45,7 @@ public class UserResponse {
             this.userEmail = user.getUserEmail();
             this.userBirth = user.getUserBirth();
             this.userGender = user.getUserGender().name();
+            this.role = user.getRole().name();
         }
 
     }
