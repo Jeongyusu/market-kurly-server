@@ -42,3 +42,7 @@ logging:
 
 file:
   path: ./images/
+jwt:
+  secret: 8593eccff73368ea5480bbdd4750ea78a215ea658c6d6a744721986eb05c5280306b85d41f3cd8ad403bf97fef6c41666ab4d722c5cf24e8942ef31bded66eb6
+  atk:
+    expire: 3600 #s
