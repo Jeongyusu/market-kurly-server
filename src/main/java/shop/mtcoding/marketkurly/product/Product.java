@@ -27,6 +27,7 @@ public class Product {
     private Integer id;
     private String productThumbnail;
     private String productName;
+    private Integer price; // 빠졌음
     private Integer discountRate;
 
     @CreationTimestamp
@@ -36,14 +37,13 @@ public class Product {
     private Category category;
 
     @Builder
-    public Product(Integer id, String productThumbnail, String productName, Integer discountRate,
-            Timestamp productUploadedAt, Category category) {
+    public Product(Integer id, String productThumbnail, String productName, Integer price, Integer discountRate, Timestamp productUploadedAt, Category category) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productName = productName;
+        this.price = price;
         this.discountRate = discountRate;
         this.productUploadedAt = productUploadedAt;
         this.category = category;
     }
-    
 }
