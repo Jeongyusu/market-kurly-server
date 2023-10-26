@@ -64,7 +64,6 @@ public class UserService {
                 requestDTO.getUserEmail());
 
         if (optUser.isPresent()) {
-            System.out.println("있다!!");
             return optUser.get().getUserId();
         } else {
             return null;

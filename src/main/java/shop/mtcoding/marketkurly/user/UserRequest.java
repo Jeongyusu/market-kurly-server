@@ -10,15 +10,13 @@ import lombok.Setter;
 
 public class UserRequest {
 
-    
-
     @Getter
     @NoArgsConstructor
     @Setter
     public static class UserFindUsernameDTO {
         private String username;
         private String userEmail;
-                   
+
     }
 
     @Getter
@@ -32,7 +30,6 @@ public class UserRequest {
     @Getter
     @Setter
     public static class UserJoinDTO {
-        private Integer id; // PK
         private String userId;
         private String userPassword;
         private String username;
@@ -40,11 +37,16 @@ public class UserRequest {
         @DateTimeFormat(pattern = "yyyy-MM-dd")
         private LocalDate userBirth;
         private String userGender;
+        private String role;
 
         // enum.valueOf (String)이 String 변수를 읽어서 enum 타입으로 바꿔준다.
         // toUpperCase는 전부 대문자로 바꿔준다
         public Gender getUserGender() {
             return Gender.valueOf(userGender.toUpperCase());
+        }
+
+        public Role getRole() {
+            return Role.valueOf(role.toUpperCase());
         }
 
         public User toEntity() {
@@ -55,6 +57,7 @@ public class UserRequest {
                     .userEmail(userEmail)
                     .userBirth(userBirth)
                     .userGender(Gender.valueOf(userGender))
+                    .role(Role.valueOf(role))
                     .build();
         }
 
