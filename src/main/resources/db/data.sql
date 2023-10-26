@@ -1,6 +1,16 @@
 INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gender, user_birth, role) VALUES ('1', 'z2poter', 'ssar@nate.com', '$2a$10$sSu6qQgNY8pqivmlVHaQfOapmxrC0A8B0C/0TTN4cd0BErUBcU8pq', 'ssar', 'MAN', '1997-08-29', 'NORMAL');
 INSERT INTO notice_tb (notice_content, notice_title, notice_type) VALUES ('공지내용', '공지제목', '일반공지');
 
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(1, '/images/1.jpg', '채소, 과일');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(2, '/images/2.jpg', '정육, 계란');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(3, '/images/3.jpg', '수산, 해산, 건어물');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(4, '/images/4.jpg', '면, 양념, 오일');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(5, '/images/5.jpg', '국, 반찬, 메인요리');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(6, '/images/6.jpg', '생수, 음료, 우유');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(7, '/images/7.jpg', '건강식품');
+insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(8, '/images/8.jpg', '주류, 와인');
+
+
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('1', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '', '/images/1.jpg', '1000');
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('2', '[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율', '', '/images/2.jpg', '2000');
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('3', '삼성전자 JBL JR310 외 어린이용/성인용 헤드셋 3종!', '', '/images/3.jpg', '30000');
