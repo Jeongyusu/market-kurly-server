@@ -10,6 +10,13 @@ insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(6, '/images/6.jp
 insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(7, '/images/7.jpg', '건강식품');
 insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(8, '/images/8.jpg', '주류, 와인');
 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','12-1',false,'이동국','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','4층',false,'강호동','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','5층',false,'김수미','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','112-1',false,'이동국','01012345678',1); 
+
 
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('1', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '', '/images/1.jpg', '1000');
 -- INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('2', '[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율', '', '/images/2.jpg', '2000');
