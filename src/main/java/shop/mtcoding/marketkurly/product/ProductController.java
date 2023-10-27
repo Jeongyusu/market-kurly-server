@@ -16,17 +16,16 @@ public class ProductController {
 
     @GetMapping("/test")
     void test() {
-        log.info("인포");
-        log.debug("디버그");
-        log.trace("트레이스");
-        log.warn("경고");
-        log.error("에러");
+    log.info("인포");
+    log.debug("디버그");
+    log.trace("트레이스");
+    log.warn("경고");
+    log.error("에러");
     }
 
     @PostMapping("/api/productHome")
-    public ResponseEntity<?> 메인홈(@RequestBody ProductRequest.ProductMainDTO ProductMainDTO)
+    public ResponseEntity<?> 메인홈(@RequestBody ProductRequest.ProductMainDTO
+    ProductMainDTO)
     pr
 
-
-         
 }
