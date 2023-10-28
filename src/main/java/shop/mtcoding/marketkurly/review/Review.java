@@ -1,14 +1,8 @@
 package shop.mtcoding.marketkurly.review;
 
 import java.sql.Timestamp;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,13 +25,16 @@ public class Review {
     private String reviewContent;
     private Integer starCount;
 
+
     @CreationTimestamp
     private Timestamp reviewCreatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     @Builder
