@@ -1,6 +1,9 @@
 package shop.mtcoding.marketkurly.user;
 
+import java.util.Optional;
+
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +24,7 @@ public class UserRestController {
 
     private final UserService userService;
     private final JwtManager jwtManager;
+    private final UserJPARepository userJPARepository;
 
     @GetMapping("/test")
     void test() {
@@ -48,10 +52,11 @@ public class UserRestController {
     }
 
     @PostMapping("/api/userLogin")
-    public UserResponse.LoginDTO 로그인(@RequestBody UserRequest.LoginDTO loginDTO) {
-        UserInfo userInfo = userService.로그인(loginDTO);
-        String atk = jwtManager.buildAtk(userInfo.getId(), userInfo.getUsername(), userInfo.getRole());
-        return new UserResponse.LoginDTO(atk);
+    public ResponseEntity<?> 로그인(@RequestBody UserRequest.LoginDTO loginDTO) {
+        String jwt = userService.로그인(loginDTO);
+        Optional<User> userps = userJPARepository.findByUserId(loginDTO.getUserId());
+        return ResponseEntity.ok().header("Authorization", "Bearer " + jwt)
+                .body(ApiUtils.success((userps)));
     }
 
     @PostMapping("/api/userJoin")
