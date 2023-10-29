@@ -25,7 +25,6 @@ public class OptionResponse {
     @Getter
     @NoArgsConstructor
     public static class OptionSelectMainDTO {
-
     }
 
 }

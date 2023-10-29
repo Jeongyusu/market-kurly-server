@@ -17,7 +17,7 @@ public class ReviewService {
     private final ReviewJPARepository reivewJPARepository;
     private final NoticeRepository noticeJPARepository;
 
-    public ReviewMainDTO 상품리뷰메인페이지() {
+    public ReviewMainDTO 상품리뷰메인() {
 
         // TODO findByProduct 매개변수 Product 타입이 아닌 ProductId 로 찾기
         List<Review> reviews = reivewJPARepository.findByProduct(new Product());

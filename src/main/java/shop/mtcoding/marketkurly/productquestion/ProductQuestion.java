@@ -32,7 +32,7 @@ public class ProductQuestion {
     private Boolean isSecreted;
 
     @CreationTimestamp
-    private Timestamp productQuestionCeatedAt;
+    private Timestamp productQuestionCreatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
@@ -40,20 +40,17 @@ public class ProductQuestion {
     @ManyToOne(fetch = FetchType.LAZY)
     private Option option;
 
-
     @Builder
     public ProductQuestion(Integer id, String productQuestionTitle, String productQuestionContent, Boolean isAnswered,
-            Boolean isSecreted, Timestamp productQuestionCeatedAt, User user, Option option) {
+            Boolean isSecreted, Timestamp productQuestionCreatedAt, User user, Option option) {
         this.id = id;
         this.productQuestionTitle = productQuestionTitle;
         this.productQuestionContent = productQuestionContent;
         this.isAnswered = isAnswered;
         this.isSecreted = isSecreted;
-        this.productQuestionCeatedAt = productQuestionCeatedAt;
+        this.productQuestionCreatedAt = productQuestionCreatedAt;
         this.user = user;
         this.option = option;
     }
 
-    
-    
 }
