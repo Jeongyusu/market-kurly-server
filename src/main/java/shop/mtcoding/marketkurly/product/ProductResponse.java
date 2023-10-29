@@ -13,6 +13,31 @@ public class ProductResponse {
     @ToString
     @Getter
     @NoArgsConstructor
+    public static class bestProductDTO {
+    List<ProductSummary> result = new ArrayList<>();
+
+        public bestProductDTO(List<ProductSummary> result) {
+            this.result = result;
+        }
+        
+    }
+
+
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class newProductDTO {
+        List<ProductSummary> result = new ArrayList<>();
+
+        public newProductDTO(List<ProductSummary> result) {
+            this.result = result;
+        }
+    }
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
     public static class ProductMainDTO {
         List<ProductSummary> result = new ArrayList<>();
 
@@ -31,7 +56,6 @@ public class ProductResponse {
         Integer discountRate;
         Integer discountedPrice;
         Double averageStarCount;
-
 
         public ProductSummary(Product product, Double averageStarCount, Option option) {
             this.productId = product.getId();

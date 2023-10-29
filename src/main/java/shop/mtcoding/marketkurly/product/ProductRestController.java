@@ -18,6 +18,20 @@ import java.util.Map;
 public class ProductRestController {
     private final ProductService productService;
 
+    @GetMapping("api/bestProduct")
+    public ResponseEntity<?> 베스트(@RequestParam int page){
+        ProductResponse.bestProductDTO response = productService.베스트(page);
+        return ResponseEntity.ok().body(ApiUtils.success(response));
+    }
+
+    @GetMapping("/api/newProdcut")
+    public ResponseEntity<?> 신상품(@RequestParam int page){
+        System.out.println("실행됨?");
+        ProductResponse.newProductDTO response = productService.신상품(page);
+        return ResponseEntity.ok().body(ApiUtils.success(response));
+
+    }
+
     @GetMapping("/api/productHome")
     public ResponseEntity<?> 컬리추천(@RequestParam int page) {
         ProductResponse.ProductMainDTO response = productService.컬리추천(page);
