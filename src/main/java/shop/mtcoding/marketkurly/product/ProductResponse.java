@@ -10,18 +10,32 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductResponse {
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class ProductListDTO {
+        private int totalCount;
+        List<ProductSummary> result = new ArrayList<>();
+        public ProductListDTO(int totalCount, List<ProductSummary> result) {
+            this.totalCount = totalCount;
+            this.result = result;
+        }
+
+
+    }
+
     @ToString
     @Getter
     @NoArgsConstructor
     public static class bestProductDTO {
-    List<ProductSummary> result = new ArrayList<>();
+        List<ProductSummary> result = new ArrayList<>();
 
         public bestProductDTO(List<ProductSummary> result) {
             this.result = result;
         }
-        
-    }
 
+    }
 
 
     @ToString
