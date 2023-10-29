@@ -52,6 +52,12 @@ INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `prod
 INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('16', '1', '01. 슬라이딩 지퍼백 크리스마스에디션 4종', '10000', '14');
 INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('17', '1', '01. 슬라이딩 지퍼백 크리스마스에디션 4종', '10000', '15');
 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','12-1',false,'이동국','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','4층',false,'강호동','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','5층',false,'김수미','01012345678',1); 
+insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','112-1',false,'이동국','01012345678',1); 
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('2', '1', '02. 슬라이딩 지퍼백 플라워에디션 5종', '10900', '1');
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('3', '1', '고무장갑 베이지 S(소형) 6팩', '9900', '1');
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('4', '1', '뽑아쓰는 키친타올 130매 12팩', '16900', '1');
