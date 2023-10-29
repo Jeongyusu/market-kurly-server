@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.address;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -44,4 +46,5 @@ public class Address {
         this.isDefaultAddress = isDefaultAddress;
         this.user = user;
     }
+
 }
