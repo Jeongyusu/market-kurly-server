@@ -1,6 +1,7 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -29,15 +30,15 @@ public class Product {
     private String productName;
     private Integer discountRate;
 
-    @CreationTimestamp
-    private Timestamp productUploadedAt;
+
+    private LocalDate  productUploadedAt;
     
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
     @Builder
     public Product(Integer id, String productThumbnail, String productName, Integer discountRate,
-            Timestamp productUploadedAt, Category category) {
+            LocalDate productUploadedAt, Category category) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productName = productName;

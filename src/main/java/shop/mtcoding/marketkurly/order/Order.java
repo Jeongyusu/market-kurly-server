@@ -1,13 +1,8 @@
 package shop.mtcoding.marketkurly.order;
 
 import java.sql.Timestamp;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,6 +28,7 @@ public class Order {
     private Timestamp orderedAt;
     
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
