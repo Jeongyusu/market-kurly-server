@@ -3,7 +3,6 @@ package shop.mtcoding.marketkurly.user;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly.token.JwtManager;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -23,7 +21,6 @@ import shop.mtcoding.marketkurly.token.JwtManager;
 public class UserRestController {
 
     private final UserService userService;
-    private final JwtManager jwtManager;
     private final UserJPARepository userJPARepository;
 
     @GetMapping("/test")
