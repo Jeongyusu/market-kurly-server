@@ -1,7 +1,6 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,9 +13,6 @@ import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
-import shop.mtcoding.marketkurly.product.ProductResponse.ProductMainDTO;
-import shop.mtcoding.marketkurly.product.ProductResponse.bestProductDTO;
-import shop.mtcoding.marketkurly.product.ProductResponse.newProductDTO;
 import shop.mtcoding.marketkurly.review.Review;
 import shop.mtcoding.marketkurly.review.ReviewJPARepository;
 
@@ -54,7 +50,8 @@ public class ProductService {
         LocalDate oneMonthAgo = LocalDate.now().minusDays(30);
 
         // 한 달 이내의 상품만 가져오도록 쿼리 작성
-        Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo, LocalDate.now(), PageRequest.of(page, 5));
+        Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo, LocalDate.now(),
+                PageRequest.of(page, 5));
 
         List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                 .map(product -> {
@@ -63,13 +60,14 @@ public class ProductService {
                             .average()
                             .orElse(0);
                     Option option = optionJPARepository.findTopByProductOrderByOptionPriceAsc(product).orElseThrow();
-                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0, option);
+                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0,
+                            option);
                 })
                 .collect(Collectors.toList());
 
-        return new ProductResponse.ProductListDTO(prodcutJPARepository.countByProductUploadedAtBetween(oneMonthAgo, LocalDate.now()), productSummaryList);
+        return new ProductResponse.ProductListDTO(
+                prodcutJPARepository.countByProductUploadedAtBetween(oneMonthAgo, LocalDate.now()), productSummaryList);
     }
-
 
     public ProductResponse.ProductListDTO 베스트(int page) {
         // 판매량순
@@ -82,17 +80,17 @@ public class ProductService {
                             .average()
                             .orElse(0);
                     Option option = optionJPARepository.findTopByProductOrderByOptionPriceAsc(product).orElseThrow();
-                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0, option);
+                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0,
+                            option);
                 })
                 .collect(Collectors.toList());
 
-
         Long count = products.getTotalElements();
-        return new ProductResponse.ProductListDTO((int)(count == null ? 0 : count), productSummaryList);
+        return new ProductResponse.ProductListDTO((int) (count == null ? 0 : count), productSummaryList);
 
     }
 
-    public ProductResponse.ProductListDTO 마감세일(int page, Integer categoryId) {
+    public ProductResponse.ProductListDTO 카테고리필터링(int page, Integer categoryId) {
         Page<Product> products = prodcutJPARepository.findByCategory_Id(categoryId, PageRequest.of(page, 5));
 
         List<ProductResponse.ProductSummary> productSummaryList = products.stream()
@@ -102,10 +100,10 @@ public class ProductService {
                             .average()
                             .orElse(0);
                     Option option = optionJPARepository.findTopByProductOrderByOptionPriceAsc(product).orElseThrow();
-                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0, option);
+                    return new ProductResponse.ProductSummary(product, Math.round(averageStarCount * 10) / 10.0,
+                            option);
                 })
                 .collect(Collectors.toList());
-
 
         int count = prodcutJPARepository.countByCategory_Id(categoryId);
         return new ProductResponse.ProductListDTO(count, productSummaryList);
