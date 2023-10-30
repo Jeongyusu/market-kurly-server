@@ -44,4 +44,5 @@ public class Address {
         this.isDefaultAddress = isDefaultAddress;
         this.user = user;
     }
+
 }
