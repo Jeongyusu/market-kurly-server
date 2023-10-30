@@ -1,6 +1,9 @@
 package shop.mtcoding.marketkurly.review;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import shop.mtcoding.marketkurly.product.Product;
+import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
@@ -25,7 +29,6 @@ public class Review {
     private String reviewContent;
     private Integer starCount;
 
-
     @CreationTimestamp
     private Timestamp reviewCreatedAt;
 
@@ -36,6 +39,9 @@ public class Review {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
+
+    @OneToMany(mappedBy = "review", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ReviewPic> reviewPics = new ArrayList<ReviewPic>();
 
     @Builder
     public Review(Integer id, String reviewTitle, String reviewContent, Integer starCount, Timestamp reviewCreatedAt,
@@ -49,6 +55,4 @@ public class Review {
         this.product = product;
     }
 
-    
-    
 }

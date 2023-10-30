@@ -18,9 +18,29 @@ import java.util.Map;
 public class ProductRestController {
     private final ProductService productService;
 
+    @GetMapping("/api/bestProduct")
+    public ResponseEntity<?> 베스트(@RequestParam int page){
+        ProductResponse.ProductListDTO response = productService.베스트(page);
+        return ResponseEntity.ok().body(ApiUtils.success(response));
+    }
+
+    @GetMapping("/api/finalSale")
+    public ResponseEntity<?> 마감세일(@RequestParam int page, @RequestParam Integer categoryId){
+        ProductResponse.ProductListDTO response = productService.마감세일(page, categoryId);
+        return ResponseEntity.ok().body(ApiUtils.success(response));
+    }
+
+    @GetMapping("/api/newProdcut")
+    public ResponseEntity<?> 신상품(@RequestParam int page){
+        System.out.println("실행됨?");
+        ProductResponse.ProductListDTO response = productService.신상품(page);
+        return ResponseEntity.ok().body(ApiUtils.success(response));
+
+    }
+
     @GetMapping("/api/productHome")
     public ResponseEntity<?> 컬리추천(@RequestParam int page) {
-        ProductResponse.ProductMainDTO response = productService.컬리추천(page);
+        ProductResponse.ProductListDTO response = productService.컬리추천(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 

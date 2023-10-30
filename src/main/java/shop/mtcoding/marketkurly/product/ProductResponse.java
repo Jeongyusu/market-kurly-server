@@ -10,6 +10,45 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductResponse {
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class ProductListDTO {
+        private int totalCount;
+        List<ProductSummary> result = new ArrayList<>();
+        public ProductListDTO(int totalCount, List<ProductSummary> result) {
+            this.totalCount = totalCount;
+            this.result = result;
+        }
+
+
+    }
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class bestProductDTO {
+        List<ProductSummary> result = new ArrayList<>();
+
+        public bestProductDTO(List<ProductSummary> result) {
+            this.result = result;
+        }
+
+    }
+
+
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class newProductDTO {
+        List<ProductSummary> result = new ArrayList<>();
+
+        public newProductDTO(List<ProductSummary> result) {
+            this.result = result;
+        }
+    }
+
     @ToString
     @Getter
     @NoArgsConstructor
@@ -31,7 +70,6 @@ public class ProductResponse {
         Integer discountRate;
         Integer discountedPrice;
         Double averageStarCount;
-
 
         public ProductSummary(Product product, Double averageStarCount, Option option) {
             this.productId = product.getId();
