@@ -14,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
+import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -50,19 +52,15 @@ public class UserRestController {
 
     @PostMapping("/api/userLogin")
     public ResponseEntity<?> 로그인(@RequestBody UserRequest.LoginDTO loginDTO) {
-        String jwt = userService.로그인(loginDTO);
-        Optional<User> userps = userJPARepository.findByUserId(loginDTO.getUserId());
-        return ResponseEntity.ok().header("Authorization", "Bearer " + jwt)
-                .body(ApiUtils.success((userps)));
+        TokenDTO tokenDTO = userService.로그인(loginDTO);
+        return ResponseEntity.ok().header("Authorization", "Bearer " + tokenDTO.getJwt())
+                .body(ApiUtils.success((tokenDTO.getUser())));
     }
 
     @PostMapping("/api/userJoin")
     public ResponseEntity<?> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
-        String encPassword = BCrypt.hashpw(userJoinDTO.getUserPassword(), BCrypt.gensalt());
-        userJoinDTO.setUserPassword(encPassword);
-        User userPS = userService.회원가입(userJoinDTO);
-        userPS.setUserPassword(null);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(userPS));
+        User user = userService.회원가입(userJoinDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
     }
 
     @PostMapping("/api/userId/duplicated")

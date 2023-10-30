@@ -9,12 +9,11 @@ import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "coupon_tb")
 public class Coupon {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -48,6 +47,4 @@ public class Coupon {
         this.couponExpiredAt = couponExpiredAt;
     }
 
- 
-    
 }

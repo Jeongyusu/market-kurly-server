@@ -10,7 +10,6 @@ import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "user_tb")

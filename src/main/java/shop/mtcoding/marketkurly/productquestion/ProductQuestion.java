@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
@@ -14,10 +15,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.product.Product;
+import shop.mtcoding.marketkurly.productreply.ProductReply;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "product_question_tb")
@@ -38,11 +40,15 @@ public class ProductQuestion {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Option option;
+    private Product product;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private ProductReply productReply;
 
     @Builder
     public ProductQuestion(Integer id, String productQuestionTitle, String productQuestionContent, Boolean isAnswered,
-            Boolean isSecreted, Timestamp productQuestionCreatedAt, User user, Option option) {
+            Boolean isSecreted, Timestamp productQuestionCreatedAt, User user, Product product,
+            ProductReply productReply) {
         this.id = id;
         this.productQuestionTitle = productQuestionTitle;
         this.productQuestionContent = productQuestionContent;
@@ -50,7 +56,8 @@ public class ProductQuestion {
         this.isSecreted = isSecreted;
         this.productQuestionCreatedAt = productQuestionCreatedAt;
         this.user = user;
-        this.option = option;
+        this.product = product;
+        this.productReply = productReply;
     }
 
 }

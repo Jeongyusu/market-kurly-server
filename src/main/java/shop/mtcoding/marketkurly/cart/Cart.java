@@ -16,7 +16,6 @@ import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "cart_tb")
@@ -40,7 +39,5 @@ public class Cart {
         this.user = user;
         this.option = option;
     }
-
-    
 
 }

@@ -16,7 +16,6 @@ import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "writeable_review_tb")
@@ -39,6 +38,4 @@ public class WriteableReview {
         this.product = product;
     }
 
-    
-    
 }

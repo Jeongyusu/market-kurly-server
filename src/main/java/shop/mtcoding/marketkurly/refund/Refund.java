@@ -16,7 +16,6 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.payment.Payment;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "refund_tb")
@@ -40,6 +39,5 @@ public class Refund {
         this.refundedAt = refundedAt;
         this.payment = payment;
     }
-    
-    
+
 }

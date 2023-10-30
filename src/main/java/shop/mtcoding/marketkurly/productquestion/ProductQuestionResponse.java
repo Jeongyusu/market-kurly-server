@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.product.Product;
 
 public class ProductQuestionResponse {
     @ToString
@@ -16,11 +17,11 @@ public class ProductQuestionResponse {
     public static class ProductQuestionMainDTO {
 
         // TODO optionName쓸지 productName쓸지 결정 (문의 세부페이지 유무에 따라 다름)
-        private String optionName;
+        private String productName;
         private List<ProductQuestionDTO> productQuestionDTOs;
 
-        public ProductQuestionMainDTO(Option option, List<ProductQuestion> productQuestions) {
-            this.optionName = option.getOptionName();
+        public ProductQuestionMainDTO(Product product, List<ProductQuestion> productQuestions) {
+            this.productName = product.getProductName();
             this.productQuestionDTOs = productQuestions.stream().map(t -> new ProductQuestionDTO(t))
                     .collect(Collectors.toList());
         }
@@ -33,6 +34,7 @@ public class ProductQuestionResponse {
             private Boolean isAnswered;
             private Boolean isSecreted;
             private String userName;
+            private String pReplyContent;
             private Timestamp productQuestionCreatedAt;
 
             public ProductQuestionDTO(ProductQuestion productQuestion) {
@@ -40,9 +42,9 @@ public class ProductQuestionResponse {
                 this.isAnswered = productQuestion.getIsAnswered();
                 this.isSecreted = productQuestion.getIsSecreted();
                 this.userName = productQuestion.getUser().getUsername();
+                this.pReplyContent = productQuestion.getProductReply().getPReplyContent();
                 this.productQuestionCreatedAt = productQuestion.getProductQuestionCreatedAt();
             }
-
         }
     }
 }
