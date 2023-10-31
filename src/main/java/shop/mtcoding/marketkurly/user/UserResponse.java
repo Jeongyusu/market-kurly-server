@@ -1,5 +1,6 @@
 package shop.mtcoding.marketkurly.user;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,7 +22,28 @@ public class UserResponse {
     @Getter
     @AllArgsConstructor
     public static class LoginDTO {
-        private String accessToken;
+        private Integer id;
+        private String userId;
+        private String username;
+        private String userEmail;
+        @DateTimeFormat(pattern = "yyyy-MM-dd")
+        private LocalDate userBirth;
+        private String userGender;
+        private String role;
+        @DateTimeFormat(pattern = "yyyy-MM-dd")
+        private Timestamp userCreatedAt;
+
+        public LoginDTO(User user) {
+            this.id = user.getId();
+            this.userId = user.getUserId();
+            this.username = user.getUsername();
+            this.userEmail = user.getUserEmail();
+            this.userBirth = user.getUserBirth();
+            this.userGender = user.getUserGender().name();
+            this.role = user.getRole().name();
+            this.userCreatedAt = user.getUserCreatedAt();
+        }
+
     }
 
     @Getter

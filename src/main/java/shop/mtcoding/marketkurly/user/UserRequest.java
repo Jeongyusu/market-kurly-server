@@ -24,9 +24,14 @@ public class UserRequest {
     public static class LoginDTO {
         private String userId;
         private String userPassword;
+
+        public LoginDTO(String userId, String userPassword) {
+            this.userId = userId;
+            this.userPassword = userPassword;
+        }
+
     }
 
-    @NoArgsConstructor
     @Getter
     @Setter
     public static class UserJoinDTO {
@@ -38,6 +43,17 @@ public class UserRequest {
         private LocalDate userBirth;
         private String userGender;
         private String role;
+
+        public UserJoinDTO(String userId, String userPassword, String username, String userEmail, LocalDate userBirth,
+                String userGender, String role) {
+            this.userId = userId;
+            this.userPassword = userPassword;
+            this.username = username;
+            this.userEmail = userEmail;
+            this.userBirth = userBirth;
+            this.userGender = userGender;
+            this.role = role;
+        }
 
         // enum.valueOf (String)이 String 변수를 읽어서 enum 타입으로 바꿔준다.
         // toUpperCase는 전부 대문자로 바꿔준다
