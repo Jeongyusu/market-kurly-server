@@ -24,7 +24,7 @@ public class ProductQuestionService {
         public ProductQuestionMainDTO 상품문의메인() {
                 Optional<Product> productOP = productJPARepository.findById(1);
                 Product product = productOP.orElseThrow(() -> new Exception404("옵션값을 찾을수 없습니다."));
-                List<ProductQuestion> productQuestions = prodcutQuestionJPARepository.findByProductId(1);
+                List<ProductQuestion> productQuestions = productQuestionJPARepository.findByProductId(1);
 
                 return new ProductQuestionResponse.ProductQuestionMainDTO(product, productQuestions);
         }
