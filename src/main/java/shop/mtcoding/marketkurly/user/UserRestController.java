@@ -1,8 +1,5 @@
 package shop.mtcoding.marketkurly.user;
 
-import java.util.Optional;
-
-import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
 @Slf4j
@@ -37,7 +33,7 @@ public class UserRestController {
 
     // Get 요청은 Body가 없다.
     // Json데이터는 @RequestBody 어노테이션을 사용해서 받기
-    @PostMapping("/api/user/findId")
+    @PostMapping("/api/users/search")
     public ResponseEntity<?> 아이디찾기(@RequestBody UserRequest.UserFindUsernameDTO userFindUsernameDTO) {
         String userId = userService.아이디찾기(userFindUsernameDTO);
 
@@ -50,20 +46,20 @@ public class UserRestController {
                 .body(ApiUtils.success(userId.substring(0, 1) + "*".repeat((userId.length() - 1))));
     }
 
-    @PostMapping("/api/user/login")
+    @PostMapping("/api/users/login")
     public ResponseEntity<?> 로그인(@RequestBody UserRequest.LoginDTO loginDTO) {
         TokenDTO tokenDTO = userService.로그인(loginDTO);
         return ResponseEntity.ok().header("Authorization", "Bearer " + tokenDTO.getJwt())
                 .body(ApiUtils.success((tokenDTO.getUser())));
     }
 
-    @PostMapping("/api/user/join")
+    @PostMapping("/api/users/join")
     public ResponseEntity<?> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
         User user = userService.회원가입(userJoinDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
     }
 
-    @PostMapping("/api/userId/duplicated")
+    @PostMapping("/api/users/checkid")
     public ResponseEntity<?> 중복확인(@RequestBody UserRequest.UserIdDuplicatedDTO request) {
         userService.중복확인(request.getUserId());
         return ResponseEntity.ok().body(ApiUtils.success(null));

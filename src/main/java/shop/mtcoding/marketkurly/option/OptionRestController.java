@@ -15,7 +15,7 @@ import shop.mtcoding.marketkurly.option.OptionResponse.OptionSelectMainDTO;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class OptionController {
+public class OptionRestController {
 
     private final OptionService optionService;
 

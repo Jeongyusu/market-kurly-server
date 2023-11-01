@@ -17,7 +17,7 @@ import shop.mtcoding.marketkurly.product.Product;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class OrderedOptionController {
+public class OrderedOptionRestController {
 
     private final OrderOptionJAPRepository orderOptionJAPRepository;
 

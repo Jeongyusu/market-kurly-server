@@ -16,7 +16,7 @@ import shop.mtcoding.marketkurly.address.AddressRequest.AddressSaveReqDTO;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class AddressController {
+public class AddressRestController {
 
     private final AddressService addressService;
 
@@ -28,7 +28,7 @@ public class AddressController {
         return ResponseEntity.ok().body(ApiUtils.success(addresses));
     }
 
-    @PostMapping("/api/test/save/address")
+    @PostMapping("/api/addresses/save")
     public ResponseEntity<?> 배송지저장(@RequestBody AddressSaveReqDTO addressSaveReqDTO) {
         log.info("addressContoller 배송지저장 호출됨");
         Address result = addressService.배송지저장(addressSaveReqDTO);

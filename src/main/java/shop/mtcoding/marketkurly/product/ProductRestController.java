@@ -18,32 +18,32 @@ import java.util.Map;
 public class ProductRestController {
     private final ProductService productService;
 
-    @GetMapping("/api/product/bestProduct")
+    @GetMapping("/api/products/best")
     public ResponseEntity<?> 베스트(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.베스트(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/product/category")
+    @GetMapping("/api/products/category")
     public ResponseEntity<?> 카테고리(@RequestParam int page, @RequestParam Integer categoryId) {
         ProductResponse.ProductListDTO response = productService.카테고리필터링(page, categoryId);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/product/newProdcut")
+    @GetMapping("/api/products/new")
     public ResponseEntity<?> 신상품(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.신상품(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
 
     }
 
-    @GetMapping("/api/product/home")
+    @GetMapping("/api/products/suggestion")
     public ResponseEntity<?> 컬리추천(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.컬리추천(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/product/event")
+    @GetMapping("/api/products/event")
     public ResponseEntity<?> 금주혜택() {
         List<String> imageUrls = List.of(
                 "http://localhost:8080/images/list/Screenshot_1.jpg",

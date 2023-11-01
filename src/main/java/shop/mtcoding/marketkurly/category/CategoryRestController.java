@@ -13,7 +13,7 @@ import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-public class CategoryController {
+public class CategoryRestController {
 
     private final CategoryService categoryService;
 
