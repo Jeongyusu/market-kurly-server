@@ -72,4 +72,35 @@ public class UserResponse {
 
     }
 
+    @Getter
+    public static class TokenDTO {
+        private String jwt;
+        private User user;
+
+        public TokenDTO(String jwt, User user) {
+            this.jwt = jwt;
+            this.user = UserPSDTO.hideUserPS(user);
+        }
+
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public static class UserPSDTO {
+
+        public static User hideUserPS(User user) {
+            User userPS = User.builder()
+                    .id(user.getId())
+                    .userId(user.getUserId())
+                    .userPassword(null)
+                    .username(user.getUsername())
+                    .userEmail(user.getUserEmail())
+                    .userGender(user.getUserGender())
+                    .userBirth(user.getUserBirth())
+                    .role(user.getRole()).build();
+            return userPS;
+        }
+
+    }
+
 }

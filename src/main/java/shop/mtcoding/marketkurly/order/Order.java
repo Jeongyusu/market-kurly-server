@@ -12,7 +12,6 @@ import shop.mtcoding.marketkurly.address.Address;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "order_tb")
@@ -26,7 +25,7 @@ public class Order {
 
     @CreationTimestamp
     private Timestamp orderedAt;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
@@ -43,7 +42,5 @@ public class Order {
         this.user = user;
         this.address = address;
     }
-
-    
 
 }

@@ -16,7 +16,6 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "admin_question_tb")
@@ -50,7 +49,4 @@ public class AdminQuestion {
         this.user = user;
     }
 
-    
-
-    
 }

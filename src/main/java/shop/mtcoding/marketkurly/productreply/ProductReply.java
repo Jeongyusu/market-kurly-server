@@ -16,7 +16,6 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.productquestion.ProductQuestion;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "product_reply_tb")
@@ -42,5 +41,4 @@ public class ProductReply {
         ProductQuestion = productQuestion;
     }
 
-    
 }

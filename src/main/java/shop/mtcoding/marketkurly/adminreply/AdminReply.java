@@ -16,12 +16,11 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.adminquestion.AdminQuestion;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "admin_reply_tb")
 public class AdminReply {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -41,5 +40,4 @@ public class AdminReply {
         this.adminQuestion = adminQuestion;
     }
 
-    
 }

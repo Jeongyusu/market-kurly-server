@@ -14,19 +14,18 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.product.Product;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "option_tb")
 public class Option {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String optionName;
     private Integer optionPrice;
     private Integer optionStack;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
 
@@ -39,5 +38,4 @@ public class Option {
         this.product = product;
     }
 
-    
 }

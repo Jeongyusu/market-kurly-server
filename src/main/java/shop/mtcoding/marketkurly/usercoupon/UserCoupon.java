@@ -15,7 +15,6 @@ import shop.mtcoding.marketkurly.coupon.Coupon;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "user_coupon_tb")
@@ -38,7 +37,4 @@ public class UserCoupon {
         this.coupon = coupon;
     }
 
-    
-    
- 
 }
