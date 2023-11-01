@@ -41,6 +41,10 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private User seller; // 판매자
 
+    // 관리자에의해서 판매승인 되었는가? << 기본값 false
+    @Nullable
+    private Boolean isAccepted = false;
+
     private LocalDate productUploadedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -55,6 +59,7 @@ public class Product {
             String productContent,
             LocalDate productUploadedAt,
             Category category,
+            Boolean isAccepted,
             User user,
             LocalDate discountExpiredAt) {
         this.id = id;
@@ -65,6 +70,7 @@ public class Product {
         this.discountRate = discountRate;
         this.productUploadedAt = productUploadedAt;
         this.discountExpiredAt = discountExpiredAt;
+        this.isAccepted = isAccepted;
         this.category = category;
         this.seller = user;
     }

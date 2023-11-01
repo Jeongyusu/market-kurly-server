@@ -10,11 +10,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.lang.Nullable;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import shop.mtcoding.marketkurly.option.Option;
+import lombok.Builder.Default;
 import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.productreply.ProductReply;
 import shop.mtcoding.marketkurly.user.User;
@@ -30,8 +31,9 @@ public class ProductQuestion {
     private Integer id;
     private String productQuestionTitle;
     private String productQuestionContent;
-    private Boolean isAnswered;
-    private Boolean isSecreted;
+
+    private Boolean isAnswered = false;
+    private Boolean isSecreted = false;
 
     @CreationTimestamp
     private Timestamp productQuestionCreatedAt;
@@ -42,6 +44,7 @@ public class ProductQuestion {
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
 
+    @Nullable
     @OneToOne(fetch = FetchType.LAZY)
     private ProductReply productReply;
 
