@@ -25,7 +25,7 @@ public class UserRestController {
     private final UserService userService;
     private final UserJPARepository userJPARepository;
 
-    @GetMapping("/test")
+    @GetMapping("/test11")
     void test() {
         log.info("인포");
         log.debug("디버그");
