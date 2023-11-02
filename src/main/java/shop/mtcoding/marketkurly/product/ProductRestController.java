@@ -18,40 +18,38 @@ import java.util.Map;
 public class ProductRestController {
     private final ProductService productService;
 
-    @GetMapping("/api/bestProduct")
-    public ResponseEntity<?> 베스트(@RequestParam int page){
+    @GetMapping("/api/product/bestProduct")
+    public ResponseEntity<?> 베스트(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.베스트(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/finalSale")
-    public ResponseEntity<?> 마감세일(@RequestParam int page, @RequestParam Integer categoryId){
-        ProductResponse.ProductListDTO response = productService.마감세일(page, categoryId);
+    @GetMapping("/api/product/category")
+    public ResponseEntity<?> 카테고리(@RequestParam int page, @RequestParam Integer categoryId) {
+        ProductResponse.ProductListDTO response = productService.카테고리필터링(page, categoryId);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/newProdcut")
-    public ResponseEntity<?> 신상품(@RequestParam int page){
-        System.out.println("실행됨?");
+    @GetMapping("/api/product/newProdcut")
+    public ResponseEntity<?> 신상품(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.신상품(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
 
     }
 
-    @GetMapping("/api/productHome")
+    @GetMapping("/api/product/home")
     public ResponseEntity<?> 컬리추천(@RequestParam int page) {
         ProductResponse.ProductListDTO response = productService.컬리추천(page);
         return ResponseEntity.ok().body(ApiUtils.success(response));
     }
 
-    @GetMapping("/api/event")
-    public  ResponseEntity<?> 금주혜택(){
+    @GetMapping("/api/product/event")
+    public ResponseEntity<?> 금주혜택() {
         List<String> imageUrls = List.of(
-                "https://github.com/KimHaYu/practice/assets/135561708/7a2478a3-1bfe-43c0-aeea-452944066cc0",
-                "https://github.com/KimHaYu/practice/assets/135561708/606a9571-0142-4b90-b0cc-0018d25652a9",
-                "https://github.com/KimHaYu/practice/assets/135561708/a5153a13-8064-42be-a6a9-b4c93f26a97a",
-                "https://github.com/KimHaYu/practice/assets/135561708/056c0611-31a1-4787-880e-c21abf5a90a0"
-        );
+                "http://localhost:8080/images/list/Screenshot_1.jpg",
+                "http://localhost:8080/images/list/Screenshot_2.jpg",
+                "http://localhost:8080/images/list/Screenshot_3.jpg",
+                "http://localhost:8080/images/list/Screenshot_4.jpg");
         return ResponseEntity.ok().body(ApiUtils.success(Map.of("imageUrls", imageUrls)));
     }
 }

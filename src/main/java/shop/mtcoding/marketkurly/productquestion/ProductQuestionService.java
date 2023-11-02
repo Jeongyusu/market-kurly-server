@@ -18,32 +18,31 @@ import shop.mtcoding.marketkurly.productquestion.ProductQuestionResponse.Product
 @RequiredArgsConstructor
 public class ProductQuestionService {
 
-    private final ProdcutJPARepository productJPARepository;
-    private final ProductQuestionJPARepository productQuestionJPARepository;
+        private final ProdcutJPARepository productJPARepository;
+        private final ProductQuestionJPARepository productQuestionJPARepository;
 
-    public ProductQuestionMainDTO 상품문의메인() {
+        public ProductQuestionMainDTO 상품문의메인() {
+                Optional<Product> productOP = productJPARepository.findById(1);
+                Product product = productOP.orElseThrow(() -> new Exception404("옵션값을 찾을수 없습니다."));
+                List<ProductQuestion> productQuestions = productQuestionJPARepository.findByProductId(1);
 
-        log.info("상품문의메인 service 호출");
-        Optional<Product> productOP = productJPARepository.findById(1);
-        Product product = productOP.orElseThrow(() -> new Exception404("상품을 찾을수 없습니다."));
-        List<ProductQuestion> productQuestions = productQuestionJPARepository.findByProductId(1);
-        return new ProductQuestionResponse.ProductQuestionMainDTO(product, productQuestions);
-    }
+                return new ProductQuestionResponse.ProductQuestionMainDTO(product, productQuestions);
+        }
 
-    public ProductQuestionSaveDTO 상품문의작성(ProductQuestionSaveDTO productQuestionSaveDTO) {
-        // TODO 원본 코드 << 테스트후 바꿔놓기
-        // Optional<Product> productOP =
-        // productJPARepository.findById(productQuestionSaveDTO.getProductId());
-        Optional<Product> productOP = productJPARepository.findById(1);
-        Product product = productOP.orElseThrow(() -> new Exception404("상품을 찾을수 없습니다."));
-        ProductQuestion productQuestion = ProductQuestion.builder()
-                .productQuestionTitle(productQuestionSaveDTO.getProductQuestionTitle())
-                .productQuestionContent(productQuestionSaveDTO.getProductQuestionContent())
-                .isSecreted(productQuestionSaveDTO.getIsSecreted())
-                .product(product).build();
-        productQuestionJPARepository.save(productQuestion);
+        public ProductQuestionSaveDTO 상품문의작성(ProductQuestionSaveDTO productQuestionSaveDTO) {
+                // TODO 원본 코드 << 테스트후 바꿔놓기
+                // Optional<Product> productOP =
+                // productJPARepository.findById(productQuestionSaveDTO.getProductId());
+                Optional<Product> productOP = productJPARepository.findById(1);
+                Product product = productOP.orElseThrow(() -> new Exception404("상품을 찾을수 없습니다."));
+                ProductQuestion productQuestion = ProductQuestion.builder()
+                                .productQuestionTitle(productQuestionSaveDTO.getProductQuestionTitle())
+                                .productQuestionContent(productQuestionSaveDTO.getProductQuestionContent())
+                                .isSecreted(productQuestionSaveDTO.getIsSecreted())
+                                .product(product).build();
+                productQuestionJPARepository.save(productQuestion);
 
-        return productQuestionSaveDTO;
+                return productQuestionSaveDTO;
 
-    }
+        }
 }

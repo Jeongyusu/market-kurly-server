@@ -60,4 +60,8 @@ public class ProductQuestionResponse {
             }
         }
     }
+
+    public static String ProductQuestionMainDTO(Product product, List<ProductQuestion> productQuestions) {
+        return null;
+    }
 }
