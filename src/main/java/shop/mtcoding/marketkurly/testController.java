@@ -29,4 +29,10 @@ public class testController {
         System.out.println("테스트 : sellerProduct 호출");
         return "seller/sellerProduct";
     }
+
+    @GetMapping("/seller/product/submit")
+    public String sellerProductSubmit() {
+        System.out.println("테스트 : sellerProductSubmit 호출");
+        return "seller/sellerProductSubmit";
+    }
 }

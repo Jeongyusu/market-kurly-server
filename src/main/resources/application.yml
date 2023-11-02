@@ -37,8 +37,7 @@ spring:
   mustache:
     prefix: classpath:/templates/
     suffix: .mustache
-    servlet:
-      expose-request-attributes: true
+    expose-request-attributes: true
 
 logging:
   level:
