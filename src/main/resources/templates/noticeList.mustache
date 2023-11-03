@@ -1,0 +1,240 @@
+{{> layout/header2}}
+
+<style>
+  .question {
+    height: auto;
+    width: 1150px;
+  }
+
+  .shadow {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+</style>
+<body>
+  <div class="wrapper">
+    <div
+      class="sidebar"
+      data-color="purple"
+      data-image="/assets/img/sidebar-5.jpg"
+    >
+      <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a href="http://www.creative-tim.com" class="simple-text"> 안녕 </a>
+        </div>
+
+        <ul class="nav">
+          <li>
+            <a href="dashboard.html">
+              <i class="pe-7s-graph"></i>
+              <p>판매 요청 관리</p>
+            </a>
+          </li>
+          <li>
+            <a href="typography.html">
+              <i class="pe-7s-news-paper"></i>
+              <p>문의 관리</p>
+            </a>
+          </li>
+          <li>
+            <a href="table.html">
+              <i class="pe-7s-note2"></i>
+              <p>공지 목록</p>
+            </a>
+          </li>
+          <li>
+            <a href="/seller">
+              <i class="pe-7s-graph"></i>
+              <p>판매 관리</p>
+            </a>
+          </li>
+          <li>
+            <a href="typography.html">
+              <i class="pe-7s-news-paper"></i>
+              <p>문의 관리</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/seller/product">
+              <i class="pe-7s-science"></i>
+              <p>상품 관리</p>
+            </a>
+          </li>
+          <li>
+            <a href="notifications.html">
+              <i class="pe-7s-bell"></i>
+              <p>공지 목록</p>
+            </a>
+          </li>
+          <li class="active-pro">
+            <a href="upgrade.html">
+              <i class="pe-7s-rocket"></i>
+              <p>Upgrade to PRO</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-panel">
+      <nav class="navbar navbar-default navbar-fixed">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#navigation-example-2"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="">
+                  <p>Account</p>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <p>
+                    Dropdown
+                    <b class="caret"></b>
+                  </p>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                  <p>Log out</p>
+                </a>
+              </li>
+              <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="content table-responsive table-full-width">
+                  
+
+<section id="contentArea" class="container-fluid">
+  <div class="d-flex justify-content-center">
+    <div>
+      <section id="main-content" class="span9 mb-5">
+        <div class="question shadow contentWrapper card p-5">
+          <div>
+            <div class="d-flex justify-content-between">
+              <h3 class="m-2">자주 묻는 질문</h3>
+              <div class="btn-group">
+                <button
+                  id="selectButton"
+                  type="button"
+                  class="btn border dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  개인
+                </button>
+                <div class="dropdown-menu">
+                  <div
+                    id="general"
+                    class="dropdown-item"
+                    onclick="selectButton('general')"
+                  >
+                    개인
+                  </div>
+                  <div
+                    id="company"
+                    class="dropdown-item"
+                    onclick="selectButton('company')"
+                  >
+                    기업
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="list-group list-group-flush mt-2">
+              <li class="list-group-item">계정 이미지는 어떻게 설정하나요?</li>
+              <li class="list-group-item">아이디/비밀번호를 잊어버렸어요.</li>
+              <li class="list-group-item">인증 받을 메일이 없어졌어요.</li>
+              <li class="list-group-item">
+                개인정보가 포함된 이력서가 검색됩니다.
+              </li>
+              <li class="list-group-item">
+                실수로 삭제한 글을 복구할수 있나요?
+              </li>
+              <li class="list-group-item">도용/해킹이 의심돼요.</li>
+              <li class="list-group-item">탈퇴한 아이디를 복구할수 있나요?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="d-flex mt-3 justify-content-end">
+              <div>
+                <button
+                  class="btn btn-info"
+                  style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3)"
+                  type="button"
+                  onclick="questionForm()"
+                >
+                  문의 작성 하기
+                </button>
+              </div>
+              <div class="mx-2">
+                <button
+                  class="btn btn-info"
+                  style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3)"
+                  type="button"
+                  onclick="questionList()"
+                >
+                  작성 문의 보기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<script>
+  function questionForm() {
+    location.href = "/question/Form";
+  }
+  function questionList() {
+    location.href = "/question/List";
+  }
+
+  function selectButton(selectId) {
+    let elementId = document.querySelector(`#${selectId}`);
+    let elementDiv = elementId.innerText;
+    document.querySelector("#selectButton").innerText = elementDiv;
+  }
+</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{> layout/footer2}}
+    </div>
+  </div>
+</body>

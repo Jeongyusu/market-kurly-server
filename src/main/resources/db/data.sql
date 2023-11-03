@@ -27,7 +27,11 @@ INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gend
 INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gender, user_birth, user_pic, role) VALUES ('27', 'seller27', 'seller27@nate.com', '$2a$10$sSu6qQgNY8pqivmlVHaQfOapmxrC0A8B0C/0TTN4cd0BErUBcU8pq', '유한', null, null,null, 'SELLER');
 INSERT INTO user_tb (id, user_id, user_email, user_password, username, user_gender, user_birth, user_pic, role) VALUES ('28', 'seller28', 'seller28@nate.com', '$2a$10$sSu6qQgNY8pqivmlVHaQfOapmxrC0A8B0C/0TTN4cd0BErUBcU8pq', 'AHC', null, null,null, 'SELLER');
 
-INSERT INTO notice_tb (notice_content, notice_title, notice_type) VALUES ('공지내용', '공지제목', '일반공지');
+INSERT INTO notice_tb (notice_content, notice_title, notice_type, notice_created_at) VALUES ('2099년 2월 15일에 점검예정입니다.', '점검예정 알림', '시스템', now());
+INSERT INTO notice_tb (notice_content, notice_title, notice_type, notice_created_at) VALUES ('당첨자 : \n 김**, 박**, 최**', '상하목장 체험권 이벤트 당첨자 안내', '이벤트', now());
+INSERT INTO notice_tb (notice_content, notice_title, notice_type, notice_created_at) VALUES ('개인정보처리방침 개정 내용 사전안내', '개인정보처리방침 개정 내용 사전안내', '안내', now());
+INSERT INTO notice_tb (notice_content, notice_title, notice_type, notice_created_at) VALUES ('[쉐프엠] 베이컨에그스프레드 외 4건', '[쉐프엠] 베이컨에그스프레드 외 4건', '가격인하공지', now());
+INSERT INTO notice_tb (notice_content, notice_title, notice_type, notice_created_at) VALUES ('감동란외 3건 (2021 2.23 ~)', '감동란외 3건 (2021 2.23 ~)', '가격인상공지', now());
 
 insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(1, '/images/categorypic/1.jpg', '채소 · 과일');
 insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(2, '/images/categorypic/2.jpg', '정육 · 계란');
@@ -181,46 +185,46 @@ INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `prod
 
 
 
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 1);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 2);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 3);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 4);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 5);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 6);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 7);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 8);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 9);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 10);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 11);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 12);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 13);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 14);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 15);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 16);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 17);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 18);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 19);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('좋아요', '5점 드립니다', 5, 1, 20);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 1);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 2);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 3);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 4);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 5);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 6);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 7);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 8);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 9);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 10);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 11);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 12);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 13);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 14);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 15);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 16);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 17);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 18);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 19);
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 20);
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 1, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 2, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 3, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 4, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 5, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 6, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 7, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 8, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 9, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 10, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 11, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 12, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 13, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 14, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 15, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 16, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 17, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 18, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 19, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('좋아요', '5점 드립니다', 5, 1, 20, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 1,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 2,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 3,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 4,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 5,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 6,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 7,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 8,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 9,now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 10, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 11, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 12, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 13, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 14, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 15, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 16, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 17, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 18, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 19, now());
+INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('그저 그래요', '3점 드립니다.', 3, 2, 20, now());
 
 
 

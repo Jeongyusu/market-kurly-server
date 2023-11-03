@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -65,6 +66,13 @@ public class ProductRestController {
                 "http://localhost:8080/images/list/Screenshot_3.jpg",
                 "http://localhost:8080/images/list/Screenshot_4.jpg");
         return ResponseEntity.ok().body(ApiUtils.success(Map.of("imageUrls", imageUrls)));
+    }
+
+    @GetMapping("/api/seller/product")
+    public ResponseEntity<?> 판매상품목록() {
+        Integer userId = 7;
+        SellerProductListDTO dto = productService.판매상품목록(userId);
+        return ResponseEntity.ok().body(ApiUtils.success(dto));
     }
 
 }

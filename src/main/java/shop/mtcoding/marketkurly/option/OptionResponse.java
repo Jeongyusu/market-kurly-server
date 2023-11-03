@@ -21,7 +21,6 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-
 public class OptionResponse {
 
     @ToString

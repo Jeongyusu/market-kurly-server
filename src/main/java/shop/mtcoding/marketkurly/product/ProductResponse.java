@@ -1,7 +1,10 @@
 package shop.mtcoding.marketkurly.product;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,7 +13,7 @@ import shop.mtcoding.marketkurly.option.Option;
 public class ProductResponse {
 
     @Getter
-    public static class ProductDetailDTO{
+    public static class ProductDetailDTO {
         private int productId;
         private String productName;
         private String productContent;
@@ -67,6 +70,36 @@ public class ProductResponse {
             this.discountRate = product.getDiscountRate();
             this.discountedPrice = option.getOptionPrice() * (100 - product.getDiscountRate()) / 100;
             this.averageStarCount = averageStarCount;
+        }
+    }
+
+    @Getter
+    public static class SellerProductListDTO {
+
+        private List<SellerProductDTO> sellerProductDTOs;
+
+        public SellerProductListDTO(List<Product> products) {
+            this.sellerProductDTOs = products.stream().map(t -> new SellerProductDTO(t)).collect(Collectors.toList());
+        }
+
+        @ToString
+        @Getter
+        public static class SellerProductDTO {
+            private int productId;
+            private String productName;
+            private String categoryType;
+            private Integer discountRate;
+            private LocalDate discountExpiredAt;
+            private LocalDate productUploadedAt;
+
+            public SellerProductDTO(Product product) {
+                this.productId = product.getId();
+                this.productName = product.getProductName();
+                this.categoryType = product.getCategory().getCategoryType();
+                this.discountExpiredAt = product.getDiscountExpiredAt();
+                this.productUploadedAt = product.getProductUploadedAt();
+                this.discountRate = product.getDiscountRate();
+            }
         }
     }
 }

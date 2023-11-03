@@ -24,15 +24,21 @@ public class testController {
         return "seller/sellerMain";
     }
 
-    @GetMapping("/seller/product")
-    public String sellerProduct() {
-        System.out.println("테스트 : sellerProduct 호출");
-        return "seller/sellerProduct";
-    }
+    // @GetMapping("/seller/product")
+    // public String sellerProduct() {
+    // System.out.println("테스트 : sellerProduct 호출");
+    // return "seller/sellerProduct";
+    // }
 
     @GetMapping("/seller/product/submit")
     public String sellerProductSubmit() {
         System.out.println("테스트 : sellerProductSubmit 호출");
         return "seller/sellerProductSubmit";
+    }
+
+    @GetMapping("/notice")
+    public String notice() {
+        System.out.println("테스트 : notice 호출");
+        return "noticeList";
     }
 }

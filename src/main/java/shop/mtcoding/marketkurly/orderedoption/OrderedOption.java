@@ -18,6 +18,8 @@ public class OrderedOption {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String orderedProductName;
+    private String orderedOptionName;
     private Integer orderedOptionQuantity;
     private Integer orderedOptionPrice;
     private Integer orderedDiscountRate;
@@ -32,9 +34,12 @@ public class OrderedOption {
 
     @Builder
     public OrderedOption(Integer id, Integer orderedOptionQuantity, Integer orderedOptionPrice,
+            String orderedProductName, String orderedOptionName,
             Integer orderedDiscountRate, Option option, Order order) {
         this.id = id;
         this.orderedOptionQuantity = orderedOptionQuantity;
+        this.orderedProductName = orderedProductName;
+        this.orderedOptionName = orderedOptionName;
         this.orderedOptionPrice = orderedOptionPrice;
         this.orderedDiscountRate = orderedDiscountRate;
         this.option = option;
