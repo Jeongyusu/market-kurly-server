@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.lang.Nullable;
 
 @Getter
 @NoArgsConstructor
@@ -23,9 +24,11 @@ public class User {
     private String userPassword;
     private String userEmail;
     private String userPic;
+    @Nullable
     private LocalDate userBirth;
     @Enumerated(EnumType.STRING)
     private Gender userGender;
+    @Nullable
     @Enumerated(EnumType.STRING)
     private Role role;
 
