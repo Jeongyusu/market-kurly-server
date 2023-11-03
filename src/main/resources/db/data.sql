@@ -227,13 +227,21 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, 4, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, 5, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, 6, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, 7, '2023-10-29', 1);
 
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (1, 1, 1000, 10, 1, 1);
+VALUES (1, 2, 1000, 10, 1, 7);
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (2, 2, 2000, 20, 2, 2);
+VALUES (2, 2, 1000, 10, 1, 7);
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (3, 1, 1000, 10, 5, 3);
+VALUES (3, 4, 2000, 20, 2, 6);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
+VALUES (4, 4, 1000, 10, 5, 6);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
+VALUES (5, 4, 1000, 10, 5, 4);
 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1); 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1); 

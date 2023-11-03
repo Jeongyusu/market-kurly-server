@@ -1,6 +1,7 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class Product {
     private LocalDate discountExpiredAt; // 할인만료기간
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User seller; // 판매자
 
     private LocalDate productUploadedAt;
@@ -44,27 +46,28 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
-    @Builder()
-    public Product(Integer id,
-            String productThumbnail,
-            String productDetailPic,
-            String productName,
-            Integer discountRate,
-            String productContent,
-            LocalDate productUploadedAt,
-            Category category,
-            User user,
-            LocalDate discountExpiredAt) {
+    private String productOrigin;
+    private Integer originPrice;
+    private String productDetailImage;
+
+    @Builder
+    public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
+            String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
+            LocalDate productUploadedAt, Category category, String productOrigin, Integer originPrice,
+            String productDetailImage) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;
         this.productName = productName;
         this.productContent = productContent;
         this.discountRate = discountRate;
-        this.productUploadedAt = productUploadedAt;
         this.discountExpiredAt = discountExpiredAt;
+        this.seller = seller;
+        this.productUploadedAt = productUploadedAt;
         this.category = category;
-        this.seller = user;
+        this.productOrigin = productOrigin;
+        this.originPrice = originPrice;
+        this.productDetailImage = productDetailImage;
     }
 
 }

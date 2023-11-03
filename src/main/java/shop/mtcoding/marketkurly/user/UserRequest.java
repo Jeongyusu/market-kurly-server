@@ -9,6 +9,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 public class UserRequest {
+    @Getter
+    @NoArgsConstructor
+    public static class myPageDTO {
+        private String userPic;
+        private String username;
+        Integer couponCount;
+        String defaultDestinationAddress;
+
+    }
 
     @Getter
     @NoArgsConstructor

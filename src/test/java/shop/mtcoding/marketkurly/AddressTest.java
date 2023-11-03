@@ -31,6 +31,8 @@ import shop.mtcoding.marketkurly.product.Product;
 @SpringBootTest
 public class AddressTest {
 
+    // @Autowired
+    // private AddressRepository addressRepository;
     @Autowired
     private AddressJPARepository addressJPARepository;
     @Autowired

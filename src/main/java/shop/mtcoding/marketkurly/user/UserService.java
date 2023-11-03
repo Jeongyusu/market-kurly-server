@@ -24,7 +24,7 @@ public class UserService {
     private final UserJPARepository userJPARepository;
 
     @Transactional
-    public User 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
+    public void 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
 
         System.out.println("서비스 진입가능?");
         System.out.println("userId에는 머가있지? " + userJoinDTO.getUserId());
@@ -38,18 +38,17 @@ public class UserService {
         System.out.println("회원가입 1 ");
         userJoinDTO.setUserPassword(encPassword);
         // 2. 디비 저장
-        User saveUser = userJPARepository.save(userJoinDTO.toEntity());
+        User userPS = userJPARepository.save(userJoinDTO.toEntity());
+        System.out.println("회원가입 2 ");
 
-        // 3. hideUserPS << 비밀번호 null처리하는 메서드
-        User userPS = UserResponse.UserPSDTO.hideUserPS(saveUser);
-        return userPS;
+       
 
     }
 
     // 아이디 중복체크 클릭시 중복체크
-    public void 중복확인(String userLoginId) {
-        User user = userJPARepository.findByUserId(userLoginId);
-        if (user.getUserId() != null) {
+        public void 중복확인(String userLoginId) {
+        User optUser = userJPARepository.findByUserId(userLoginId);
+        if (optUser != null) {
             throw new Exception400("중복된 아이디입니다.");
         }
     }
