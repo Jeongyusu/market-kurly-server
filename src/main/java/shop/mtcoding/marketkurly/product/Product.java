@@ -1,6 +1,7 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -44,18 +45,18 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
-    @Builder()
-    public Product(Integer id,
-            String productThumbnail,
-            String productDetailPic,
-            String productName,
-            Integer discountRate,
-            String productContent,
-            LocalDate productUploadedAt,
-            Category category,
-            User user,
-            LocalDate discountExpiredAt) {
-        this.id = id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User seller;
+
+    private String productOrigin;
+    private String productContent;
+    private Integer originPrice;
+    private String productDetailImage;
+
+    @Builder
+    public Product(String productThumbnail, String productName, Integer discountRate, LocalDate productUploadedAt, Category category, User seller, String productOrigin, String productContent, Integer originPrice, String productDetailImage) {
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;
         this.productName = productName;
@@ -64,7 +65,12 @@ public class Product {
         this.productUploadedAt = productUploadedAt;
         this.discountExpiredAt = discountExpiredAt;
         this.category = category;
+        this.seller = seller;
+        this.productOrigin = productOrigin;
+        this.productContent = productContent;
+        this.originPrice = originPrice;
+        this.productDetailImage = productDetailImage;
         this.seller = user;
-    }
 
+    }
 }

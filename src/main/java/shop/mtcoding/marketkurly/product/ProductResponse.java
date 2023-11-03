@@ -9,6 +9,31 @@ import shop.mtcoding.marketkurly.option.Option;
 
 public class ProductResponse {
 
+    @Getter
+    public static class ProductDetailDTO{
+        private int productId;
+        private String productName;
+        private String productContent;
+        private Integer discountRate;
+        private Integer discountedPrice;
+        private Integer originPrice;
+        private String productOrigin;
+        private String productDetailImage;
+        private String seller;
+
+        public ProductDetailDTO(Product product) {
+            this.productId = product.getId();
+            this.productName = product.getProductName();
+            this.productContent = product.getProductContent();
+            this.discountRate = product.getDiscountRate();
+            this.discountedPrice = product.getOriginPrice() * (100 - product.getDiscountRate()) / 100;
+            this.originPrice = product.getOriginPrice();
+            this.productOrigin = product.getProductOrigin();
+            this.productDetailImage = product.getProductDetailImage();
+            this.seller = product.getSeller().getUsername();
+        }
+    }
+
     @ToString
     @Getter
     @NoArgsConstructor

@@ -32,12 +32,11 @@ public class UserRestController {
         log.trace("트레이스");
         log.warn("경고");
         log.error("에러");
-
     }
 
     // Get 요청은 Body가 없다.
     // Json데이터는 @RequestBody 어노테이션을 사용해서 받기
-    @PostMapping("/api/user/findId")
+    @PostMapping("/api/users/userid")
     public ResponseEntity<?> 아이디찾기(@RequestBody UserRequest.UserFindUsernameDTO userFindUsernameDTO) {
         String userId = userService.아이디찾기(userFindUsernameDTO);
 
@@ -50,20 +49,21 @@ public class UserRestController {
                 .body(ApiUtils.success(userId.substring(0, 1) + "*".repeat((userId.length() - 1))));
     }
 
-    @PostMapping("/api/user/login")
+    @PostMapping("/api/users/login")
     public ResponseEntity<?> 로그인(@RequestBody UserRequest.LoginDTO loginDTO) {
         TokenDTO tokenDTO = userService.로그인(loginDTO);
         return ResponseEntity.ok().header("Authorization", "Bearer " + tokenDTO.getJwt())
                 .body(ApiUtils.success((tokenDTO.getUser())));
     }
 
-    @PostMapping("/api/user/join")
+    @PostMapping("/api/users/join")
     public ResponseEntity<?> 회원가입(@RequestBody UserRequest.UserJoinDTO userJoinDTO) {
-        User user = userService.회원가입(userJoinDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
+        userService.회원가입(userJoinDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(null));
+
     }
 
-    @PostMapping("/api/userId/duplicated")
+    @PostMapping("/api/users/samecheck")
     public ResponseEntity<?> 중복확인(@RequestBody UserRequest.UserIdDuplicatedDTO request) {
         userService.중복확인(request.getUserId());
         return ResponseEntity.ok().body(ApiUtils.success(null));
