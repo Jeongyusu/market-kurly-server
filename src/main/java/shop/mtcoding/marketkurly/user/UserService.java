@@ -12,7 +12,6 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserFindUsernameDTO;
-import shop.mtcoding.marketkurly.user.UserRequest.myPageDTO;
 
 @Slf4j
 @Service
@@ -78,10 +77,6 @@ public class UserService {
     public UserResponse.LoginDTO 로그인정보조회(String userId) {
         User userDTO = userJPARepository.findByUserId(userId);
         return new UserResponse.LoginDTO(userDTO);
-    }
-
-    public User 마이페이지(myPageDTO myPageDTO) {
-        return null;
     }
 
 }
