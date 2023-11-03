@@ -31,32 +31,28 @@ import shop.mtcoding.marketkurly.product.Product;
 @SpringBootTest
 public class AddressTest {
 
-
-    @Autowired
-    private AddressRepository addressRepository;
+    // @Autowired
+    // private AddressRepository addressRepository;
     @Autowired
     private AddressJPARepository addressJPARepository;
     @Autowired
     private OrderOptionJAPRepository orderOptionJAPRepository;
-
 
     @Autowired
     private AddressService addressService;
 
     private Integer userid = 1;
 
-
     @Test
     public void 주소찾기() {
         List<Address> addresses = addressJPARepository.findByUserId(userid);
     }
 
-
-     @Test
-     public ResponseEntity<?> 모든카테고리찾기() {
-     List<Category> categorys = categoryService.모든카테고리찾기();
-     return ResponseEntity.ok().body(ApiUtils.success(categorys));
-     }
+    // @Test
+    // public ResponseEntity<?> 모든카테고리찾기() {
+    // List<Category> categorys = categoryService.모든카테고리찾기();
+    // return ResponseEntity.ok().body(ApiUtils.success(categorys));
+    // }
 
     @Test
     public Page<Product> 주문옵션찾기() {
