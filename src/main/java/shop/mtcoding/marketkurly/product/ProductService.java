@@ -28,11 +28,12 @@ public class ProductService {
         private final OptionJPARepository optionJPARepository;
         private final OrderOptionJAPRepository orderOptionJAPRepository;
 
-
-        public ProductResponse.ProductDetailDTO 제품상세페이지(Integer productId){
-            Product product = prodcutJPARepository.findById(productId).orElseThrow(() -> new Exception404("해당 상품이 존재하지 않습니다:" + productId));
-            return new ProductResponse.ProductDetailDTO(product);
+        public ProductResponse.ProductDetailDTO 제품상세페이지(Integer productId) {
+                Product product = prodcutJPARepository.findById(productId)
+                                .orElseThrow(() -> new Exception404("해당 상품이 존재하지 않습니다:" + productId));
+                return new ProductResponse.ProductDetailDTO(product);
         }
+
         // page: 0, 1, 2
         public ProductResponse.ProductListDTO 컬리추천(int page) {
                 Page<Product> products = prodcutJPARepository.findAll(PageRequest.of(page, 5));

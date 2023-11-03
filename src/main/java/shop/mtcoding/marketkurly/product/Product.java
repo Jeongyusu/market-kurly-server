@@ -38,6 +38,7 @@ public class Product {
     private LocalDate discountExpiredAt; // 할인만료기간
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User seller; // 판매자
 
     private LocalDate productUploadedAt;
@@ -45,32 +46,28 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User seller;
-
     private String productOrigin;
-    private String productContent;
     private Integer originPrice;
     private String productDetailImage;
 
     @Builder
-    public Product(String productThumbnail, String productName, Integer discountRate, LocalDate productUploadedAt, Category category, User seller, String productOrigin, String productContent, Integer originPrice, String productDetailImage) {
+    public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
+            String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
+            LocalDate productUploadedAt, Category category, String productOrigin, Integer originPrice,
+            String productDetailImage) {
+        this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;
         this.productName = productName;
         this.productContent = productContent;
         this.discountRate = discountRate;
-        this.productUploadedAt = productUploadedAt;
         this.discountExpiredAt = discountExpiredAt;
-        this.category = category;
         this.seller = seller;
+        this.productUploadedAt = productUploadedAt;
+        this.category = category;
         this.productOrigin = productOrigin;
-        this.productContent = productContent;
         this.originPrice = originPrice;
         this.productDetailImage = productDetailImage;
-        this.seller = user;
-
     }
+
 }
