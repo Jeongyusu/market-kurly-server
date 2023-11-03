@@ -14,7 +14,6 @@ import lombok.Setter;
 import shop.mtcoding.marketkurly.review.Review;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "review_pic_tb")
@@ -35,7 +34,4 @@ public class ReviewPic {
         this.review = review;
     }
 
-    
-
-    
 }

@@ -79,6 +79,15 @@ insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECE
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','5층',false,'김수미','01012345678',1); 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','112-1',false,'이동국','01012345678',1); 
 
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  ) 
+values (false,true, '상품질문 내용1', '상품질문 제목1', 1, null, 1); 
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  ) 
+values (false,true, '상품질문 내용2', '상품질문 제목2', 1, null, 1); 
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  ) 
+values (false,true, '상품질문 내용3', '상품질문 제목3', 1, null, 1); 
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  ) 
+values (false,true, '상품질문 내용4', '상품질문 제목4', 1, null, 1); 
+
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('2', '1', '02. 슬라이딩 지퍼백 플라워에디션 5종', '10900', '1');
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('3', '1', '고무장갑 베이지 S(소형) 6팩', '9900', '1');
 -- INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `product_id`) VALUES ('4', '1', '뽑아쓰는 키친타올 130매 12팩', '16900', '1');

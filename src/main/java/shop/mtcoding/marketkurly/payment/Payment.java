@@ -19,12 +19,11 @@ import shop.mtcoding.marketkurly.order.Order;
 import shop.mtcoding.marketkurly.paymenttype.PaymentType;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "payment_tb")
 public class Payment {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -63,8 +62,5 @@ public class Payment {
         this.paymentType = paymentType;
         this.coupon = coupon;
     }
-
-    
-
 
 }

@@ -39,6 +39,9 @@ public class AddressService {
                 .isDefaultAddress(addressSaveReqDTO.getIsDefaultAddress())
                 .user(user)
                 .build();
+        if (addressSaveReqDTO.getIsDefaultAddress() == true) {
+            addressJPARepository.updateDefaultAddress();
+        }
         Address result = addressJPARepository.save(address);
         return result;
     }

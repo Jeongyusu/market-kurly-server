@@ -10,12 +10,11 @@ import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.order.Order;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "ordered_option_tb")
 public class OrderedOption {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -42,5 +41,4 @@ public class OrderedOption {
         this.order = order;
     }
 
-    
 }

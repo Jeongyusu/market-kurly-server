@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "notice_tb")
@@ -39,5 +38,4 @@ public class Notice {
         this.noticeCreatedAt = noticeCreatedAt;
     }
 
-    
 }
