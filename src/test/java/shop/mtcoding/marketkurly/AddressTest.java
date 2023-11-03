@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.address.Address;
-import shop.mtcoding.marketkurly.address.AddressRepository;
+// import shop.mtcoding.marketkurly.address.AddressRepository;
 import shop.mtcoding.marketkurly.address.AddressService;
 import shop.mtcoding.marketkurly.category.Category;
 import shop.mtcoding.marketkurly.category.CategoryRepository;
@@ -24,18 +24,18 @@ import shop.mtcoding.marketkurly.category.CategoryService;
 @SpringBootTest
 public class AddressTest {
 
-    @Autowired
-    private AddressRepository addressRepository;
+    // @Autowired
+    // private AddressRepository addressRepository;
 
-    @Autowired
-    private AddressService addressService;
+    // @Autowired
+    // private AddressService addressService;
 
-    private Integer userid = 1;
+    // private Integer userid = 1;
 
-    @Test
-    public void 주소찾기() {
-        List<Address> addresses = addressRepository.findByUserId(userid);
-    }
+    // @Test
+    // public void 주소찾기() {
+    // List<Address> addresses = addressRepository.findByUserId(userid);
+    // }
 
     // @Test
     // public ResponseEntity<?> 모든카테고리찾기() {

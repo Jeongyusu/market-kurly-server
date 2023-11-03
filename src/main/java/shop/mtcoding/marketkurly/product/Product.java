@@ -1,18 +1,14 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import shop.mtcoding.marketkurly.category.Category;
+import shop.mtcoding.marketkurly.user.User;
 
 @Getter
 @Setter
@@ -33,15 +29,26 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User seller;
+
+    private String productOrigin;
+    private String productContent;
+    private Integer originPrice;
+    private String productDetailImage;
+
     @Builder
-    public Product(Integer id, String productThumbnail, String productName, Integer discountRate,
-            LocalDate productUploadedAt, Category category) {
-        this.id = id;
+    public Product(String productThumbnail, String productName, Integer discountRate, LocalDate productUploadedAt, Category category, User seller, String productOrigin, String productContent, Integer originPrice, String productDetailImage) {
         this.productThumbnail = productThumbnail;
         this.productName = productName;
         this.discountRate = discountRate;
         this.productUploadedAt = productUploadedAt;
         this.category = category;
+        this.seller = seller;
+        this.productOrigin = productOrigin;
+        this.productContent = productContent;
+        this.originPrice = originPrice;
+        this.productDetailImage = productDetailImage;
     }
-
 }

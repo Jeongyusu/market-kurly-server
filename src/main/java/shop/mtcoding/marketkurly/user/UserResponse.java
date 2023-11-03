@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public class UserResponse {
+
     @Getter
     @AllArgsConstructor
     public static class UserFindUsernameDTO {

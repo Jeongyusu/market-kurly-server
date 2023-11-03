@@ -11,21 +11,21 @@ insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(7, '/images/7.jp
 insert into category_tb(ID,CATEGORY_PIC ,CATEGORY_TYPE ) values(8, '/images/8.jpg', '주류, 와인');
 
 
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('1', '/images/1.jpg', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '20', '2023-10-29', 1);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('2', '/images/2.jpg', '[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율','20', '2023-08-29', 2);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('3', '/images/3.jpg', '삼성전자 JBL JR310 외 어린이용/성인용 헤드셋 3종!', '20', '2023-08-29', 3);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('4', '/images/4.jpg', '바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종', '20', '2023-10-29', 3);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('5', '/images/5.jpg', '[더주] 컷팅말랑장족, 숏다리 100g/300g 외 주전부리 모음 /중독성 최고/마른안주', '20', '2023-8-29', 4);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('6', '/images/6.jpg', '굳지않는 앙금절편 1,050g 2팩 외 우리쌀떡 모음전', '20', '2023-10-29', 5);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('7', '/images/7.jpg', 'eoe 이너딜리티 30포, 오렌지맛 고 식이섬유 보충제', '20', '2023-09-29', 5);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('8', '/images/8.jpg', 'eoe 이너딜리티 30포, 초코맛 고 식이섬유 보충제', '20', '2023-10-29', 5);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('9', '/images/9.jpg', '플레이스테이션 VR2 호라이즌 번들. 생생한 몰입감', '20', '2023-09-29', 5);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('10', '/images/10.jpg', '통영 홍 가리비 2kg, 2세트 구매시 1kg 추가증정', '20', '2023-7-29', 6);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('11', '/images/11.jpg', '아삭한 궁채 장아찌 1kg 외 인기 반찬 모음전', '20', '2023-10-29', 6);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('12', '/images/12.jpg', '깨끗한나라 순수소프트 30롤 2팩. 무형광, 도톰 3겹', '20', '2023-10-29', 7);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('13', '/images/13.jpg', '생활공작소 초미세모 칫솔 12입 2개+가글 증정', '20', '2023-10-29', 7);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('14', '/images/14.jpg', '경북 영천 샤인머스켓 가정용 1kg 2수 내외', '20', '2023-08-29', 7);
-INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`) VALUES ('15', '/images/15.jpg', '[LIVE][5%쿠폰] 홈카페 Y3.3 캡슐머신 베이직 세트', '20', '2023-10-29', 8);
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('1', '/images/1.jpg', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '20', '2023-10-29', 1, 10000, 1, '좋습니다', '중국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('2', '/images/2.jpg', '[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율','20', '2023-08-29', 2, 15000, 1, '아주좋습니다', '미국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('3', '/images/3.jpg', '삼성전자 JBL JR310 외 어린이용/성인용 헤드셋 3종!', '20', '2023-08-29', 3, 20000, 1, '미국에 바이든 기침소리가 들립니다', '베트남산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('4', '/images/4.jpg', '바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종', '20', '2023-10-29', 3, 12000, 1, '밥그릇 밑바닥이 뚫려도 책임 못집니다', '국내산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('5', '/images/5.jpg', '[더주] 컷팅말랑장족, 숏다리 100g/300g 외 주전부리 모음 /중독성 최고/마른안주', '20', '2023-8-29', 4, 10000, 1, '당신은 알코올중독에 걸릴 수도 있습니다', '호주산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('6', '/images/6.jpg', '굳지않는 앙금절편 1,050g 2팩 외 우리쌀떡 모음전', '20', '2023-10-29', 5, 9000, 1, '찹살떡~궁합이 우리궁합이', '인도산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('7', '/images/7.jpg', 'eoe 이너딜리티 30포, 오렌지맛 고 식이섬유 보충제', '20', '2023-09-29', 5, 38000, 1, '당신은 매일 거울이 보고 싶어질 수도 있습니다', '미국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('8', '/images/8.jpg', 'eoe 이너딜리티 30포, 초코맛 고 식이섬유 보충제', '20', '2023-10-29', 5, 38000, 1, '당신은 매일 거울이 보고 싶어질 수도 있습니다', '미국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('9', '/images/9.jpg', '플레이스테이션 VR2 호라이즌 번들. 생생한 몰입감', '20', '2023-09-29', 5, 200000, 1, '와이프 몰래 공유기로 위장하고 싶은 당신 공유기로 위장포장 해드립니다', '미국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('10', '/images/10.jpg', '통영 홍 가리비 2kg, 2세트 구매시 1kg 추가증정', '20', '2023-7-29', 6, 38000, 1, '파격적인 sale 이보다 더 맛있고 싼 조개가 없다!', '국내산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('11', '/images/11.jpg', '아삭한 궁채 장아찌 1kg 외 인기 반찬 모음전', '20', '2023-10-29', 6, 21000, 1, '장아찌', '국내산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('12', '/images/12.jpg', '깨끗한나라 순수소프트 30롤 2팩. 무형광, 도톰 3겹', '20', '2023-10-29', 7, 30000 , 1, '저희도 이게 뭔지 잘 모릅니다', '일본산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('13', '/images/13.jpg', '생활공작소 초미세모 칫솔 12입 2개+가글 증정', '20', '2023-10-29', 7, 12000, 1, '악어새를 연구하여 만들었습니다', '미국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('14', '/images/14.jpg', '경북 영천 샤인머스켓 가정용 1kg 2수 내외', '20', '2023-08-29', 7, 18000, 1, '탕후루가 저희 샤인머스켓을 사용합니다', '중국산', '/images/1.jpg');
+INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `origin_price`, `user_id`, `product_content`, `product_origin`, `product_detail_image`) VALUES ('15', '/images/15.jpg', '[LIVE][5%쿠폰] 홈카페 Y3.3 캡슐머신 베이직 세트', '20', '2023-10-29', 8, 200000, 1,  '우리집을 카페로만드는 비법', '국내산', '/images/1.jpg');
 
 INSERT INTO review_tb (`id`, `review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES (1, 'asd', '123', 5, 1, 1);
 INSERT INTO review_tb (`id`, `review_title`, `review_content`, `star_count`, `user_id`, `product_id`)VALUES (2, 'asd', '123', 5, 1, 1);
@@ -56,13 +56,21 @@ INSERT INTO option_tb (`id`,`option_stack`, `option_name`, `option_price`, `prod
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, 4, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, 5, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, 6, '2023-10-29', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, 7, '2023-10-29', 1);
 
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (1, 1, 1000, 10, 1, 1);
+VALUES (1, 2, 1000, 10, 1, 7);
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (2, 2, 2000, 20, 2, 2);
+VALUES (2, 2, 1000, 10, 1, 7);
 INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
-VALUES (3, 1, 1000, 10, 5, 3);
+VALUES (3, 4, 2000, 20, 2, 6);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
+VALUES (4, 4, 1000, 10, 5, 6);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`)
+VALUES (5, 4, 1000, 10, 5, 4);
 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1); 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1); 

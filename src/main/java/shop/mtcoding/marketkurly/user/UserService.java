@@ -12,6 +12,7 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserFindUsernameDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.myPageDTO;
 
 @Slf4j
 @Service
@@ -22,7 +23,7 @@ public class UserService {
     private final UserJPARepository userJPARepository;
 
     @Transactional
-    public User 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
+    public void 회원가입(UserRequest.UserJoinDTO userJoinDTO) {
 
         System.out.println("서비스 진입가능?");
         System.out.println("userId에는 머가있지? " + userJoinDTO.getUserId());
@@ -38,16 +39,14 @@ public class UserService {
         // 2. 디비 저장
         User userPS = userJPARepository.save(userJoinDTO.toEntity());
         System.out.println("회원가입 2 ");
-        return userPS;
 
     }
 
     public void 중복확인(String userLoginId) {
         User optUser = userJPARepository.findByUserId(userLoginId);
-        if (optUser.getUserId() != null) {
+        if (optUser != null) {
             throw new Exception400("중복된 아이디입니다.");
         }
-
     }
 
     public String 로그인(LoginDTO loginDTO) {
@@ -79,6 +78,10 @@ public class UserService {
     public UserResponse.LoginDTO 로그인정보조회(String userId) {
         User userDTO = userJPARepository.findByUserId(userId);
         return new UserResponse.LoginDTO(userDTO);
+    }
+
+    public User 마이페이지(myPageDTO myPageDTO) {
+        return null;
     }
 
 }
