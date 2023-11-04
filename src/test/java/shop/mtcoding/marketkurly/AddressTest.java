@@ -3,8 +3,6 @@ package shop.mtcoding.marketkurly;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
@@ -12,17 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
-import org.springframework.http.ResponseEntity;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.address.Address;
 import shop.mtcoding.marketkurly.address.AddressJPARepository;
 import shop.mtcoding.marketkurly.address.AddressService;
-import shop.mtcoding.marketkurly.category.Category;
-import shop.mtcoding.marketkurly.category.CategoryRepository;
-import shop.mtcoding.marketkurly.category.CategoryService;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
 import shop.mtcoding.marketkurly.product.Product;
 

@@ -1,25 +1,25 @@
 package shop.mtcoding.marketkurly.notice;
 
-import org.springframework.http.ResponseEntity;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly.notice.NoticeResponse.NoticeMainDTO;
+import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
 
 @Slf4j
-@RestController
+@Controller
 @RequiredArgsConstructor
 public class NoticeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping("/api/test/notices")
-    public ResponseEntity<?> 공지목록() {
-        System.out.println("option 컨트롤러 호출");
-        NoticeMainDTO dto = noticeService.공지목록();
-        return ResponseEntity.ok().body(ApiUtils.success(dto));
+    @GetMapping("/notice")
+    public String 웹공지목록(HttpServletRequest request) {
+        WebNoticeMainDTO dto = noticeService.웹공지목록();
+        request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
+        return "noticeList";
     }
 }

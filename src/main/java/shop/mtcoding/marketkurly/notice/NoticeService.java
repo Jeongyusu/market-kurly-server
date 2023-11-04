@@ -6,9 +6,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.NoticeMainDTO;
-import shop.mtcoding.marketkurly.option.OptionJPARepository;
-import shop.mtcoding.marketkurly.option.OptionResponse.OptionSelectMainDTO;
-import shop.mtcoding.marketkurly.product.ProdcutJPARepository;
+import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -21,4 +19,8 @@ public class NoticeService {
         return new NoticeResponse.NoticeMainDTO(notices);
     }
 
+    public WebNoticeMainDTO 웹공지목록() {
+        List<Notice> notices = noticeJPARepository.findAll();
+        return new NoticeResponse.WebNoticeMainDTO(notices);
+    }
 }

@@ -35,6 +35,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
 
 	
     testCompileOnly 'org.projectlombok:lombok:1.18.12' // 테스트환경에서 의존성 추가

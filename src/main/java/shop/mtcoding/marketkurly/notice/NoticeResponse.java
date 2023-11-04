@@ -42,4 +42,30 @@ public class NoticeResponse {
         }
     }
 
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class WebNoticeMainDTO {
+
+        private List<WebNoticeDTO> webNoticeDTOs;
+
+        public WebNoticeMainDTO(List<Notice> notices) {
+            this.webNoticeDTOs = notices.stream().map(t -> new WebNoticeDTO(t)).collect(Collectors.toList());
+        }
+
+        @ToString
+        @Getter
+        @NoArgsConstructor
+        public class WebNoticeDTO {
+            private Integer noticeId;
+            private String noticeTypeAndTitle;
+            private LocalDate noticeCreatedAt;
+
+            public WebNoticeDTO(Notice notice) {
+                this.noticeId = notice.getId();
+                this.noticeTypeAndTitle = "[" + notice.getNoticeType() + "] " + notice.getNoticeTitle();
+                this.noticeCreatedAt = notice.getNoticeCreatedAt().toLocalDateTime().toLocalDate();
+            }
+        }
+    }
 }

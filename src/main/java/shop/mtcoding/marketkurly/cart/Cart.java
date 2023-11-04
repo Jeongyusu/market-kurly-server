@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.user.User;
 

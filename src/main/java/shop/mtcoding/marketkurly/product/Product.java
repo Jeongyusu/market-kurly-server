@@ -1,7 +1,6 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,9 +9,7 @@ import org.springframework.lang.Nullable;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.category.Category;
-import shop.mtcoding.marketkurly.review.Review;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
@@ -35,6 +32,7 @@ public class Product {
     @Nullable
     private String productContent; // 상품설명
 
+    // 할인율
     private Integer discountRate;
 
     @Nullable
