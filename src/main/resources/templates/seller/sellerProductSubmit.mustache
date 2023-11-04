@@ -361,7 +361,7 @@
 
       // 공백 검사
       $(document).ready(function () {
-        $('#submitButton').click(function (e) {
+        $('#submitButton').click(async function (e) {
           var isValid = true;
 
           $('.required').each(function () {
@@ -372,7 +372,7 @@
           });
 
           if (isValid) {
-            saveProduct();
+            await saveProduct();
             e.preventDefault()
           } else {
             alert('모든 필수 필드를 작성하세요.');
@@ -387,7 +387,6 @@
         // requestBody << Body데이터 객체를 Json으로만들어 fetch를 통해 보낼 것임
 
         let formData = new FormData();
-
 
         // 파일 업로드 필드에 파일 추가
         let productThumbnail = document.querySelector("#productThumbnail");
@@ -404,19 +403,7 @@
         formData.append("discountExpiredAt", document.querySelector("#discountExpiredAt").value);
         formData.append("categoryId", document.querySelector("#categoryId").value);
 
-
-        // let product = {
-        //   productThumbnail: document.querySelector("#productThumbnail").value,
-        //   productDetailPic: document.querySelector("#productDetailPic").value,
-        //   productName: document.querySelector("#productName").value,
-        //   productContent: document.querySelector("#productContent").value,
-        //   discountRate: document.querySelector("#discountRate").value,
-        //   discountExpiredAt: document.querySelector("#discountExpiredAt").value,
-        //   categoryId: document.querySelector("#categoryId").value,
-        // };
-
         let optionList = [];
-
 
         for (let i = 0; i < nextId; i++) {
 
@@ -424,9 +411,6 @@
           let optionPrice = $(`#optionPrice${i}`).val();
           let optionStack = $(`#optionStack${i}`).val();
 
-          // console.log(optionName);
-          // console.log(optionPrice);
-          // console.log(optionStack);
 
           // 객체 생성 및 배열에 추가
           let option = {
@@ -440,11 +424,6 @@
 
         formData.append("optionList", JSON.stringify(optionList));
 
-        // let requestBody = {
-        //   product: product,
-        //   optionList: optionList,
-        // };
-        // console.log(requestBody);
 
         let response = await fetch("/product/save", {
           method: "post",
@@ -453,7 +432,6 @@
           body: formData,
         });
 
-        console.log('json 변환 : ' + JSON.stringify(requestBody));
         let responseBody = await response.json();
         console.log(responseBody);
 
@@ -463,7 +441,6 @@
           alert(responseBody.data);
         }
       }
-
 
     </script>
 
