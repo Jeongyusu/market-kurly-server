@@ -24,6 +24,7 @@
                 <div>
                   <form name="product">
                     {{#wProduct}}
+                    <input id="wproductId" value="{{Id}}" disabled hidden>
                     <div class="row">
                       <div class="col-md-12 ">
                         <div class="form-group">
@@ -155,7 +156,7 @@
 
 
                     {{#isAdmin}}
-                    <button type="submit" class="btn btn-info btn-fill pull-right" id="submitButton">
+                    <button type="submit" class="btn btn-info btn-fill pull-right" onclick="acceptProduct()">
                       상품 승인
                     </button>
                     {{/isAdmin}}
@@ -197,61 +198,30 @@
         }
       }
 
-      async function saveProduct() {
-
-        // requestBody << Body데이터 객체를 Json으로만들어 fetch를 통해 보낼 것임
-
-        let formData = new FormData();
-
-        // 파일 업로드 필드에 파일 추가
-        let productThumbnail = document.querySelector("#productThumbnail");
-        formData.append("productThumbnail", productThumbnail.files[0]);
+      async function acceptProduct() {
 
 
-        let productDetailPic = document.querySelector("#productDetailPic");
-        formData.append("productDetailPic", productDetailPic.files[0]);
 
-        // 나머지 필드를 FormData에 추가
-        formData.append("productName", document.querySelector("#productName").value);
-        formData.append("productContent", document.querySelector("#productContent").value);
-        formData.append("discountRate", document.querySelector("#discountRate").value);
-        formData.append("discountExpiredAt", document.querySelector("#discountExpiredAt").value);
-        formData.append("categoryId", document.querySelector("#categoryId").value);
-
-        let optionList = [];
-
-        for (let i = 0; i < nextId; i++) {
-
-          let optionName = $(`#optionName${i}`).val();
-          let optionPrice = $(`#optionPrice${i}`).val();
-          let optionStack = $(`#optionStack${i}`).val();
-
-
-          // 객체 생성 및 배열에 추가
-          let option = {
-            optionName: optionName,
-            optionPrice: optionPrice,
-            optionStack: optionStack
-          };
-
-          optionList.push(option);
-        }
-
-        formData.append("optionList", JSON.stringify(optionList));
-
-
-        let response = await fetch("/seller/product/submit/save", {
+        let wproductId = $("#wproductId").val();
+        console.log(wproductId);
+        let response = await fetch("/auth/product/waiting/accept/" + wproductId, {
           method: "post",
-          headers: {
-          },
-          body: formData,
         });
 
         let responseBody = await response.json();
         console.log(responseBody);
 
         if (responseBody.success) {
-          sellerProductList();
+          alert("승인 되었습니다.");
+          var parentWindow = window.opener;
+
+          // 이전 창 새로고침
+          if (parentWindow) {
+            parentWindow.location.reload();
+          }
+
+          // 지금 창 닫기
+          window.close();
         } else {
           alert(responseBody.data);
         }

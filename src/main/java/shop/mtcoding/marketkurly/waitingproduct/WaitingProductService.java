@@ -3,6 +3,7 @@ package shop.mtcoding.marketkurly.waitingproduct;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,7 +24,10 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception500;
 import shop.mtcoding.marketkurly._core.vo.MyPath;
 import shop.mtcoding.marketkurly.category.Category;
 import shop.mtcoding.marketkurly.category.CategoryJPARepository;
-import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
+import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.option.OptionJPARepository;
+import shop.mtcoding.marketkurly.product.ProdcutJPARepository;
+import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.user.User;
 import shop.mtcoding.marketkurly.user.UserJPARepository;
 import shop.mtcoding.marketkurly.waitingoption.WaitingOption;
@@ -40,6 +44,8 @@ public class WaitingProductService {
     private final WaitingProductJPARepository waitingProductJPARepository;
     private final WaitingOptionJPARepository waitingOptionJPARepository;
     private final UserJPARepository userJPARepository;
+    private final ProdcutJPARepository prodcutJPARepository;
+    private final OptionJPARepository optionJPARepository;
 
     @Transactional
     public void 상품승인요청(WProductDTO wProductDTO, Integer userId) {
@@ -110,6 +116,67 @@ public class WaitingProductService {
     public WaitingProductListDTO 대기상품목록(Integer userId) {
         List<WaitingProduct> waitingProducts = waitingProductJPARepository.findBySellerId(userId);
         return new WaitingProductListDTO(waitingProducts);
+    }
+
+    public List<WaitingProduct> 대기상품전체() {
+        List<WaitingProduct> waitingProducts = waitingProductJPARepository.findAll();
+        return waitingProducts;
+    }
+
+    @Transactional
+    public void 상품승인(Integer wProductId) {
+
+        WaitingProduct waitingProduct = waitingProductJPARepository.findById(wProductId).get();
+
+        Integer wthumbIndex = waitingProduct.getWProductThumbnail().lastIndexOf("/") + 1;
+        Integer wDetailInedex = waitingProduct.getWProductDetailPic().lastIndexOf("/") + 1;
+
+        String wthumbFileName = waitingProduct.getWProductThumbnail().substring(wthumbIndex);
+        String wDetailFileName = waitingProduct.getWProductDetailPic().substring(wDetailInedex);
+
+        Path ProductThumbnailPath = Paths.get("." + waitingProduct.getWProductThumbnail());
+        Path ProductDetailPicPath = Paths.get("." + waitingProduct.getWProductDetailPic());
+
+        Path newThumbnailPath = Paths.get(MyPath.PRODUCTTHUMB_PATH + wthumbFileName);
+        Path newDetailPicPath = Paths.get(MyPath.PRODUCTDETAIL_PATH + wDetailFileName);
+
+        try {
+            // 원본 파일을 대상 파일로 복사
+            Files.copy(ProductThumbnailPath, newThumbnailPath, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(ProductDetailPicPath, newDetailPicPath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new Exception500("사진 이동 및 삭제 실패");
+        }
+
+        Product product = Product.builder()
+                .productName(waitingProduct.getWProductName())
+                .productContent(waitingProduct.getWProductContent())
+                .discountExpiredAt(waitingProduct.getWDiscountExpiredAt())
+                .discountRate(waitingProduct.getWDiscountRate())
+                .category(waitingProduct.getCategory())
+                .seller(waitingProduct.getSeller())
+                .productThumbnail(MyPath.WAITINGPRODUCTDETAIL_PATH + wthumbFileName)
+                .productDetailPic(wDetailFileName)
+                .productUploadedAt(waitingProduct.getWProductUploadedAt().toLocalDateTime().toLocalDate())
+                .build();
+
+        prodcutJPARepository.save(product);
+
+        List<WaitingOption> waitingOptions = waitingOptionJPARepository.findByWaitingProductId(wProductId);
+
+        for (WaitingOption waitingOption : waitingOptions) {
+            Option option = Option.builder()
+                    .optionName(waitingOption.getWOptionName())
+                    .optionStack(waitingOption.getWOptionStack())
+                    .optionPrice(waitingOption.getWOptionPrice())
+                    .product(product)
+                    .build();
+            optionJPARepository.save(option);
+            waitingOptionJPARepository.delete(waitingOption);
+        }
+
+        waitingProductJPARepository.deleteById(wProductId);
+
     }
 
 }

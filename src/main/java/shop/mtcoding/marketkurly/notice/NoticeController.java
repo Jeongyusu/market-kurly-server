@@ -19,7 +19,9 @@ public class NoticeController {
     @GetMapping("/notice")
     public String 웹공지목록(HttpServletRequest request) {
         WebNoticeMainDTO dto = noticeService.웹공지목록();
+        Boolean isAdmin = true;
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
+        request.setAttribute("isAdmin", isAdmin);
         return "noticeList";
     }
 }

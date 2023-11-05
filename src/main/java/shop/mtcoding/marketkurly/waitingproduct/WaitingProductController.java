@@ -21,8 +21,11 @@ public class WaitingProductController {
     @GetMapping("/auth/product/waiting/{wProductId}")
     public String 대기상품디테일(@PathVariable Integer wProductId, HttpServletRequest request) {
         WOptionListDTO dto = waitingOptionService.대기상품디테일(wProductId);
+        Boolean isAdmin = true;
         request.setAttribute("wProduct", dto.getWaitingProduct());
         request.setAttribute("wOptionList", dto.getWaitingOptionDTOs());
+        request.setAttribute("isAdmin", isAdmin);
         return "seller/waitingProductDetail";
     }
+
 }
