@@ -15,6 +15,7 @@ import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductListDTO;
+import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.review.Review;
 import shop.mtcoding.marketkurly.review.ReviewJPARepository;
 
@@ -131,5 +132,10 @@ public class ProductService {
         public ProductListDTO 마감세일(int page) {
 
                 return null;
+        }
+
+        public SellerProductListDTO 판매상품목록(Integer userId) {
+                List<Product> products = prodcutJPARepository.findBySellerId(userId);
+                return new SellerProductListDTO(products);
         }
 }

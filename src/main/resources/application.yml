@@ -4,6 +4,9 @@ server:
       charset: utf-8
       force: true
   port: 8080
+  tomcat:
+    additional-tld-skip-patterns: "*.jar"
+
 spring:
   datasource:
     url: jdbc:h2:mem:test;MODE=MySQL
@@ -38,6 +41,10 @@ spring:
     prefix: classpath:/templates/
     suffix: .mustache
     expose-request-attributes: true
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
 
 logging:
   level:

@@ -1,6 +1,7 @@
 package shop.mtcoding.marketkurly.productquestion;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,7 +42,7 @@ public class ProductQuestionResponse {
             private Boolean isSecreted;
             private String userName;
             private String pReplyContent;
-            private Timestamp productQuestionCreatedAt;
+            private LocalDate productQuestionCreatedAt;
 
             public ProductQuestionDTO(ProductQuestion productQuestion) {
                 this.productQuestionId = productQuestion.getId();
@@ -56,7 +57,8 @@ public class ProductQuestionResponse {
                 if (productQuestion.getProductReply() == null) {
                     this.pReplyContent = null;
                 }
-                this.productQuestionCreatedAt = productQuestion.getProductQuestionCreatedAt();
+                this.productQuestionCreatedAt = productQuestion.getProductQuestionCreatedAt().toLocalDateTime()
+                        .toLocalDate();
             }
         }
     }

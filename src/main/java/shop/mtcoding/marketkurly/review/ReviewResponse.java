@@ -7,6 +7,7 @@ import shop.mtcoding.marketkurly.notice.Notice;
 import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,11 +17,12 @@ public class ReviewResponse {
     @NoArgsConstructor
     public static class ReviewMainDTO {
 
-        private List<ReviewNoticeDTO> reviewNotices;
+        // private List<ReviewNoticeDTO> reviewNotices;
         private List<ReviewDetailDTO> reviewDetails;
 
         public ReviewMainDTO(List<Notice> notices, List<Review> reviews) {
-            this.reviewNotices = notices.stream().map(t -> new ReviewNoticeDTO(t)).collect(Collectors.toList());
+            // this.reviewNotices = notices.stream().map(t -> new
+            // ReviewNoticeDTO(t)).collect(Collectors.toList());
             this.reviewDetails = reviews.stream().map(t -> new ReviewDetailDTO(t)).collect(Collectors.toList());
         }
 
@@ -48,7 +50,7 @@ public class ReviewResponse {
             private String username;
             private Integer starCount;
             private String productName;
-            private Timestamp reviewCreatedAt;
+            private LocalDate reviewCreatedAt;
             private List<ReviewPic> reviewPics;
             private String reviewContent;
 
@@ -56,7 +58,7 @@ public class ReviewResponse {
                 this.username = review.getUser().getUsername();
                 this.starCount = review.getStarCount();
                 this.productName = review.getProduct().getProductName();
-                this.reviewCreatedAt = review.getReviewCreatedAt();
+                this.reviewCreatedAt = review.getReviewCreatedAt().toLocalDateTime().toLocalDate();
                 this.reviewPics = review.getReviewPics();
                 this.reviewContent = review.getReviewContent();
             }

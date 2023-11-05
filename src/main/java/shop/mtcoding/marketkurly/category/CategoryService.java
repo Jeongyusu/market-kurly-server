@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CategoryService {
 
-    private final CategoryRepository categoryRepository;
+    private final CategoryJPARepository categoryRepository;
 
     public List<Category> 모든카테고리찾기() {
         List<Category> categorys = categoryRepository.findAll();

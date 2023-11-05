@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.category.Category;
-import shop.mtcoding.marketkurly.category.CategoryRepository;
+import shop.mtcoding.marketkurly.category.CategoryJPARepository;
 import shop.mtcoding.marketkurly.category.CategoryService;
 
 @Slf4j
@@ -18,7 +18,7 @@ import shop.mtcoding.marketkurly.category.CategoryService;
 @RequiredArgsConstructor
 public class CategoryTest {
 
-    private final CategoryRepository categoryRepository;
+    private final CategoryJPARepository categoryRepository;
     private final CategoryService categoryService;
 
     @Test

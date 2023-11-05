@@ -10,6 +10,8 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.OptionResponse.OptionSelectMainDTO;
 import shop.mtcoding.marketkurly.product.ProdcutJPARepository;
 import shop.mtcoding.marketkurly.product.Product;
+import shop.mtcoding.marketkurly.product.ProductResponse.ProductDetailListDTO;
+import shop.mtcoding.marketkurly.waitingoption.WaitingOptionResponse.WOptionListDTO;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +27,12 @@ public class OptionService {
 
         System.out.println("option 서비스 options : " + options);
         return new OptionSelectMainDTO(options);
+    }
+
+    public ProductDetailListDTO 대기상품디테일(Integer productId) {
+        List<Option> options = optionJPARepository.findByProductId(productId);
+        System.out.println("대기상품 디테일 서비스 : " + options);
+        return new ProductDetailListDTO(options);
     }
 
 }
