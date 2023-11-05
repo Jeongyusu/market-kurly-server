@@ -1,0 +1,32 @@
+package shop.mtcoding.marketkurly.waitingproduct;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly.waitingproduct.WaitingProductRequest.WProductDTO;
+
+@RequiredArgsConstructor
+@RestController
+public class WaitingProductRestController {
+
+    private final WaitingProductService waitingProductService;
+
+    @PostMapping("/seller/product/submit/save")
+    public ResponseEntity<?> 상품승인요청(@ModelAttribute WProductDTO wProductDTO) {
+
+        // TODO userId << sessionUserId로 바꿔야 함
+        Integer userId = 7;
+
+        System.out.println("상품승인요청 컨트롤러 호출됨");
+        waitingProductService.상품승인요청(wProductDTO, userId);
+
+        System.out.println("productDTO : " + wProductDTO);
+        return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));
+    }
+
+}

@@ -210,9 +210,10 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="discountRate">할인율</label>
-                            <input type="number" class="form-control required" placeholder="0 ~ 100사이 숫자를 입력하세요" min="0"
-                              max="100" id="discountRate" required />
+                            <label for="discountRate">할인율(%)</label>
+                            <input type="number" id="discountRate" class="form-control required"
+                              placeholder="0 ~ 100사이 숫자를 입력하세요" min="0" max="100" required
+                              oninput="checkDiscountRate(this)" />
                           </div>
                         </div>
                       </div>
@@ -301,6 +302,17 @@
         }
       }
 
+
+
+      function checkDiscountRate(inputElement) {
+        const inputValue = inputElement.value;
+        if (inputValue < 0) {
+          inputElement.value = 0;
+        } else if (inputValue > 100) {
+          inputElement.value = 100;
+        }
+      }
+
       function getCurrentDate() {
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -372,18 +384,19 @@
           });
 
           if (isValid) {
-            await saveProduct();
-            e.preventDefault()
+            saveProduct();
+            alert(' 승인 요청 되었습니다.');
           } else {
             alert('모든 필수 필드를 작성하세요.');
           }
+
         });
+
       });
 
 
       async function saveProduct() {
 
-        console.log('saveProduct 실행');
         // requestBody << Body데이터 객체를 Json으로만들어 fetch를 통해 보낼 것임
 
         let formData = new FormData();
@@ -425,7 +438,7 @@
         formData.append("optionList", JSON.stringify(optionList));
 
 
-        let response = await fetch("/product/save", {
+        let response = await fetch("/seller/product/submit/save", {
           method: "post",
           headers: {
           },
@@ -436,11 +449,16 @@
         console.log(responseBody);
 
         if (responseBody.success) {
-          location.reload();
+          sellerProductList();
         } else {
           alert(responseBody.data);
         }
       }
+
+      function sellerProductList() {
+        location.href = "/seller/product";
+      }
+
 
     </script>
 
