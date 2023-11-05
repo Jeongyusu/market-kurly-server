@@ -84,4 +84,20 @@ public class UserRequest {
         private String userId;
     }
 
+    @Getter
+    @Setter
+    public static class SellerJoinDTO {
+        private String userId;
+        private String userPassword;
+        private String username;
+        private String userEmail;
+
+        public SellerJoinDTO(String userId, String userPassword, String username, String userEmail) {
+            this.userId = userId;
+            this.userPassword = userPassword;
+            this.username = username;
+            this.userEmail = userEmail;
+        }
+    }
+
 }

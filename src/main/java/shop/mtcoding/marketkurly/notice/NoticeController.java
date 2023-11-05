@@ -4,9 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import shop.mtcoding.marketkurly.notice.NoticeRequest.NoticeSaveDTO;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
 
 @Slf4j
@@ -23,5 +26,27 @@ public class NoticeController {
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
         request.setAttribute("isAdmin", isAdmin);
         return "noticeList";
+    }
+
+    @PostMapping("/admin/notice/save")
+    public String 공지등록(NoticeSaveDTO noticeSaveDTO) {
+        System.out.println("공지등록 호출");
+        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeContent());
+        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeTitle());
+        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeType());
+        noticeService.공지등록(noticeSaveDTO);
+        return "redirect:/notice";
+    }
+
+    @GetMapping("/notice/detail/{noticeId}")
+    public String 공지상세보기(@PathVariable Integer noticeId, HttpServletRequest request) {
+        Notice notice = noticeService.공지상세보기(noticeId);
+        request.setAttribute("notice", notice);
+        return "noticeDetail";
+    }
+
+    @GetMapping("/admin/notice")
+    public String noticeWrite() {
+        return "admin/noticeWrite";
     }
 }

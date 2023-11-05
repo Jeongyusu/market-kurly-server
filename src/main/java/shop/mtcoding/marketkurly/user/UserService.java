@@ -3,7 +3,6 @@ package shop.mtcoding.marketkurly.user;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserFindUsernameDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
@@ -41,12 +41,10 @@ public class UserService {
         User userPS = userJPARepository.save(userJoinDTO.toEntity());
         System.out.println("회원가입 2 ");
 
-       
-
     }
 
     // 아이디 중복체크 클릭시 중복체크
-        public void 중복확인(String userLoginId) {
+    public void 중복확인(String userLoginId) {
         User optUser = userJPARepository.findByUserId(userLoginId);
         if (optUser != null) {
             throw new Exception400("중복된 아이디입니다.");
@@ -86,6 +84,22 @@ public class UserService {
     public UserResponse.LoginDTO 로그인정보조회(String userId) {
         User userDTO = userJPARepository.findByUserId(userId);
         return new UserResponse.LoginDTO(userDTO);
+    }
+
+    public void 판매자회원가입(SellerJoinDTO sellerJoinDTO) {
+
+        String encPassword = BCrypt.hashpw(sellerJoinDTO.getUserPassword(), BCrypt.gensalt());
+        System.out.println("회원가입 1 ");
+        sellerJoinDTO.setUserPassword(encPassword);
+        User user = User.builder()
+                .userId(sellerJoinDTO.getUserId())
+                .username(sellerJoinDTO.getUsername())
+                .userEmail(sellerJoinDTO.getUserEmail())
+                .userPassword(encPassword)
+                .role(Role.SELLER)
+                .build();
+
+        userJPARepository.save(user);
     }
 
 }
