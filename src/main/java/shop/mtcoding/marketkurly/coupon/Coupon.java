@@ -20,12 +20,12 @@ public class Coupon {
     private Integer couponNumber;
     private String couponName;
     private Integer couponContent;
-    private Integer reduceAmount;
-    private Boolean isExpired;
-
+    private Integer reduceAmount; // 할인금액
+    private Boolean isExpired; // 쿠폰 만료
+    // 쿠폰 생성일
     @CreationTimestamp
     private Timestamp couponCreatedAt;
-
+    // 쿠폰 만료일
     @CreationTimestamp
     private Timestamp couponExpiredAt;
 
