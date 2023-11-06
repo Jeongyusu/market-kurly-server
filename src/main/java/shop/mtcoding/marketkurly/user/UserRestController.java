@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.UpdateCheckDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.UserUpdateDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
 @Slf4j
@@ -62,6 +64,18 @@ public class UserRestController {
     public ResponseEntity<?> 중복확인(@RequestBody UserRequest.UserIdDuplicatedDTO request) {
         userService.중복확인(request.getUserId());
         return ResponseEntity.ok().body(ApiUtils.success(null));
+    }
+
+    @PostMapping("/api/users/update")
+    public ResponseEntity<?> 회원정보수정(@RequestBody UserUpdateDTO userUpdateDTO) {
+        User user = userService.회원정보수정(userUpdateDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
+    }
+
+    @PostMapping("/api/users/updateCheck")
+    public ResponseEntity<?> 회원수정체크(@RequestBody UpdateCheckDTO updateCheckDTO) {
+        User user = userService.회원수정체크(updateCheckDTO);
+        return ResponseEntity.ok().body(ApiUtils.success(user));
     }
 
 }

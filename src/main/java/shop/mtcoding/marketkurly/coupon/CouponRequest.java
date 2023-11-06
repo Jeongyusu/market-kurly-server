@@ -33,6 +33,12 @@ public class CouponRequest {
             this.isExpired = isExpired;
         }
 
+        @Getter
+        @Setter
+        @NoArgsConstructor
+        public static class CouponRegisterDTO {
+            private String couponNumber;
+        }
     }
 
 }

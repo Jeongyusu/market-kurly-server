@@ -18,7 +18,6 @@ public class NoticeRestController {
 
     @GetMapping("/api/test/notices")
     public ResponseEntity<?> 공지목록() {
-        System.out.println("option 컨트롤러 호출");
         NoticeMainDTO dto = noticeService.공지목록();
         return ResponseEntity.ok().body(ApiUtils.success(dto));
     }

@@ -34,12 +34,12 @@ public class CouponController {
 
     @GetMapping("/admin/coupon/save")
     public String 쿠폰등록페이지() {
-        return "admin/couponsave";
+        return "admin/couponSave";
     }
 
     @PostMapping("/admin/coupon/save")
-    public String 쿠폰등록(CouponSaveDTO couponSaveDTO) {
-        couponService.쿠폰등록(couponSaveDTO);
+    public String 쿠폰생성(CouponSaveDTO couponSaveDTO) {
+        couponService.쿠폰생성(couponSaveDTO);
         return "redirect:/admin/coupon";
     }
 }

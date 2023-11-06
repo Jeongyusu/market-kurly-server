@@ -36,9 +36,6 @@ public class WaitingProductRestController {
         // TODO userId << sessionUserId로 바꿔야 함
         Integer userId = 7;
 
-        System.out.println("상품승인 컨트롤러 호출됨");
-        System.out.println("wProductId : " + wProductId);
-
         waitingProductService.상품승인(wProductId);
 
         return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));

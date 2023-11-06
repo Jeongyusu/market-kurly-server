@@ -1,12 +1,9 @@
 package shop.mtcoding.marketkurly.user;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
 
 @RequiredArgsConstructor

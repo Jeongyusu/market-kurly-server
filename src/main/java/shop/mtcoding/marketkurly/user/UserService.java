@@ -12,7 +12,9 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.UpdateCheckDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserFindUsernameDTO;
+import shop.mtcoding.marketkurly.user.UserRequest.UserUpdateDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
 @Slf4j
@@ -39,7 +41,7 @@ public class UserService {
         userJoinDTO.setUserPassword(encPassword);
         // 2. 디비 저장
         User userPS = userJPARepository.save(userJoinDTO.toEntity());
-        System.out.println("회원가입 2 ");
+        System.out.println("회원가입 2 userPS : " + userPS);
 
     }
 
@@ -57,7 +59,7 @@ public class UserService {
         System.out.println(encPassword);
         User user = userJPARepository.findByUserId(loginDTO.getUserId());
         if (user == null) {
-            throw new Exception400("아이디가 일치하지 않습니다.");
+            throw new Exception400("존재하지 않는 아이디 입니다.");
         }
         if (!BCrypt.checkpw(loginDTO.getUserPassword(), user.getUserPassword())) {
             throw new Exception400("비밀번호가 일치하지 않습니다.");
@@ -99,7 +101,35 @@ public class UserService {
                 .role(Role.SELLER)
                 .build();
 
+        System.out.println("user" + user.getRole());
         userJPARepository.save(user);
+    }
+
+    @Transactional
+    public User 회원정보수정(UserUpdateDTO userUpdateDTO) {
+
+        Integer sessionUserId = 1; // << TODO 현재 sessionUser의 id값 들어가야함
+        String encPassword = BCrypt.hashpw(userUpdateDTO.getUserPassword(), BCrypt.gensalt());
+        userUpdateDTO.setUserPassword(encPassword);
+        userUpdateDTO.setId(sessionUserId);
+        User user = userJPARepository.save(userUpdateDTO.toIdEntity());
+        return user;
+    }
+
+    public User 회원수정체크(UpdateCheckDTO updateCheckDTO) {
+
+        User user = userJPARepository.findByUserId(updateCheckDTO.getUserId());
+        if (user == null) {
+            throw new Exception400("존재하지 않는 아이디 입니다.");
+        }
+        if (!BCrypt.checkpw(updateCheckDTO.getUserPassword(), user.getUserPassword())) {
+            throw new Exception400("비밀번호가 일치하지 않습니다.");
+        }
+
+        // hideUserPS(user) << 비밀번호 null처리하는 메서드
+        // 토큰 or 리턴값에 비밀번호 들어갈 필요없음 << hideUserPS로 null처리
+        User userPS = UserResponse.UserPSDTO.hideUserPS(user);
+        return userPS;
     }
 
 }

@@ -31,9 +31,6 @@ public class NoticeController {
     @PostMapping("/admin/notice/save")
     public String 공지등록(NoticeSaveDTO noticeSaveDTO) {
         System.out.println("공지등록 호출");
-        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeContent());
-        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeTitle());
-        System.out.println("noticeSaveDTO : " + noticeSaveDTO.getNoticeType());
         noticeService.공지등록(noticeSaveDTO);
         return "redirect:/notice";
     }
