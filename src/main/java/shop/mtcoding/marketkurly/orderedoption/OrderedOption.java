@@ -19,8 +19,6 @@ public class OrderedOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer orderedOptionQuantity;
-    private Integer orderedOptionPrice;
-    private Integer orderedDiscountRate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "option_id")
@@ -30,13 +28,8 @@ public class OrderedOption {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @Builder
-    public OrderedOption(Integer id, Integer orderedOptionQuantity, Integer orderedOptionPrice,
-            Integer orderedDiscountRate, Option option, Order order) {
-        this.id = id;
+    public OrderedOption(Integer orderedOptionQuantity, Option option, Order order) {
         this.orderedOptionQuantity = orderedOptionQuantity;
-        this.orderedOptionPrice = orderedOptionPrice;
-        this.orderedDiscountRate = orderedDiscountRate;
         this.option = option;
         this.order = order;
     }

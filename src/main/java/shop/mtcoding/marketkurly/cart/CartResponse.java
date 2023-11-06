@@ -26,11 +26,11 @@ public class CartResponse {
                     .map(CartProductDTO::new)
                     .collect(Collectors.toList());
             this.totalBeforePrice = this.cartProducts.stream()
-                    .mapToInt(CartProductDTO::getOriginPrice)
+                    .mapToInt(cp ->  cp.getOriginPrice() * cp.getOptionQuantity())
                     .sum();
             this.deliveryFee = 0;
             this.totalPrice = this.cartProducts.stream()
-                    .mapToInt(CartProductDTO::getDiscountedPrice)
+                    .mapToInt(cp -> (cp.getOriginPrice() * (100 - cp.getDiscountRate()) / 100) * cp.getOptionQuantity())
                     .sum();
 
             this.totalDiscountPrice = this.totalPrice - this.totalBeforePrice;
@@ -60,9 +60,9 @@ public class CartResponse {
                 this.optionId = option.getId();
                 this.optionName = option.getOptionName();
                 this.sellerName = product.getSeller().getUsername();
-                this.originPrice = option.getOptionPrice() * cart.getOptionQuantity();
+                this.originPrice = option.getOptionPrice();
                 this.discountRate = product.getDiscountRate();
-                this.discountedPrice = (option.getOptionPrice() * (100 - product.getDiscountRate()) / 100) * cart.getOptionQuantity();
+                this.discountedPrice = (option.getOptionPrice() * (100 - product.getDiscountRate()) / 100);
                 this.optionQuantity = cart.getOptionQuantity();
             }
         }

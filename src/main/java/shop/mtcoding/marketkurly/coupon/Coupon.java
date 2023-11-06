@@ -19,7 +19,7 @@ public class Coupon {
     private Integer id;
     private Integer couponNumber;
     private String couponName;
-    private Integer couponContent;
+    private String couponContent;
     private Integer reduceAmount; // 할인금액
     private Boolean isExpired; // 쿠폰 만료
     // 쿠폰 생성일
@@ -30,7 +30,7 @@ public class Coupon {
     private Timestamp couponExpiredAt;
 
     @Builder
-    public Coupon(Integer id, Integer couponNumber, String couponName, Integer couponContent, Integer reduceAmount,
+    public Coupon(Integer id, Integer couponNumber, String couponName, String couponContent, Integer reduceAmount,
             Boolean isExpired, Timestamp couponCreatedAt, Timestamp couponExpiredAt) {
         this.id = id;
         this.couponNumber = couponNumber;

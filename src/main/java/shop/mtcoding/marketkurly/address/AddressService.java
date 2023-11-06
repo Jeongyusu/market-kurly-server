@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly.address.AddressRequest.AddressSaveReqDTO;
 import shop.mtcoding.marketkurly.user.User;
 import shop.mtcoding.marketkurly.user.UserJPARepository;
@@ -44,6 +45,12 @@ public class AddressService {
         }
         Address result = addressJPARepository.save(address);
         return result;
+    }
+
+    public AddressResponse.DefaultAddressDTO 기본배송지조회(Integer userPk) {
+        return addressJPARepository.findDefaultAddressByUserId(userPk)
+                .map(AddressResponse.DefaultAddressDTO::new)
+                .orElseThrow(() -> new Exception400("기본배송지가 없습니다??"));
     }
 
     // @Transactional

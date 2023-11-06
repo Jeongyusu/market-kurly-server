@@ -3,7 +3,6 @@ package shop.mtcoding.marketkurly.user;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,7 +40,7 @@ public class UserService {
         User userPS = userJPARepository.save(userJoinDTO.toEntity());
         System.out.println("회원가입 2 ");
 
-       
+
 
     }
 
@@ -85,6 +84,12 @@ public class UserService {
 
     public UserResponse.LoginDTO 로그인정보조회(String userId) {
         User userDTO = userJPARepository.findByUserId(userId);
+        return new UserResponse.LoginDTO(userDTO);
+    }
+
+    public UserResponse.LoginDTO 내정보조회(Integer userPk) {
+        User userDTO = userJPARepository.findById(userPk)
+                .orElseThrow(() -> new Exception400("유저가 존재하지 않습니다."));
         return new UserResponse.LoginDTO(userDTO);
     }
 
