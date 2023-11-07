@@ -41,10 +41,10 @@ public class UserController {
         TokenDTO tokenDTO = userService.로그인(loginDTO);
         // String jwt = "Bearer " + tokenDTO.getJwt();
 
-        Cookie cookie = new Cookie("jwt", tokenDTO.getJwt());
-        cookie.setHttpOnly(true);
-        cookie.setPath("/");
-        response.addCookie(cookie);
+        // Cookie cookie = new Cookie("jwt", tokenDTO.getJwt());
+        // cookie.setHttpOnly(true);
+        // cookie.setPath("/");
+        // response.addCookie(cookie);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(null));
     }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly.product.ProductResponse.ProductAvgStar;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 
 @Slf4j
@@ -73,6 +74,12 @@ public class ProductRestController {
         Integer userId = 7;
         SellerProductListDTO dto = productService.판매상품목록(userId);
         return ResponseEntity.ok().body(ApiUtils.success(dto));
+    }
+
+    @GetMapping("/api/test/product")
+    public ResponseEntity<?> 메인상품리스트() {
+        List<Product> productAvgStars = productService.메인상품리스트();
+        return ResponseEntity.ok().body(ApiUtils.success(productAvgStars));
     }
 
 }

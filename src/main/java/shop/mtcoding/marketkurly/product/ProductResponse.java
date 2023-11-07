@@ -145,4 +145,31 @@ public class ProductResponse {
             }
         }
     }
+
+    public static class ProductAvgStar {
+        private Product product; // 제품 아이디
+        private Double avgStarCount; // 별점 평균
+
+        public ProductAvgStar(Product product, Double avgStarCount) {
+            this.product = product;
+            this.avgStarCount = avgStarCount;
+        }
+
+        public Product getProduct() {
+            return product;
+        }
+
+        public void setProduct(Product product) {
+            this.product = product;
+        }
+
+        public Double getAvgStarCount() {
+            return avgStarCount;
+        }
+
+        public void setAvgStarCount(Double avgStarCount) {
+            this.avgStarCount = avgStarCount;
+        }
+    }
+
 }

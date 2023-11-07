@@ -1,6 +1,7 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +15,7 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
+import shop.mtcoding.marketkurly.product.ProductResponse.ProductAvgStar;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductListDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.review.Review;
@@ -137,5 +139,13 @@ public class ProductService {
         public SellerProductListDTO 판매상품목록(Integer userId) {
                 List<Product> products = prodcutJPARepository.findBySellerId(userId);
                 return new SellerProductListDTO(products);
+        }
+
+        public List<Product> 메인상품리스트() {
+                List<Product> productAvgStarsRow = prodcutJPARepository.getProductAvgStars();
+
+                // prodcutJPARepository.findListByDiscountRate();
+                // prodcutJPARepository.findListByRandom();
+                return productAvgStarsRow;
         }
 }
