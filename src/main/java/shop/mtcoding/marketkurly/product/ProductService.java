@@ -2,8 +2,13 @@ package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.persistence.TypedQuery;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,8 +20,8 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
-import shop.mtcoding.marketkurly.product.ProductResponse.ProductAvgStar;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductListDTO;
+import shop.mtcoding.marketkurly.product.ProductResponse.ProductMainListsDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.review.Review;
 import shop.mtcoding.marketkurly.review.ReviewJPARepository;
@@ -27,6 +32,7 @@ import shop.mtcoding.marketkurly.review.ReviewJPARepository;
 public class ProductService {
 
         private final ProdcutJPARepository prodcutJPARepository;
+        private final ProductRepository productRepository;
         private final ReviewJPARepository reviewJPARepository;
         private final OptionJPARepository optionJPARepository;
         private final OrderOptionJAPRepository orderOptionJAPRepository;
@@ -141,11 +147,32 @@ public class ProductService {
                 return new SellerProductListDTO(products);
         }
 
-        public List<Product> 메인상품리스트() {
-                List<Product> productAvgStarsRow = prodcutJPARepository.getProductAvgStars();
+        public ProductMainListsDTO 메인상품리스트() {
 
-                // prodcutJPARepository.findListByDiscountRate();
-                // prodcutJPARepository.findListByRandom();
-                return productAvgStarsRow;
+                Integer productCount = productRepository.allProductCount().intValue();
+                Integer min = 1;
+                Integer count = 8;
+
+                Set<Integer> randomNumberSet = new HashSet<>();
+
+                Random random = new Random();
+
+                // 중복되지 않는 난수 생성
+                while (randomNumberSet.size() < count) {
+                        int randomNumber = random.nextInt(productCount - min + 1) + min;
+                        randomNumberSet.add(randomNumber);
+                }
+
+                StringBuilder randomNumbers = new StringBuilder("(");
+                for (Integer number : randomNumberSet) {
+                        randomNumbers.append(number).append(", ");
+                }
+                randomNumbers.setLength(randomNumbers.length() - 2); // 마지막 쉼표 및 공백 제거
+                randomNumbers.append(")");
+
+                List<ProductStarDTO> productStarDTOs = productRepository.findListByStarCount();
+                List<ProductDiscountDTO> productDiscountDTOs = productRepository.findListByDiscountRate();
+                List<ProductRandomDTO> productRandomDTOs = productRepository.findListByRandom(randomNumbers.toString());
+                return new ProductMainListsDTO(productStarDTOs, productDiscountDTOs, productRandomDTOs);
         }
 }

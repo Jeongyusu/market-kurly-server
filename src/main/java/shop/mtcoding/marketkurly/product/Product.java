@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import shop.mtcoding.marketkurly.category.Category;
 import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.review.Review;
 import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
 
@@ -42,6 +43,9 @@ public class Product {
     @Nullable
     private LocalDate discountExpiredAt; // 할인만료기간
 
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Review> reviews = new ArrayList<Review>();
+
     @Nullable
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -60,7 +64,7 @@ public class Product {
     @Builder
     public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
             String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
-            LocalDate productUploadedAt, Category category, String productOrigin) {
+            LocalDate productUploadedAt, Category category, String productOrigin, List<Review> reviews) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;
@@ -72,6 +76,7 @@ public class Product {
         this.productUploadedAt = productUploadedAt;
         this.category = category;
         this.productOrigin = productOrigin;
+        this.reviews = reviews;
     }
 
 }

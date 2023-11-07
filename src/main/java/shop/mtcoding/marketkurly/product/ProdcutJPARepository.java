@@ -14,8 +14,6 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import shop.mtcoding.marketkurly.product.ProductResponse.ProductAvgStar;
-
 public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     int countByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now);
@@ -31,10 +29,8 @@ public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     List<Product> findBySellerId(Integer userId);
 
-    @Query(value = "SELECT product_id " +
-            "FROM review_tb " +
-            "GROUP BY product_id " +
-            "ORDER BY avg_star_count DESC", nativeQuery = true)
-    List<Product> getProductAvgStars();
+    // @Query("SELECT p FROM Product p ORDER BY (SELECT AVG(r.starCount) FROM Review
+    // r WHERE r.product=p)DESC")
+    // List<Product> getProductAvgStars();
 
 }

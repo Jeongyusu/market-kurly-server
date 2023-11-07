@@ -10,11 +10,42 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import shop.mtcoding.marketkurly.option.Option;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOption;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOptionResponse.WOptionListDTO.WaitingOptionDTO;
-import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
 
 public class ProductResponse {
+
+    public static Double starCountRound(Double starCount) {
+        if (starCount > 4.75) {
+            return 5.0;
+        }
+        if (4.75 >= starCount && starCount > 4.25) {
+            return 4.5;
+        }
+        if (4.25 >= starCount && starCount > 3.75) {
+            return 4.0;
+        }
+        if (3.75 >= starCount && starCount > 3.25) {
+            return 3.5;
+        }
+        if (3.25 >= starCount && starCount > 2.75) {
+            return 3.0;
+        }
+        if (2.75 >= starCount && starCount > 2.25) {
+            return 2.5;
+        }
+        if (2.25 >= starCount && starCount > 1.75) {
+            return 2.0;
+        }
+        if (1.75 >= starCount && starCount > 1.25) {
+            return 1.5;
+        }
+        if (1.25 >= starCount && starCount > 0.75) {
+            return 1.0;
+        }
+        if (0.75 >= starCount && starCount > 0.25) {
+            return 0.5;
+        }
+        return 0.5;
+    }
 
     @Getter
     @Setter
@@ -146,30 +177,145 @@ public class ProductResponse {
         }
     }
 
-    public static class ProductAvgStar {
-        private Product product; // 제품 아이디
-        private Double avgStarCount; // 별점 평균
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @ToString
+    public static class ProductMainListsDTO {
 
-        public ProductAvgStar(Product product, Double avgStarCount) {
-            this.product = product;
-            this.avgStarCount = avgStarCount;
+        List<ProductStarMainDTO> productStarMainDTOs;
+        List<ProductDiscountMainDTO> productDiscountMainDTOs;
+        List<ProductRandomMainDTO> productRandomMainDTOs;
+
+        public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
+                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+            this.productStarMainDTOs = productStarDTOs.stream()
+                    .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
+                    .collect(Collectors.toList());
+            this.productDiscountMainDTOs = productDiscountDTOs.stream()
+                    .map(t -> new ProductDiscountMainDTO(t.getProduct(), t.getAvgStarCount()))
+                    .collect(Collectors.toList());
+            this.productRandomMainDTOs = productRandomDTOs.stream()
+                    .map(t -> new ProductRandomMainDTO(t.getProduct(), t.getAvgStarCount()))
+                    .collect(Collectors.toList());
         }
 
-        public Product getProduct() {
-            return product;
+        @ToString
+        @Setter
+        @Getter
+        public static class ProductStarMainDTO {
+            private Integer productId;
+            private String sellerName;
+            private String productName;
+            private Integer minOptionPrice;
+            private Integer discountedminOptionPrice;
+            private Integer discountRate;
+            private Double avgStarCount;
+
+            public ProductStarMainDTO(Product product, Double starCount) {
+                this.productId = product.getId();
+                this.sellerName = product.getSeller().getUsername();
+                this.productName = product.getProductName();
+                this.minOptionPrice = product.getOptions().stream()
+                        .mapToInt(Option::getOptionPrice)
+                        .min()
+                        .orElse(0);
+                this.discountRate = product.getDiscountRate();
+                this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.avgStarCount = starCountRound(starCount);
+            }
+
         }
 
-        public void setProduct(Product product) {
-            this.product = product;
+        @ToString
+        @Setter
+        @Getter
+        public static class ProductDiscountMainDTO {
+            private Integer productId;
+            private String sellerName;
+            private String productName;
+            private Integer minOptionPrice;
+            private Integer discountedminOptionPrice;
+            private Integer discountRate;
+            private Double avgStarCount;
+
+            public ProductDiscountMainDTO(Product product, Double starCount) {
+                this.productId = product.getId();
+                this.sellerName = product.getSeller().getUsername();
+                this.productName = product.getProductName();
+                this.minOptionPrice = product.getOptions().stream()
+                        .mapToInt(Option::getOptionPrice)
+                        .min()
+                        .orElse(0);
+                this.discountRate = product.getDiscountRate();
+                this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.avgStarCount = starCountRound(starCount);
+            }
         }
 
-        public Double getAvgStarCount() {
-            return avgStarCount;
-        }
+        @ToString
+        @Setter
+        @Getter
+        public static class ProductRandomMainDTO {
+            private Integer productId;
+            private String sellerName;
+            private String productName;
+            private Integer minOptionPrice;
+            private Integer discountedminOptionPrice;
+            private Integer discountRate;
+            private Double avgStarCount;
 
-        public void setAvgStarCount(Double avgStarCount) {
-            this.avgStarCount = avgStarCount;
+            public ProductRandomMainDTO(Product product, Double starCount) {
+                this.productId = product.getId();
+                this.sellerName = product.getSeller().getUsername();
+                this.productName = product.getProductName();
+                this.minOptionPrice = product.getOptions().stream()
+                        .mapToInt(Option::getOptionPrice)
+                        .min()
+                        .orElse(0);
+                this.discountRate = product.getDiscountRate();
+                this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.avgStarCount = starCountRound(starCount);
+            }
         }
     }
+}
 
+@Getter
+@Setter
+@NoArgsConstructor
+class ProductStarDTO {
+    private Product product;
+    private Double avgStarCount;
+
+    public ProductStarDTO(Product product, Double avgStarCount) {
+        this.product = product;
+        this.avgStarCount = avgStarCount;
+    }
+}
+
+@Getter
+@Setter
+@NoArgsConstructor
+class ProductDiscountDTO {
+    private Product product;
+    private Double avgStarCount;
+
+    public ProductDiscountDTO(Product product, Double avgStarCount) {
+        this.product = product;
+        this.avgStarCount = avgStarCount;
+    }
+}
+
+@Getter
+@Setter
+@NoArgsConstructor
+class ProductRandomDTO {
+    private Product product;
+    private Double avgStarCount;
+
+    public ProductRandomDTO(Product product, Double avgStarCount) {
+        this.product = product;
+        this.avgStarCount = avgStarCount;
+    }
 }
