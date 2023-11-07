@@ -124,7 +124,7 @@ public class ProductService {
                                 })
                                 .collect(Collectors.toList());
 
-                int count = prodcutJPARepository.countByCategory_Id(categoryId);
+                int count = prodcutJPARepository.countByCategoryId(categoryId);
                 return new ProductResponse.ProductListDTO(count, productSummaryList);
 
         }

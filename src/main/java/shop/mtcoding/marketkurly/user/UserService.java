@@ -55,16 +55,20 @@ public class UserService {
 
     public TokenDTO 로그인(LoginDTO loginDTO) {
 
+        System.out.println("로그인 서비스");
         String encPassword = BCrypt.hashpw(loginDTO.getUserPassword(), BCrypt.gensalt());
         System.out.println(encPassword);
         User user = userJPARepository.findByUserId(loginDTO.getUserId());
         if (user == null) {
+            System.out.println("로그인 서비스 : 존재하지 않는 아이디 입니다");
             throw new Exception400("존재하지 않는 아이디 입니다.");
         }
         if (!BCrypt.checkpw(loginDTO.getUserPassword(), user.getUserPassword())) {
+            System.out.println("로그인 서비스 : 비밀번호가 일치하지 않습니다.");
             throw new Exception400("비밀번호가 일치하지 않습니다.");
         }
 
+        System.out.println("로그인 서비스 : 성공");
         // hideUserPS(user) << 비밀번호 null처리하는 메서드
         // 토큰 or 리턴값에 비밀번호 들어갈 필요없음 << hideUserPS로 null처리
         User userPS = UserResponse.UserPSDTO.hideUserPS(user);
@@ -101,7 +105,6 @@ public class UserService {
                 .role(Role.SELLER)
                 .build();
 
-        System.out.println("user" + user.getRole());
         userJPARepository.save(user);
     }
 

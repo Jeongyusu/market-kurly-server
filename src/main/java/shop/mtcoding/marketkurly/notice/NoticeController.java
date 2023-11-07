@@ -1,8 +1,10 @@
 package shop.mtcoding.marketkurly.notice;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +21,13 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
+    private final HttpSession session;
+
     @GetMapping("/notice")
     public String 웹공지목록(HttpServletRequest request) {
         WebNoticeMainDTO dto = noticeService.웹공지목록();
         Boolean isAdmin = true;
+        System.out.println("sessionUser : " + session.getAttribute("sessionUser"));
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
         request.setAttribute("isAdmin", isAdmin);
         return "noticeList";

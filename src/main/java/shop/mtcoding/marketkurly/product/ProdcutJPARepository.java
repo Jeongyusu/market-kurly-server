@@ -9,8 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
-
 public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     int countByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now);
@@ -19,11 +17,10 @@ public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     Page<Product> findByCategory_Id(Integer categoryId, Pageable pageable);
 
-    int countByCategory_Id(Integer categoryId);
+    int countByCategoryId(Integer categoryId);
 
     @EntityGraph(attributePaths = { "seller" })
     Optional<Product> findById(Integer productId);
 
     List<Product> findBySellerId(Integer userId);
-
 }

@@ -52,12 +52,6 @@ public class testController {
         return "admin/adminMain";
     }
 
-    @GetMapping("/seller")
-    public String sellerMain() {
-        System.out.println("테스트 : sellerMain 호출");
-        return "seller/sellerMain";
-    }
-
     // productController에 있음
     // @GetMapping("/seller/product")
     // public String sellerProduct() {
