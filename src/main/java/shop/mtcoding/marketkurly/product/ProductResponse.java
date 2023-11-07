@@ -39,7 +39,7 @@ public class ProductResponse {
                     .map(Option::getOptionPrice)
                     .min(Integer::compareTo)
                     .orElse(0);
-            this.discountedPrice = originPrice * (100 - product.getDiscountRate()) / 100;
+            this.discountedPrice = Math.round(originPrice * (100 - product.getDiscountRate()) / 1000) * 10;
             this.productOrigin = product.getProductOrigin();
             this.productDetailImage = product.getProductDetailPic();
             this.seller = product.getSeller().getUsername();

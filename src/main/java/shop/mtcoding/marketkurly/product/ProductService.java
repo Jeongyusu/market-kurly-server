@@ -108,7 +108,7 @@ public class ProductService {
         }
 
         public ProductResponse.ProductListDTO 카테고리필터링(int page, Integer categoryId) {
-                Page<Product> products = prodcutJPARepository.findByCategory_Id(categoryId, PageRequest.of(page, 5));
+                Page<Product> products = prodcutJPARepository.findByCategoryId(categoryId, PageRequest.of(page, 5));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -124,7 +124,7 @@ public class ProductService {
                                 })
                                 .collect(Collectors.toList());
 
-                int count = prodcutJPARepository.countByCategory_Id(categoryId);
+                int count = prodcutJPARepository.countByCategoryId(categoryId);
                 return new ProductResponse.ProductListDTO(count, productSummaryList);
 
         }

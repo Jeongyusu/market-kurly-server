@@ -17,9 +17,9 @@ public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     Page<Product> findByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now, Pageable pageable);
 
-    Page<Product> findByCategory_Id(Integer categoryId, Pageable pageable);
+    Page<Product> findByCategoryId(Integer categoryId, Pageable pageable);
 
-    int countByCategory_Id(Integer categoryId);
+    int countByCategoryId(Integer categoryId);
 
     @EntityGraph(attributePaths = { "seller" })
     Optional<Product> findById(Integer productId);
