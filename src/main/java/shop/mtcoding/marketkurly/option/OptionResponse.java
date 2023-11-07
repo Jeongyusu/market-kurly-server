@@ -2,11 +2,7 @@ package shop.mtcoding.marketkurly.option;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOption;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOptionResponse.WOptionListDTO.WaitingOptionDTO;
-import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.orderedoption;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,4 +21,6 @@ public interface OrderOptionJAPRepository extends JpaRepository<OrderedOption, I
                         "group by oo.option.product " +
                         "order by count(*) desc")
         Integer countBestProducts();
+
+        List<OrderedOption> findByOrderId(Integer orderId);
 }

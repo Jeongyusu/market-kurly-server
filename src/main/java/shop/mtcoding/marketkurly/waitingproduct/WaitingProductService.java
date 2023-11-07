@@ -155,8 +155,8 @@ public class WaitingProductService {
                 .discountRate(waitingProduct.getWDiscountRate())
                 .category(waitingProduct.getCategory())
                 .seller(waitingProduct.getSeller())
-                .productThumbnail(MyPath.WAITINGPRODUCTDETAIL_PATH + wthumbFileName)
-                .productDetailPic(wDetailFileName)
+                .productThumbnail((MyPath.PRODUCTDETAIL_PATH + wthumbFileName).substring(1))
+                .productDetailPic((MyPath.PRODUCTDETAIL_PATH + wDetailFileName).substring(1))
                 .productUploadedAt(waitingProduct.getWProductUploadedAt().toLocalDateTime().toLocalDate())
                 .build();
 

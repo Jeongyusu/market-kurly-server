@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+
 import javax.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -17,21 +19,20 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer couponNumber;
+    private String couponNumber;
     private String couponName;
-    private Integer couponContent;
+    private String couponContent;
     private Integer reduceAmount; // 할인금액
     private Boolean isExpired; // 쿠폰 만료
     // 쿠폰 생성일
-    @CreationTimestamp
-    private Timestamp couponCreatedAt;
+    private LocalDate couponCreatedAt;
     // 쿠폰 만료일
-    @CreationTimestamp
-    private Timestamp couponExpiredAt;
+    private LocalDate couponExpiredAt;
+    private Integer couponCount; // 쿠폰 사용횟수
 
     @Builder
-    public Coupon(Integer id, Integer couponNumber, String couponName, Integer couponContent, Integer reduceAmount,
-            Boolean isExpired, Timestamp couponCreatedAt, Timestamp couponExpiredAt) {
+    public Coupon(Integer id, String couponNumber, String couponName, String couponContent, Integer reduceAmount,
+            Boolean isExpired, LocalDate couponCreatedAt, LocalDate couponExpiredAt, Integer couponCount) {
         this.id = id;
         this.couponNumber = couponNumber;
         this.couponName = couponName;
@@ -40,6 +41,7 @@ public class Coupon {
         this.isExpired = isExpired;
         this.couponCreatedAt = couponCreatedAt;
         this.couponExpiredAt = couponExpiredAt;
+        this.couponCount = (couponCount != null) ? couponCount : 0;
     }
 
 }
