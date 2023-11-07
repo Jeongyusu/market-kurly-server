@@ -13,9 +13,9 @@
 // FilterRegistrationBean<JwtAuthorizationFilter> bean = new
 // FilterRegistrationBean<>(
 // new JwtAuthorizationFilter());
-// // bean.addUrlPatterns("/products/*");
-// // bean.addUrlPatterns("/carts/*");
-// // bean.addUrlPatterns("/orders/*");
+// bean.addUrlPatterns("/seller/*");
+// bean.addUrlPatterns("/admin/*");
+// bean.addUrlPatterns("/users/*");
 // bean.setOrder(0); // 낮은 번호부터 실행됨
 // return bean;
 // }

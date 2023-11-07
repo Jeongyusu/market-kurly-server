@@ -14,7 +14,8 @@ public class JwtTokenUtils {
         String jwt = JWT.create()
                 .withSubject("metacoding-key")
                 .withClaim("id", user.getId())
-                .withClaim("email", user.getUserEmail())
+                .withClaim("userEmail", user.getUserEmail())
+                .withClaim("role", user.getRole().toString())
                 .withExpiresAt(Instant.now().plusMillis(1000 * 60 * 60 * 24 * 7L))
                 .sign(Algorithm.HMAC512("meta"));
         return jwt;

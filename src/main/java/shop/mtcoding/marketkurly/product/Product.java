@@ -1,6 +1,8 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,6 +12,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import shop.mtcoding.marketkurly.category.Category;
+import shop.mtcoding.marketkurly.option.Option;
+import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
@@ -50,16 +54,13 @@ public class Product {
 
     private String productOrigin;
 
-    private Integer originPrice;
-
-    private String productDetailImage;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Option> options = new ArrayList<Option>();
 
     @Builder
     public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
             String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
-            LocalDate productUploadedAt, Category category, String productOrigin, Integer originPrice,
-
-            String productDetailImage) {
+            LocalDate productUploadedAt, Category category, String productOrigin) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;
@@ -71,8 +72,6 @@ public class Product {
         this.productUploadedAt = productUploadedAt;
         this.category = category;
         this.productOrigin = productOrigin;
-        this.originPrice = originPrice;
-        this.productDetailImage = productDetailImage;
     }
 
 }
