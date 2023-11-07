@@ -17,6 +17,8 @@ import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
 public class ProductResponse {
 
     @Getter
+    @Setter
+    @NoArgsConstructor
     public static class ProductDetailDTO {
         private int productId;
         private String productName;
@@ -33,10 +35,13 @@ public class ProductResponse {
             this.productName = product.getProductName();
             this.productContent = product.getProductContent();
             this.discountRate = product.getDiscountRate();
-            this.discountedPrice = product.getOriginPrice() * (100 - product.getDiscountRate()) / 100;
-            this.originPrice = product.getOriginPrice();
+            this.originPrice = product.getOptions().stream()
+                    .map(Option::getOptionPrice)
+                    .min(Integer::compareTo)
+                    .orElse(0);
+            this.discountedPrice = originPrice * (100 - product.getDiscountRate()) / 100;
             this.productOrigin = product.getProductOrigin();
-            this.productDetailImage = product.getProductDetailImage();
+            this.productDetailImage = product.getProductDetailPic();
             this.seller = product.getSeller().getUsername();
         }
     }
