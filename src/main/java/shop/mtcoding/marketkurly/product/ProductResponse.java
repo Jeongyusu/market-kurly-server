@@ -54,6 +54,7 @@ public class ProductResponse {
         private int productId;
         private String productName;
         private String productContent;
+        private String productThumbnail;
         private Integer discountRate;
         private Integer discountedPrice;
         private Integer originPrice;
@@ -65,6 +66,7 @@ public class ProductResponse {
             this.productId = product.getId();
             this.productName = product.getProductName();
             this.productContent = product.getProductContent();
+            this.productThumbnail = product.getProductThumbnail();
             this.discountRate = product.getDiscountRate();
             this.originPrice = product.getOptions().stream()
                     .map(Option::getOptionPrice)
@@ -188,7 +190,7 @@ public class ProductResponse {
         List<ProductRandomMainDTO> productRandomMainDTOs;
 
         public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
-                                   List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
             this.productStarMainDTOs = productStarDTOs.stream()
                     .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());
@@ -367,5 +369,3 @@ class ProductRandomDTO {
         this.avgStarCount = avgStarCount;
     }
 }
-
-
