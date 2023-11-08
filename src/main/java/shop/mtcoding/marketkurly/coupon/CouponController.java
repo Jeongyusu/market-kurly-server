@@ -45,4 +45,10 @@ public class CouponController {
         couponService.쿠폰생성(couponSaveDTO);
         return "redirect:/admin/coupon";
     }
+
+
+    @GetMapping("/admin/coupon/delete/{CouponId}")
+    public void 쿠폰삭제(@PathVariable Integer CouponId) {
+        couponService.쿠폰삭제(CouponId);
+    }
 }
