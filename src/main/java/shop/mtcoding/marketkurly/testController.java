@@ -1,25 +1,15 @@
 package shop.mtcoding.marketkurly;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.multipart.MultipartFile;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import shop.mtcoding.marketkurly._core.vo.MyPath;
 import shop.mtcoding.marketkurly.category.Category;
 import shop.mtcoding.marketkurly.category.CategoryService;
-import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProductService;
 
