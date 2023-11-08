@@ -99,18 +99,22 @@ public class ProductResponse {
         Integer productId;
         String productThumnail;
         String productName;
+        String sellerName;
         Integer originPrice;
         Integer discountRate;
         Integer discountedPrice;
+        Integer categoryId;
         Double averageStarCount;
 
         public ProductSummary(Product product, Double averageStarCount, Option option) {
             this.productId = product.getId();
             this.productThumnail = product.getProductThumbnail();
             this.productName = product.getProductName();
+            this.sellerName = product.getSeller().getUsername();
             this.originPrice = option.getOptionPrice();
             this.discountRate = product.getDiscountRate();
             this.discountedPrice = option.getOptionPrice() * (100 - product.getDiscountRate()) / 100;
+            this.categoryId = product.getCategory().getId();
             this.averageStarCount = averageStarCount;
         }
     }
