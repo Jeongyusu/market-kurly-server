@@ -4,6 +4,7 @@
 // import org.springframework.context.annotation.Bean;
 // import org.springframework.context.annotation.Configuration;
 
+// import shop.mtcoding.marketkurly._core.filter.ApiJwtAuthorizationFilter;
 // import shop.mtcoding.marketkurly._core.filter.JwtAuthorizationFilter;
 
 // @Configuration
@@ -14,8 +15,19 @@
 // FilterRegistrationBean<>(
 // new JwtAuthorizationFilter());
 // bean.addUrlPatterns("/seller/*");
+// System.out.println("/seller/ 에서 막힘");
 // bean.addUrlPatterns("/admin/*");
-// bean.addUrlPatterns("/users/*");
+// System.out.println("/admin/ 에서 막힘");
+// bean.setOrder(0); // 낮은 번호부터 실행됨
+// return bean;
+// }
+
+// @Bean
+// FilterRegistrationBean<ApiJwtAuthorizationFilter> apiJwtFilter() {
+// FilterRegistrationBean<ApiJwtAuthorizationFilter> bean = new
+// FilterRegistrationBean<>(
+// new ApiJwtAuthorizationFilter());
+// bean.addUrlPatterns("/api/*");
 // bean.setOrder(0); // 낮은 번호부터 실행됨
 // return bean;
 // }

@@ -91,7 +91,7 @@
       userPassword: userPassword
     };
 
-    let response = await fetch("/api/users/login", {
+    let response = await fetch("/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -102,9 +102,12 @@
     let responseBody = await response.json();
     if (responseBody.success) {
 
+      alert("성공");
+
       location.href = "/notice";
 
     } else {
+      
       alert(responseBody.error.message);
     }
   }

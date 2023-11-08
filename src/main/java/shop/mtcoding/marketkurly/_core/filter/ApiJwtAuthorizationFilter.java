@@ -7,13 +7,10 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CookieValue;
-
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
@@ -24,32 +21,34 @@ import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.Role;
 import shop.mtcoding.marketkurly.user.User;
 
-public class JwtAuthorizationFilter implements Filter {
+public class ApiJwtAuthorizationFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
+        String requestUri = request.getRequestURI();
 
-        Cookie[] cookies = request.getCookies();
-        String jwt = null;
-
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("jwt".equals(cookie.getName())) {
-                    jwt = cookie.getValue();
-                    break; // 이름이 "jwt"인 쿠키를 찾았으면 루프 종료
-                }
-            }
-        }
-
-        if (jwt == null || jwt.isEmpty()) {
-            response.sendRedirect("/login");
+        if (requestUri.equals("/api/users/samecheck")) {
+            System.out.println("/api/users/samecheck 요청 건너뜀");
+            chain.doFilter(request, response);
             return;
         }
-
+        if (requestUri.equals("/users/login")) {
+            System.out.println("/users/login 요청 건너뜀");
+            chain.doFilter(request, response);
+            return;
+        }
+        String jwt = request.getHeader("Authorization");
+        if (jwt == null || jwt.isEmpty()) {
+            System.out.println("토큰이 없습니다");
+            onError(response, "토큰이 없습니다");
+            return;
+        }
         try {
+
+            System.out.println("토큰 검증 요청");
             DecodedJWT decodedJWT = JwtTokenUtils.verify(jwt);
             int userId = decodedJWT.getClaim("id").asInt();
             String userEmail = decodedJWT.getClaim("userEmail").asString();
@@ -57,15 +56,19 @@ public class JwtAuthorizationFilter implements Filter {
             Role userRole = Role.NORMAL;
             if (role == "SELLER") {
                 userRole = Role.SELLER;
+                System.out.println("(SELLER) userRole : " + userRole);
             }
             if (role == "ADMIN") {
                 userRole = Role.ADMIN;
+                System.out.println("(ADMIN) userRole : " + userRole);
             }
 
             User sessionUser = User.builder().id(userId).userEmail(userEmail).role(userRole).build();
 
             HttpSession session = request.getSession();
             session.setAttribute("sessionUser", sessionUser);
+
+            System.out.println("토큰 검증 완료");
 
             chain.doFilter(request, response);
         } catch (SignatureVerificationException | JWTDecodeException e1) {
@@ -88,17 +91,5 @@ public class JwtAuthorizationFilter implements Filter {
         } catch (Exception e) {
             System.out.println("파싱 에러가 날 수 없음");
         }
-    }
-
-    private String getJwtFromCookie(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("Authorization".equals(cookie.getName())) {
-                    return cookie.getValue();
-                }
-            }
-        }
-        return null;
     }
 }

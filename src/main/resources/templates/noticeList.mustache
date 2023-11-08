@@ -129,7 +129,9 @@
                     <div class="container-fluid">
                       <div class="panel panel-default">
                         <div class="panel-heading">
-                          <h4>공지 사항</h4>
+                                        {{#sessionUser}}
+                          <h4>공지 사항 {{userId}}  ,{{userEmail}}</h4>
+                                        {{/sessionUser}}
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
