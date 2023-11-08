@@ -60,4 +60,32 @@ public class ProductRepository {
 
         return productDTOs;
     }
+
+    public List<ProductStarDTO> findListBySearch(String keyword) {
+        System.out.println("테스트 keyword : " + keyword);
+        System.out.println("테스트 keyword : " + keyword);
+        System.out.println("테스트 keyword : " + keyword);
+        System.out.println("테스트 keyword : " + keyword);
+        System.out.println("테스트 keyword : " + keyword);
+        TypedQuery<ProductStarDTO> query = em.createQuery(
+                "SELECT NEW shop.mtcoding.marketkurly.product.ProductStarDTO(p, AVG(r.starCount))" +
+                        " FROM Product p" +
+                        " JOIN Review r ON r.product = p" +
+                        " WHERE p.productName LIKE :keyword" +
+                        " GROUP BY p",
+                ProductStarDTO.class);
+
+        query.setParameter("keyword", "%" + keyword + "%");
+
+        List<ProductStarDTO> productDTOs = query.getResultList();
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        System.out.println("테스트 : " + productDTOs);
+        return productDTOs;
+    }
+
 }

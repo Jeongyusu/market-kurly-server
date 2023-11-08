@@ -84,6 +84,7 @@ public class WaitingProductService {
                 .wProductUploadedAt(new Timestamp(new Date().getTime()))
                 .category(category)
                 .seller(user)
+                .state("대기중")
                 .build();
 
         waitingProductJPARepository.save(waitingProduct);
@@ -131,6 +132,7 @@ public class WaitingProductService {
         Integer wthumbIndex = waitingProduct.getWProductThumbnail().lastIndexOf("/") + 1;
         Integer wDetailInedex = waitingProduct.getWProductDetailPic().lastIndexOf("/") + 1;
 
+
         String wthumbFileName = waitingProduct.getWProductThumbnail().substring(wthumbIndex);
         String wDetailFileName = waitingProduct.getWProductDetailPic().substring(wDetailInedex);
 
@@ -161,7 +163,6 @@ public class WaitingProductService {
                 .build();
 
         prodcutJPARepository.save(product);
-
         List<WaitingOption> waitingOptions = waitingOptionJPARepository.findByWaitingProductId(wProductId);
 
         for (WaitingOption waitingOption : waitingOptions) {
@@ -179,4 +180,9 @@ public class WaitingProductService {
 
     }
 
+    @Transactional
+    public void 상품거절(Integer wProductId) {
+
+        waitingProductJPARepository.rejectProduct(wProductId);
+    }
 }

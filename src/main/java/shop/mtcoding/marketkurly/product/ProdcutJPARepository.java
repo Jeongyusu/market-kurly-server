@@ -8,8 +8,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
+
 
     int countByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now);
 
@@ -19,8 +22,11 @@ public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     int countByCategoryId(Integer categoryId);
 
-    @EntityGraph(attributePaths = { "seller" })
+    @EntityGraph(attributePaths = {"seller"})
     Optional<Product> findById(Integer productId);
 
     List<Product> findBySellerId(Integer userId);
+
+    @Query(value = "SELECT * FROM product_tb WHERE product_name LIKE %:keyword%", nativeQuery = true)
+    List<Product> findBySearchKeyword(@Param("keyword") String keyword);
 }

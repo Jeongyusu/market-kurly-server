@@ -22,11 +22,7 @@ public class WaitingProductRestController {
 
         // TODO userId << sessionUserId로 바꿔야 함
         Integer userId = 7;
-
-        System.out.println("상품승인요청 컨트롤러 호출됨");
         waitingProductService.상품승인요청(wProductDTO, userId);
-
-        System.out.println("productDTO : " + wProductDTO);
         return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));
     }
 
@@ -35,10 +31,17 @@ public class WaitingProductRestController {
 
         // TODO userId << sessionUserId로 바꿔야 함
         Integer userId = 7;
-
         waitingProductService.상품승인(wProductId);
+        return ResponseEntity.ok().body(ApiUtils.success(true));
+    }
 
-        return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));
+    @PostMapping("/auth/product/waiting/reject/{wProductId}")
+    public ResponseEntity<?> 상품거절(@PathVariable Integer wProductId) {
+
+        // TODO userId << sessionUserId로 바꿔야 함
+        Integer userId = 7;
+        waitingProductService.상품거절(wProductId);
+        return ResponseEntity.ok().body(ApiUtils.success(true));
     }
 
 }

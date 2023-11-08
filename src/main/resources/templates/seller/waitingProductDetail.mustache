@@ -28,8 +28,8 @@
 											<div class="row">
 												<div class="col-md-12 ">
 													<div class="form-group">
-														<label for="productContent">product Seller</label>
-														<input type="text" id="productContent" class="form-control required"
+														<label for="Seller">product Seller</label>
+														<input type="text" id="Seller" class="form-control required"
 														       value="{{seller.username}}" disabled/>
 													</div>
 												</div>
@@ -156,8 +156,11 @@
 
 
 										{{#isAdmin}}
-											<button type="submit" class="btn btn-info btn-fill pull-right" onclick="acceptProduct()">
+											<button type="button" class="btn btn-info btn-fill pull-right" onclick="acceptProduct()">
 												상품 승인
+											</button>
+											<button type="button" class="btn btn-info btn-fill pull-right" onclick="rejectProduct()">
+												상품 거절
 											</button>
 										{{/isAdmin}}
 									</form>
@@ -170,6 +173,7 @@
 		</div>
 
 		<script>
+
 			function previewImage(inputId, imgId) {
 				var input = document.getElementById(inputId);
 				var preview = document.getElementById(imgId);
@@ -209,10 +213,9 @@
 				});
 
 				let responseBody = await response.json();
-				console.log(responseBody);
+
 
 				if (responseBody.success) {
-					alert("승인 되었습니다.");
 					var parentWindow = window.opener;
 
 					// 이전 창 새로고침
@@ -227,6 +230,34 @@
 				}
 			}
 
+			async function rejectProduct() {
+
+
+				let wrejectId = $("#wproductId").val();
+				console.log(wproductId);
+
+				let response = await fetch("/auth/product/waiting/reject/" + wrejectId, {
+					method: "post",
+				});
+
+
+				let responseBody = await response.json();
+
+				if (responseBody.success) {
+
+					var parentWindow = window.opener;
+
+					// 이전 창 새로고침
+					if (parentWindow) {
+						parentWindow.location.reload();
+					}
+
+					// 지금 창 닫기
+					window.close();
+				} else {
+					alert(responseBody.data);
+				}
+			}
 		</script>
 
 {{> layout/footer}}
