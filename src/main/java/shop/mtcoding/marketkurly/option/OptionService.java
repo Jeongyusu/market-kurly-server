@@ -1,17 +1,13 @@
 package shop.mtcoding.marketkurly.option;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.OptionResponse.OptionSelectMainDTO;
 import shop.mtcoding.marketkurly.product.ProdcutJPARepository;
-import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductDetailListDTO;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOptionResponse.WOptionListDTO;
 
 @Service
 @RequiredArgsConstructor

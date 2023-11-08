@@ -29,6 +29,7 @@ public class WaitingProductResponse {
             private Integer discountRate;
             private LocalDate discountExpiredAt;
             private LocalDate productUploadedAt;
+            private String state;
 
             public WaitingProductDTO(WaitingProduct waitingProduct) {
                 this.productId = waitingProduct.getId();
@@ -37,6 +38,7 @@ public class WaitingProductResponse {
                 this.discountExpiredAt = waitingProduct.getWDiscountExpiredAt();
                 this.productUploadedAt = waitingProduct.getWProductUploadedAt().toLocalDateTime().toLocalDate();
                 this.discountRate = waitingProduct.getWDiscountRate();
+                this.state = waitingProduct.getState();
             }
         }
     }

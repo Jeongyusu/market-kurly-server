@@ -81,8 +81,8 @@ public class ProductResponse {
     @Getter
     @NoArgsConstructor
     public static class ProductListDTO {
-        private int totalCount;
         List<ProductSummary> result = new ArrayList<>();
+        private int totalCount;
 
         public ProductListDTO(int totalCount, List<ProductSummary> result) {
             this.totalCount = totalCount;
@@ -188,7 +188,7 @@ public class ProductResponse {
         List<ProductRandomMainDTO> productRandomMainDTOs;
 
         public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
-                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+                                   List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
             this.productStarMainDTOs = productStarDTOs.stream()
                     .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());
@@ -279,6 +279,54 @@ public class ProductResponse {
             }
         }
     }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @ToString
+    public static class SearchListDTO {
+
+        List<ProductSearchDTO> productSearchDTOS;
+
+        public SearchListDTO(List<ProductStarDTO> productStarDTOs) {
+            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
+            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
+            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
+            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
+            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
+            this.productSearchDTOS = productStarDTOs.stream()
+                    .map(t -> new ProductSearchDTO(t.getProduct(), t.getAvgStarCount()))
+                    .collect(Collectors.toList());
+        }
+
+        @ToString
+        @Setter
+        @Getter
+        public static class ProductSearchDTO {
+            private Integer productId;
+            private String sellerName;
+            private String productName;
+            private Integer minOptionPrice;
+            private Integer discountedminOptionPrice;
+            private Integer discountRate;
+            private Double avgStarCount;
+
+            public ProductSearchDTO(Product product, Double starCount) {
+                this.productId = product.getId();
+                this.sellerName = product.getSeller().getUsername();
+                this.productName = product.getProductName();
+                this.minOptionPrice = product.getOptions().stream()
+                        .mapToInt(Option::getOptionPrice)
+                        .min()
+                        .orElse(0);
+                this.discountRate = product.getDiscountRate();
+                this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.avgStarCount = starCountRound(starCount);
+            }
+
+        }
+
+    }
 }
 
 @Getter
@@ -319,3 +367,5 @@ class ProductRandomDTO {
         this.avgStarCount = avgStarCount;
     }
 }
+
+

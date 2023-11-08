@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.lang.Nullable;
 
 import lombok.Builder;
@@ -44,6 +45,7 @@ public class Product {
     private LocalDate discountExpiredAt; // 할인만료기간
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Review> reviews = new ArrayList<Review>();
 
     @Nullable
@@ -59,12 +61,13 @@ public class Product {
     private String productOrigin;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Option> options = new ArrayList<Option>();
 
     @Builder
     public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
-            String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
-            LocalDate productUploadedAt, Category category, String productOrigin, List<Review> reviews) {
+                   String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
+                   LocalDate productUploadedAt, Category category, String productOrigin, List<Review> reviews) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;

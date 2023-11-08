@@ -1,13 +1,8 @@
 package shop.mtcoding.marketkurly.user;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly._core.utils.Script;
 import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
