@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -27,8 +28,10 @@ public class CouponController {
         return "admin/couponList";
     }
 
-    @GetMapping("/admin/coupon/detail")
-    public String 쿠폰상세() {
+    @GetMapping("/admin/coupon/detail/{CouponId}")
+    public String 쿠폰상세(@PathVariable Integer CouponId, HttpServletRequest request) {
+        Coupon coupon = couponService.쿠폰상세(CouponId);
+        request.setAttribute("coupon", coupon);
         return "admin/couponDetail";
     }
 
@@ -41,5 +44,11 @@ public class CouponController {
     public String 쿠폰생성(CouponSaveDTO couponSaveDTO) {
         couponService.쿠폰생성(couponSaveDTO);
         return "redirect:/admin/coupon";
+    }
+
+
+    @GetMapping("/admin/coupon/delete/{CouponId}")
+    public void 쿠폰삭제(@PathVariable Integer CouponId) {
+        couponService.쿠폰삭제(CouponId);
     }
 }

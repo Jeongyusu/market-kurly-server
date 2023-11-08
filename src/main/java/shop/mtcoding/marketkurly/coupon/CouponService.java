@@ -72,4 +72,16 @@ public class CouponService {
         return savedUserCoupon;
     }
 
+    public Coupon 쿠폰상세(Integer couponId) {
+        Optional<Coupon> couponOP = couponJPARepository.findById(couponId);
+        if (couponOP.isEmpty()) {
+            throw new Exception404("존재하지 않는 쿠폰입니다.");
+        }
+        Coupon coupon = couponOP.get();
+        return coupon;
+    }
+
+    public void 쿠폰삭제(Integer couponId) {
+        couponJPARepository.deleteById(couponId);
+    }
 }

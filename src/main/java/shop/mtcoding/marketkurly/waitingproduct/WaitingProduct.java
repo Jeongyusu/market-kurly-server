@@ -58,10 +58,13 @@ public class WaitingProduct {
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
+    @Nullable
+    private String state = "대기중";
+
     @Builder
     public WaitingProduct(Integer id, Integer productId, String wProductThumbnail, String wProductDetailPic,
-            String wProductName, String wProductContent, Integer wDiscountRate, LocalDate wDiscountExpiredAt,
-            User seller, Timestamp wProductUploadedAt, Category category) {
+                          String wProductName, String wProductContent, Integer wDiscountRate, LocalDate wDiscountExpiredAt,
+                          User seller, Timestamp wProductUploadedAt, Category category, String state) {
         this.id = id;
         this.productId = productId;
         this.wProductThumbnail = wProductThumbnail;
@@ -73,6 +76,7 @@ public class WaitingProduct {
         this.seller = seller;
         this.wProductUploadedAt = wProductUploadedAt;
         this.category = category;
+        this.state = state;
     }
 
 }
