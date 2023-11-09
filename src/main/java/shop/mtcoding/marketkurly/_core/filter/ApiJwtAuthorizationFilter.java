@@ -35,11 +35,6 @@ public class ApiJwtAuthorizationFilter implements Filter {
             chain.doFilter(request, response);
             return;
         }
-        if (requestUri.equals("/users/login")) {
-            System.out.println("/users/login 요청 건너뜀");
-            chain.doFilter(request, response);
-            return;
-        }
         String jwt = request.getHeader("Authorization");
         if (jwt == null || jwt.isEmpty()) {
             System.out.println("토큰이 없습니다");
