@@ -2,6 +2,9 @@ package shop.mtcoding.marketkurly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class MarketKurlyApplication {
@@ -9,4 +12,5 @@ public class MarketKurlyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MarketKurlyApplication.class, args);
 	}
+
 }

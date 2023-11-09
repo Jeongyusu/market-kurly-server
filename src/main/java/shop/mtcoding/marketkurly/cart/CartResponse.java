@@ -25,6 +25,7 @@ public class CartResponse {
         private Integer deliveryFee;
         private Integer totalPrice; // 5880
         private Integer addressId = null;
+        private Boolean isDefaultAddress = false;
         private String destination = "기본배송지가 ";
         private String destinationDetail = "없습니다.";
 
@@ -42,7 +43,9 @@ public class CartResponse {
             this.totalDiscountPrice = this.totalPrice - this.totalBeforePrice;
             if (address != null) {
                 this.addressId = address.getId();
+                this.isDefaultAddress = address.getIsDefaultAddress();
                 this.destination = address.getDestination();
+                this.destinationDetail = address.getDestinationDetail();
                 this.destinationDetail = address.getDestinationDetail();
             }
         }
