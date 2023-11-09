@@ -397,6 +397,153 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 56, now());
 
 
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '교환(반품)진행 시, 배송비가 부과 되나요?', '취소/교환/환불', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '포장재를 회수하기도 하나요?', '포장', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '아이디,비밀번호를 잊어버렸습니다.', '회원', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '컬리앱이 켜지지 않아요.', '시스템오류', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '이벤트 문자는 오는데, 배송완료문자만 오지 않습니다.', '서비스 이용', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '상품불량인 경우, 교환(반품)기준이 궁금합니다.', '취소/교환/환불', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '집 앞이 아니라 공동현관/경비실 앞에 배송되었어요.', '배송', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, 'IOS 환경에서 컬리APP의 주문내역이 확인되지 않습니다.', '시스템오류.', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '(주류)성인인증이 자꾸 실패합니다.', '상품', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '최종 결제처리 후,[결제완료]창으로 넘어가지 않습니다.', '시스템오류', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '셀프픽업 서비스는 무엇인가요?', '셀프픽업', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '상품은 어떻게 포장되나요?', '포장', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '컬리는 어떤 회사인가요?', '서비스 이용', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '휴대폰 간편결제 중에"결제가 종료되었습니다"라는 문구가 발생합니다.', '시스템오류', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '(컬리패스)컬리패스 주문내역은 어디서 확인하나요?', '컬리패스/맴버스', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '주문 시 배송비가 부가되나요?', '주문/결제/대량주문', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '교환(반품)어떻게 진행 되나요?', '취소/교환/환불', '자주하는 질문', 2);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '친환경/유기농/무농약이 어떻게 다른가요?', '상품', '자주하는 질문', 3);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '컬리 어플 최소 지원버전이 무엇인가요?', '시스템오류', '자주하는 질문', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
+values (true, false, '상품 문의는 어디서 작성할 수 있나요?', '서비스 이용', '자주하는 질문', 2);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('단순변심에 의한 교환/반품 시 배송비 6,000원을 고객님께서 부담하셔야합니다.', 1);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리는 수도권 지역에 한해서 일부 포자쟁의 회수 서비스를 진행하고 있습니다.', 2);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('-하기 경로를 통해 아이디 및 비밀번호 찾기가 가능하며, 임시 비밀번호의 경우 회원가입 시 등록한 이메일 주소로 발송 됩니다.', 3);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리APP의 최신 업데이트 버전 여부를 확인해주세요.', 4);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('보유 휴대폰 기기의 용량 초과(이벤트 문자와 다르게 배송완료 문자는 사진이 포함 됨)', 5);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 사품이 표시&광고 내용 또는 계약 내용과 다른 경우에는 상품을 받은 날부터 3개월이내 교환 및 환불을 요청하실 수 있습니다.', 6);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('공동현관 출입/자택 앞으로 배송 불가 한 경우 최대한 상품을 안전히 배송해드리고자 공동현관 앞/경비실 앞으로 대응배송을 진행하고 있습니다.', 7);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 8);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리몰 성인인증 시스템은 KCB 올크레딧에서 주관하므로, 성인인증 단계에서 실패/오류 방생 시에는 하기 연락처로 문의 부탁드립니다.', 9);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 10);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('셀프픽업 서비스는 컬리에서 상품을 구매(결제)한 후, 고객님께서 직접 지정한 매장으로 방문하여 상품을 픽업하는 형태의 서비스입니다..', 11);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('상품 보관방법별로 구분하여 포장됩니다.(상온/냉장/냉동).', 12);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리에서는 사람을 소중히 하는 마음으로, 산지에서 친환경 혹은 유기농 인증을 받은 제품들을 꼼꼼히 선택하여 판매합니다.', 13);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 오류는 결제PG사인 KG모빌리언스에서 정책관련 이슈로 확인됩니다.', 14);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리패스는 2023년 8월 1일부터 신규 가입이 중지 됩니다.', 15);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('실 결제금액 기준으로 4만원 미만 구매 시, 배송비 3천원이 추가로 부과됩니다.', 16);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 상품을 교환 하실 경우, 교환 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.', 17);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('친환경 농산물은 인체와 생태환경에 해로운 화학비료, 농약, 제초제 등을 최대한 사용하지 않고 재배한 농산물을 일컬으며 이 중, 화학비료와 농약 사용량에 따라 저농약, 무농약, 유기농으로 구분됩니다.', 18);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('IOS 13 이상 필요, Android 7.0 이상 필요.', 19);
+insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
+
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '이번에 뉴스에 나온 방울토마토 구토 관련 건이랑은 상관 없나요..? 재배지도 궁금합니다.', '방울토마토 관련 문의드립니다.', 1, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '맵기가 어느정도인가요? 우리 아이들이 먹을만 한가요?', '춘천식 닭갈비 관련 문의드립니다.', 2, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '대부분의 팽이버섯은 안씻고 밑둥만 잘라서 먹어도 된다던데, 이것도 그런가요? 팽이버섯은 원래 농약 안뿌린다고 해서요', '팽이버섯 관련 질문있습니다', 3, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '100g당 당이 얼만큼 들어 있나요?', '쭈꾸미 볶음 질문드립니다', 4, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '힘줄이 너무 질겨서 가위질도 미끄러져 튕기고 못씹고 뱉어낼정도인데요', '양념 소 붉고기 질문드립니다', 5, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '산간지역도 배송이 가능한가요?', '고소한 재래 도시락김 16개입 질문드립니다', 6, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '사육환경번호 궁금해요', '1+등급 무항생제 특란 20구 질문드립니다', 7, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '22개월아기도 먹을수있나요?', '한돈 떡갈비 1kg 질문드립니다', 8, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '두장씩 뜯어쓰면 어떻게되나요?', '한장씩 뜯어쓰는 위생롤백 4종 질문드립니다', 9, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '몇개 들어있나요?', '새콤달콤 제주 하우스 감귤 1.5kg 질문드립니다', 10, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '유통기한이 언제까지인가요?', '국산 손질 꽃게 500g 질문드립니다', 11, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '생지는 유통키한이 얼마나 되죠?', '크로아상 냉동 생지 2종 질문 드립니다', 12, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '전자레인지두 가능한가요?', '냉동 생지 2종', 13, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '한세트시켰는데 두세트가왔어요~ 어떻게 하면 될까요?', '드레싱 4종 질문드립니다', 14, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '스프가 왜 묽은가요?', '컵수푸 4종 질문드립니다', 15, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '오늘 제품을 받아보니까 깨져있네요 ㅡㅡ', '드레싱 4종 질문드립니다', 16, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '혹시 강아지 발 씻길때도 이제품을 써도 괜찮을까요?', '프리미엄 모이스처 핸드솝 힐링 코튼 2종 질문드립니다', 17, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '오늘 주문했는데 언제 도착하나요?', '모둠나물 진실 3종(고사리&도라지&취나물)', 18, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '많이 단가요?', '갈색설탕 3종', 19, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+                                 PRODUCT_REPLY_ID, USER_ID)
+values (false, true, '유통기한은 넉넉한가요? 추석에 선물 드릴려고 하는데.', '국수 3종', 20, null, 2);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 이번 뉴스와는 상관없이 믿고 드셔도 됩니다!', 1);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('영유아기를 제외한 어린이들은 충분히 먹을 수 있습니다!', 2);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 하지만 위생을 위해 한 번 씻고 드시는걸 추천드립니다.', 3);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('(냉동), 450g, 1개 상품의 100g 당 당은 4.82g이며, 1일 영양소 섭취기준 4.82% 함량 되어있는 점 참고 부탁드립니다.', 4);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('힘줄이 좀 들어가있습니다 불편드려 죄송합니다 ㅠㅠ', 5);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 추가 배송배용지불시 가능합니다 자세한 내용은 택배회사 페이지를 참조해주세요.', 6);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('곰곰 1+등급 무항생제 특란, 20구 상품의 사육환경번호는 4번인 점 참고 부탁드립니다.', 7);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 드셔도 됩니다!', 8);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('8종을 구매하시면 됩니다.', 9);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('많이 들어있습니다.', 10);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('냉동 시키면 무제한입니다.', 11);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('냉장 2~3일정도 입니다 가능한 빨리 드시면 좋습니다.', 12);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('전자렌인지 불가 입니다. 오븐 또는 에어후라이기 사용를 권장합니다.', 13);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('서프라이즈~', 14);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('조미료를 최소 첨가해서 그렇습니다^^', 15);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('죄송합니다 고객님ㅜㅜ 연락처랑 성함 남겨주시면 저희가 신속히 처리해드리겠습니다.', 16);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('강아지는 안 맞을 수 있어요 애견용품을 별도로 구매하시는걸 추천드립니다.', 17);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('주문날짜 2~3일후에 수령 가능합니다!', 18);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('적당히 답니다', 19);
+insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('넉넉합니다~', 20);
+
+
+
+
+
+
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
