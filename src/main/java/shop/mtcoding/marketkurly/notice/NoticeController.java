@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly.notice.NoticeRequest.NoticeSaveDTO;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
+import shop.mtcoding.marketkurly.user.User;
 
 @Slf4j
 @Controller
@@ -21,13 +22,14 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    // private final HttpSession session;
+    private final HttpSession session;
 
     @GetMapping("/notice")
     public String 웹공지목록(HttpServletRequest request) {
         WebNoticeMainDTO dto = noticeService.웹공지목록();
-        Boolean isAdmin = true;
-        // System.out.println("sessionUser : " + session.getAttribute("sessionUser"));
+        Boolean isAdmin = false;
+        User user = (User) session.getAttribute("sessionUser");
+        System.out.println("sessionUser role : " + user.getRole());
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
         request.setAttribute("isAdmin", isAdmin);
         return "noticeList";

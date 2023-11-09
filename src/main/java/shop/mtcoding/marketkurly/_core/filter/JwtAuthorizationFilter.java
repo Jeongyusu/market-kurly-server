@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CookieValue;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
@@ -57,13 +56,14 @@ public class JwtAuthorizationFilter implements Filter {
             Role userRole = Role.NORMAL;
             if (role == "SELLER") {
                 userRole = Role.SELLER;
+                System.out.println("토큰 : " + userRole + " 담김");
             }
             if (role == "ADMIN") {
                 userRole = Role.ADMIN;
+                System.out.println("토큰 : " + userRole + " 담김");
             }
 
             User sessionUser = User.builder().id(userId).userEmail(userEmail).role(userRole).build();
-
             HttpSession session = request.getSession();
             session.setAttribute("sessionUser", sessionUser);
 
