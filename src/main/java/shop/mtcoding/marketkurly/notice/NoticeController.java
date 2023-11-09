@@ -24,28 +24,29 @@ public class NoticeController {
 
     private final HttpSession session;
 
-    private Boolean isAdmin = false;
-    private Boolean isSeller = false;
+    private final HttpServletRequest request;
 
     @GetMapping("/notice")
-    public String 웹공지목록(HttpServletRequest request) {
+    public String 웹공지목록() {
         WebNoticeMainDTO dto = noticeService.웹공지목록();
 
         User user = (User) session.getAttribute("sessionUser");
         if (user.getRole().toString().equals("ADMIN")) {
-            isAdmin = true;
+            request.setAttribute("isAdmin", true);
         }
         if (user.getRole().toString().equals("SELLER")) {
-            isSeller = true;
+            request.setAttribute("isSeller", true);
         }
 
         System.out.println("sessionUser id : " + user.getId());
         System.out.println("sessionUser email : " + user.getUserEmail());
         System.out.println("sessionUser role : " + user.getRole());
-        System.out.println("sessionUser isAdmin : " + isAdmin);
+        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
+        System.out.println("sessionUser DTO전 isAdmin : " + request.getAttribute("isAdmin"));
+        System.out.println("sessionUser DTO전 isSeller : " + request.getAttribute("isSeller"));
+        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
-        request.setAttribute("isAdmin", isAdmin);
-        request.setAttribute("isSeller", isSeller);
+        System.out.println("sessionUser DTO 후 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         return "noticeList";
     }
 
@@ -54,10 +55,11 @@ public class NoticeController {
 
         User user = (User) session.getAttribute("sessionUser");
         if (user.getRole().toString().equals("ADMIN")) {
-            isAdmin = true;
+            request.setAttribute("isSeller", true);
+
         }
         if (user.getRole().toString().equals("SELLER")) {
-            isSeller = true;
+            request.setAttribute("isAdmin", true);
         }
 
         noticeService.공지등록(noticeSaveDTO);
