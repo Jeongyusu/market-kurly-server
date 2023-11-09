@@ -194,7 +194,7 @@ public class ProductResponse {
         List<ProductRandomMainDTO> productRandomMainDTOs;
 
         public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
-                                   List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
             this.productStarMainDTOs = productStarDTOs.stream()
                     .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());
@@ -301,11 +301,6 @@ public class ProductResponse {
         List<ProductSearchDTO> productSearchDTOS;
 
         public SearchListDTO(List<ProductStarDTO> productStarDTOs) {
-            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
-            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
-            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
-            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
-            System.out.println("테스트 productStarDTOs : " + productStarDTOs);
             this.productSearchDTOS = productStarDTOs.stream()
                     .map(t -> new ProductSearchDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());

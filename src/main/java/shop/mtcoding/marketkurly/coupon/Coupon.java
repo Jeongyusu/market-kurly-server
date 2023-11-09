@@ -3,12 +3,9 @@ package shop.mtcoding.marketkurly.coupon;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
 import javax.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @NoArgsConstructor

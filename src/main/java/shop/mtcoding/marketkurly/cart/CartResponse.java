@@ -8,10 +8,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import shop.mtcoding.marketkurly.address.Address;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.product.Product;
 
 public class CartResponse {
+
     @ToString
     @Getter
     @Setter
@@ -22,8 +24,11 @@ public class CartResponse {
         private Integer totalDiscountPrice; // -2520
         private Integer deliveryFee;
         private Integer totalPrice; // 5880
+        private Integer addressId = null;
+        private String destination = "기본배송지가 ";
+        private String destinationDetail = "없습니다.";
 
-        public FindAllDTO(List<Cart> carts) {
+        public FindAllDTO(List<Cart> carts, Address address) {
             this.cartProducts = carts.stream()
                     .map(CartProductDTO::new)
                     .collect(Collectors.toList());
@@ -34,8 +39,12 @@ public class CartResponse {
             this.totalPrice = this.cartProducts.stream()
                     .mapToInt(value -> value.getDiscountedPrice() * value.getOptionQuantity())
                     .sum();
-
             this.totalDiscountPrice = this.totalPrice - this.totalBeforePrice;
+            if (address != null) {
+                this.addressId = address.getId();
+                this.destination = address.getDestination();
+                this.destinationDetail = address.getDestinationDetail();
+            }
         }
 
         @ToString
@@ -66,7 +75,8 @@ public class CartResponse {
                 this.sellerName = product.getSeller().getUsername();
                 this.originPrice = option.getOptionPrice();
                 this.discountRate = product.getDiscountRate();
-                this.discountedPrice = Math.round((option.getOptionPrice() * (100 - product.getDiscountRate()) / 100) / 10) * 10;
+                this.discountedPrice = Math
+                        .round((option.getOptionPrice() * (100 - product.getDiscountRate()) / 100) / 10) * 10;
                 this.optionQuantity = cart.getOptionQuantity();
             }
         }

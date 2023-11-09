@@ -36,7 +36,7 @@ public class testController {
     public String 대기상품전체(HttpServletRequest request) {
         System.out.println("테스트 : adminMain 호출");
         List<WaitingProduct> waitingproducts = waitingProductService.대기상품전체();
-        Boolean isAdmin = true;
+        Boolean isAdmin = false;
         request.setAttribute("allWaitingProduct", waitingproducts);
         request.setAttribute("isAdmin", isAdmin);
         return "admin/adminMain";
