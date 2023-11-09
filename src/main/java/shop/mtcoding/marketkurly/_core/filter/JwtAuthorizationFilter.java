@@ -2,6 +2,9 @@ package shop.mtcoding.marketkurly._core.filter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -31,21 +34,42 @@ public class JwtAuthorizationFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        Cookie[] cookies = request.getCookies();
+        String startEndPoint = request.getRequestURI().split("/")[1];
+        String requestUri = request.getRequestURI();
         String jwt = null;
 
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("jwt".equals(cookie.getName())) {
-                    jwt = cookie.getValue();
-                    break; // 이름이 "jwt"인 쿠키를 찾았으면 루프 종료
-                }
-            }
+        if (requestUri.equals("/users/login")) {
+            System.out.println("/users/login 요청 건너뜀");
+            chain.doFilter(request, response);
+            return;
         }
 
-        if (jwt == null || jwt.isEmpty()) {
-            response.sendRedirect("/login");
-            return;
+        boolean foundTokenCookie = false;
+        if (startEndPoint.equals("api")) {
+            // JwtAuthorizationFilter 에서는 쿠키에 넣어야함
+            jwt = request.getHeader("Authorization");
+            if (jwt == null || jwt.isEmpty()) {
+                System.out.println("토큰이 없습니다");
+                onError(response, "토큰이 없습니다");
+                return;
+            }
+        } else {
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if ("token".equals(cookie.getName())) {
+                        // Found the "jwt" cookie
+                        jwt = URLDecoder.decode(cookie.getValue(), "UTF-8");
+                        foundTokenCookie = true;
+                        break;
+                    }
+                }
+            }
+            if (!foundTokenCookie) {
+                response.setHeader("Location", "/login");
+                response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY); // 302 상태 코드
+                return;
+            }
         }
 
         try {
@@ -54,6 +78,10 @@ public class JwtAuthorizationFilter implements Filter {
             String userEmail = decodedJWT.getClaim("userEmail").asString();
             String role = decodedJWT.getClaim("role").asString();
             Role userRole = Role.NORMAL;
+
+            if (role == "NORMAL") {
+                userRole = Role.NORMAL;
+            }
             if (role == "SELLER") {
                 userRole = Role.SELLER;
                 System.out.println("토큰 : " + userRole + " 담김");
@@ -88,17 +116,5 @@ public class JwtAuthorizationFilter implements Filter {
         } catch (Exception e) {
             System.out.println("파싱 에러가 날 수 없음");
         }
-    }
-
-    private String getJwtFromCookie(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("Authorization".equals(cookie.getName())) {
-                    return cookie.getValue();
-                }
-            }
-        }
-        return null;
     }
 }

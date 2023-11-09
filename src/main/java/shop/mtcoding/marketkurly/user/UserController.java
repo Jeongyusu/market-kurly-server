@@ -1,5 +1,11 @@
 package shop.mtcoding.marketkurly.user;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
@@ -29,16 +35,20 @@ public class UserController {
 
     @PostMapping("/users/login")
     @ResponseBody
-    public ResponseEntity<?> 판매자로그인(@RequestBody UserRequest.LoginDTO loginDTO, HttpServletResponse response) {
+    public ResponseEntity<?> 판매자로그인(@RequestBody UserRequest.LoginDTO loginDTO, HttpServletResponse response,
+            HttpServletRequest request) {
 
         System.out.println("login 호출");
         TokenDTO tokenDTO = userService.로그인(loginDTO);
-        // String jwt = "Bearer " + tokenDTO.getJwt();
+        String jwt = "Bearer " + tokenDTO.getJwt();
+        String encodedJwt = null;
+        try {
+            encodedJwt = URLEncoder.encode(jwt, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-        // Cookie cookie = new Cookie("jwt", tokenDTO.getJwt());
-        // cookie.setHttpOnly(true);
-        // cookie.setPath("/");
-        // response.addCookie(cookie);
+        response.setHeader("Set-Cookie", "token=" + encodedJwt + "; Path=/; HttpOnly; samesite=Strict");
 
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(null));
     }
