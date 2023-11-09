@@ -54,6 +54,7 @@ public class ProductResponse {
         private int productId;
         private String productName;
         private String productContent;
+        private String productThumbnail;
         private Integer discountRate;
         private Integer discountedPrice;
         private Integer originPrice;
@@ -65,6 +66,7 @@ public class ProductResponse {
             this.productId = product.getId();
             this.productName = product.getProductName();
             this.productContent = product.getProductContent();
+            this.productThumbnail = product.getProductThumbnail();
             this.discountRate = product.getDiscountRate();
             this.originPrice = product.getOptions().stream()
                     .map(Option::getOptionPrice)
@@ -97,18 +99,22 @@ public class ProductResponse {
         Integer productId;
         String productThumnail;
         String productName;
+        String sellerName;
         Integer originPrice;
         Integer discountRate;
         Integer discountedPrice;
+        Integer categoryId;
         Double averageStarCount;
 
         public ProductSummary(Product product, Double averageStarCount, Option option) {
             this.productId = product.getId();
             this.productThumnail = product.getProductThumbnail();
             this.productName = product.getProductName();
+            this.sellerName = product.getSeller().getUsername();
             this.originPrice = option.getOptionPrice();
             this.discountRate = product.getDiscountRate();
             this.discountedPrice = option.getOptionPrice() * (100 - product.getDiscountRate()) / 100;
+            this.categoryId = product.getCategory().getId();
             this.averageStarCount = averageStarCount;
         }
     }
@@ -188,7 +194,7 @@ public class ProductResponse {
         List<ProductRandomMainDTO> productRandomMainDTOs;
 
         public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
-                                   List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
             this.productStarMainDTOs = productStarDTOs.stream()
                     .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());
@@ -367,5 +373,3 @@ class ProductRandomDTO {
         this.avgStarCount = avgStarCount;
     }
 }
-
-

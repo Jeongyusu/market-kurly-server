@@ -12,6 +12,6 @@ public interface AddressJPARepository extends JpaRepository<Address, Integer> {
 
     @Modifying
     @Query(value = "update ADDRESS_TB set IS_DEFAULT_ADDRESS = false", nativeQuery = true)
-    Integer updateDefaultAddress();
+    void updateDefaultAddress();
 
 }
