@@ -194,7 +194,7 @@ public class ProductResponse {
         List<ProductRandomMainDTO> productRandomMainDTOs;
 
         public ProductMainListsDTO(List<ProductStarDTO> productStarDTOs,
-                List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
+                                   List<ProductDiscountDTO> productDiscountDTOs, List<ProductRandomDTO> productRandomDTOs) {
             this.productStarMainDTOs = productStarDTOs.stream()
                     .map(t -> new ProductStarMainDTO(t.getProduct(), t.getAvgStarCount()))
                     .collect(Collectors.toList());
@@ -213,6 +213,7 @@ public class ProductResponse {
             private Integer productId;
             private String sellerName;
             private String productName;
+            private String productThumbnail;
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
@@ -222,6 +223,7 @@ public class ProductResponse {
                 this.productId = product.getId();
                 this.sellerName = product.getSeller().getUsername();
                 this.productName = product.getProductName();
+                this.productThumbnail = product.getProductThumbnail();
                 this.minOptionPrice = product.getOptions().stream()
                         .mapToInt(Option::getOptionPrice)
                         .min()
@@ -240,6 +242,7 @@ public class ProductResponse {
             private Integer productId;
             private String sellerName;
             private String productName;
+            private String productThumbnail;
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
@@ -249,6 +252,7 @@ public class ProductResponse {
                 this.productId = product.getId();
                 this.sellerName = product.getSeller().getUsername();
                 this.productName = product.getProductName();
+                this.productThumbnail = product.getProductThumbnail();
                 this.minOptionPrice = product.getOptions().stream()
                         .mapToInt(Option::getOptionPrice)
                         .min()
@@ -266,6 +270,7 @@ public class ProductResponse {
             private Integer productId;
             private String sellerName;
             private String productName;
+            private String productThumbnail;
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
@@ -275,6 +280,7 @@ public class ProductResponse {
                 this.productId = product.getId();
                 this.sellerName = product.getSeller().getUsername();
                 this.productName = product.getProductName();
+                this.productThumbnail = product.getProductThumbnail();
                 this.minOptionPrice = product.getOptions().stream()
                         .mapToInt(Option::getOptionPrice)
                         .min()
