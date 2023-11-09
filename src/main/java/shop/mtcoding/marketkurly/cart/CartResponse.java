@@ -67,8 +67,6 @@ public class CartResponse {
                 this.originPrice = option.getOptionPrice();
                 this.discountRate = product.getDiscountRate();
                 this.discountedPrice = Math.round((option.getOptionPrice() * (100 - product.getDiscountRate()) / 100) / 10) * 10;
-
-
                 this.optionQuantity = cart.getOptionQuantity();
             }
         }
