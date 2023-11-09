@@ -35,7 +35,6 @@ public class CouponResponse {
         @ToString
         @Setter
         @Getter
-
         @NoArgsConstructor
         public static class CouponDTO {
 

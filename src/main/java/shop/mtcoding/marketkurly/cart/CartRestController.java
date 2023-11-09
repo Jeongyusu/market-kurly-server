@@ -4,6 +4,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +14,9 @@ import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception401;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
+import shop.mtcoding.marketkurly.coupon.CouponRequest.CouponSaveDTO.CouponRegisterDTO;
+import shop.mtcoding.marketkurly.notice.NoticeResponse.NoticeMainDTO;
+import shop.mtcoding.marketkurly.usercoupon.UserCoupon;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -32,5 +37,13 @@ public class CartRestController {
         Integer userID = JwtTokenUtils.verify(token).getClaim("id").as(Integer.class);
         CartResponse.FindAllDTO findAllDTO = cartService.장바구니목록조회(userID);
         return ResponseEntity.ok().body(ApiUtils.success(findAllDTO));
+    }
+
+    @PostMapping("/1234")
+    public ResponseEntity<?> 장바구니주문서() {
+
+        Integer sessionUserId = 2; // TODO << 나중에 SessionUserId로 바꿔야함
+        cartService.장바구니주문서();
+        return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 }

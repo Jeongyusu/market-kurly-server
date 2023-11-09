@@ -17,4 +17,7 @@ public class CartService {
         List<Cart> carts = cartJPARepository.findByUser_Id(memberId);
         return new CartResponse.FindAllDTO(carts);
     }
+
+    public void 장바구니주문서() {
+    }
 }
