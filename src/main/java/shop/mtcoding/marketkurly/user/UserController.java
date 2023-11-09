@@ -39,7 +39,9 @@ public class UserController {
             HttpServletRequest request) {
 
         System.out.println("login 호출");
+
         TokenDTO tokenDTO = userService.로그인(loginDTO);
+
         String jwt = "Bearer " + tokenDTO.getJwt();
         String encodedJwt = null;
         try {
@@ -50,7 +52,7 @@ public class UserController {
 
         response.setHeader("Set-Cookie", "token=" + encodedJwt + "; Path=/; HttpOnly; samesite=Strict");
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(null));
+        return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 
     @GetMapping("/seller")

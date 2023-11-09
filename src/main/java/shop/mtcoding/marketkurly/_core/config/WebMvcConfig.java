@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
+
+import shop.mtcoding.marketkurly._core.interceptor.SellerInterceptor;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -31,4 +34,18 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/assets/");
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new UserInterceptor())
+                // addPathPatterns( "해당 주소로 갈때" )
+                .addPathPatterns("/api/users/**");
+        // excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
+        // .excludePathPatterns("/board/{id:[0-9]+}");
+
+        registry.addInterceptor(new SellerInterceptor())
+                // addPathPatterns( "해당 주소로 갈때" )
+                .addPathPatterns("/sellers/**");
+        // excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
+        // .excludePathPatterns("/board/{id:[0-9]+}");
+    }
 }
