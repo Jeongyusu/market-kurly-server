@@ -24,6 +24,9 @@ public class CartService {
         return new CartResponse.FindAllDTO(carts, address);
     }
 
-    public void 장바구니주문서() {
+    public void 장바구니주문() {
+    }
+
+    public void 장바구니담기() {
     }
 }

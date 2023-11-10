@@ -35,11 +35,20 @@ public class CartRestController {
         return ResponseEntity.ok().body(ApiUtils.success(findAllDTO));
     }
 
-    @PostMapping("/1234")
-    public ResponseEntity<?> 장바구니주문서() {
+    @PostMapping("/api/carts/order")
+    public ResponseEntity<?> 장바구니주문() {
 
         Integer sessionUserId = 2; // TODO << 나중에 SessionUserId로 바꿔야함
-        cartService.장바구니주문서();
+        cartService.장바구니주문();
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
+
+    @PostMapping("/api/carts/insert")
+    public ResponseEntity<?> 장바구니담기() {
+
+        Integer sessionUserId = 2; // TODO << 나중에 SessionUserId로 바꿔야함
+        cartService.장바구니담기();
+        return ResponseEntity.ok().body(ApiUtils.success(null));
+    }
+
 }
