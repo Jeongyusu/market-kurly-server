@@ -20,7 +20,6 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
-import shop.mtcoding.marketkurly.product.ProductResponse.ProductListDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductMainListsDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.review.Review;
@@ -67,7 +66,6 @@ public class ProductService {
         public ProductResponse.ProductListDTO 신상품(int page) {
                 // 한 달 전의 날짜 계산
                 LocalDate oneMonthAgo = LocalDate.now().minusDays(30);
-                LocalDate oneWeekAfter = LocalDate.now().plusDays(7);
 
                 // 한 달 이내의 상품만 가져오도록 쿼리 작성
                 Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo,
