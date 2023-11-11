@@ -115,9 +115,9 @@ public class ProductResponse {
             this.sellerName = product.getSeller().getUsername();
             this.originPrice = option.getOptionPrice();
             this.discountRate = product.getDiscountRate();
-            this.discountedPrice = option.getOptionPrice() * (100 - product.getDiscountRate()) / 100;
+            this.discountedPrice = Math.round(originPrice * (100 - product.getDiscountRate()) / 1000) * 10;
             this.categoryId = product.getCategory().getId();
-            this.averageStarCount = averageStarCount;
+            this.averageStarCount = starCountRound(averageStarCount);
         }
     }
 
