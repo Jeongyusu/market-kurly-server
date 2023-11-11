@@ -38,20 +38,21 @@ public class WebMvcConfig implements WebMvcConfigurer {
         public void addInterceptors(InterceptorRegistry registry) {
                 registry.addInterceptor(new UserInterceptor())
                                 // addPathPatterns( "해당 주소로 갈때" )
-                                .addPathPatterns("/api/users/**");
-                // excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
+                                .addPathPatterns("/api/users/**")
+                                .excludePathPatterns("/api/users/login");
+                // .excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
                 // .excludePathPatterns("/board/{id:[0-9]+}");
 
                 registry.addInterceptor(new SellerInterceptor())
                                 // addPathPatterns( "해당 주소로 갈때" )
                                 .addPathPatterns("/seller/**");
-                // excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
+                // .excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
                 // .excludePathPatterns("/board/{id:[0-9]+}");
 
                 registry.addInterceptor(new AdminInterceptor())
                                 // addPathPatterns( "해당 주소로 갈때" )
                                 .addPathPatterns("/admin/**");
-                // excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
+                // .excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
                 // .excludePathPatterns("/board/{id:[0-9]+}");
         }
 }

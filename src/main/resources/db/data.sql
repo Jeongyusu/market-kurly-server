@@ -579,6 +579,9 @@ values (false,true, '상품질문 내용3', '상품질문 제목3', 1, null, 1);
 insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
 values (false,true, '상품질문 내용4', '상품질문 제목4', 1, null, 1);
 
+insert into coupon_tb (COUPON_CONTENT ,COUPON_COUNT ,COUPON_CREATED_AT ,COUPON_EXPIRED_AT ,COUPON_NAME ,COUPON_NUMBER ,IS_EXPIRED ,REDUCE_AMOUNT ) values ('마켓컬리 가입을 축하합니다.', 0, now(), now(), '가입축하 쿠폰', 123456, false, 2000);
+insert into user_coupon_tb (coupon_id, user_id) values (1,1);
+
 insert into cart_tb (id, user_id, option_id, option_quantity) values (1, 1, 1, 2),
                                                                      (3, 1, 3, 1),
                                                                      (4, 1, 5, 6),

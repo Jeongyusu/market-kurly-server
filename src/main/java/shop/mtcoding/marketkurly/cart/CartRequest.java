@@ -2,15 +2,11 @@ package shop.mtcoding.marketkurly.cart;
 
 import java.util.List;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import shop.mtcoding.marketkurly.address.Address;
-import shop.mtcoding.marketkurly.cart.CartResponse.FindAllDTO.CartProductDTO;
-import shop.mtcoding.marketkurly.coupon.Coupon;
-import shop.mtcoding.marketkurly.option.Option;
-import shop.mtcoding.marketkurly.product.Product;
-import java.util.stream.Collectors;
 
 public class CartRequest {
 
@@ -32,6 +28,7 @@ public class CartRequest {
     @ToString
     @Getter
     @Setter
+    @NoArgsConstructor
     public static class SelectedCartListDTO {
 
         private List<SelectedCartProductDTO> selectedCartProducts;
@@ -43,6 +40,7 @@ public class CartRequest {
         private Integer userCouponId;
         private Integer addressId;
 
+        @Builder
         public SelectedCartListDTO(List<SelectedCartProductDTO> selectedCartProducts, Integer totalBeforePrice,
                 Integer totalDiscountPrice,
                 Integer deliveryFee, Integer totalPrice, Integer finalPrice, Integer userCouponId, Integer addressId) {
@@ -61,9 +59,8 @@ public class CartRequest {
     @ToString
     @Setter
     @Getter
-    public static class SelectedCartProductDTO
-
-    {
+    @NoArgsConstructor
+    public static class SelectedCartProductDTO {
         private Integer cartId;
         private Integer productId;
         private String productPic;
@@ -87,6 +84,35 @@ public class CartRequest {
             this.sellerName = sellerName;
             this.totalOptionOriginPrice = totalOptionOriginPrice;
             this.totalOptionDiscountedPrice = totalOptionDiscountedPrice;
+            this.optionQuantity = optionQuantity;
+        }
+    }
+
+    @ToString
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    public static class CartSaveDTO {
+
+        List<SelectedOptionDTO> selectedOptionDTOs;
+
+        public CartSaveDTO(List<SelectedOptionDTO> selectedOptionDTOs) {
+            this.selectedOptionDTOs = selectedOptionDTOs;
+        }
+
+    }
+
+    @ToString
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    public static class SelectedOptionDTO {
+
+        Integer optionId;
+        Integer optionQuantity;
+
+        public SelectedOptionDTO(Integer optionId, Integer optionQuantity) {
+            this.optionId = optionId;
             this.optionQuantity = optionQuantity;
         }
 
