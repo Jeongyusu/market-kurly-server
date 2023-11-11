@@ -40,13 +40,12 @@ public class ProductService {
         public ProductResponse.ProductDetailDTO 제품상세페이지(Integer productId) {
                 Product product = prodcutJPARepository.findById(productId)
                                 .orElseThrow(() -> new Exception404("해당 상품이 존재하지 않습니다:" + productId));
-                List<Option> options = optionJPARepository.findByProductId(productId);
-                return new ProductResponse.ProductDetailDTO(product, options);
+                return new ProductResponse.ProductDetailDTO(product);
         }
 
         // page: 0, 1, 2
         public ProductResponse.ProductListDTO 컬리추천(int page) {
-                Page<Product> products = prodcutJPARepository.findAll(PageRequest.of(page, 5));
+                Page<Product> products = prodcutJPARepository.findAll(PageRequest.of(page, 8));
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
                                         double averageStarCount = reviewJPARepository.findByProduct(product).stream()
@@ -72,7 +71,7 @@ public class ProductService {
                 // 한 달 이내의 상품만 가져오도록 쿼리 작성
                 Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo,
                                 LocalDate.now(),
-                                PageRequest.of(page, 5));
+                                PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -95,7 +94,7 @@ public class ProductService {
 
         public ProductResponse.ProductListDTO 베스트(int page) {
                 // 판매량순
-                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 5));
+                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -117,7 +116,7 @@ public class ProductService {
         }
 
         public ProductResponse.ProductListDTO 카테고리필터링(int page, Integer categoryId) {
-                Page<Product> products = prodcutJPARepository.findByCategoryId(categoryId, PageRequest.of(page, 5));
+                Page<Product> products = prodcutJPARepository.findByCategoryId(categoryId, PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
