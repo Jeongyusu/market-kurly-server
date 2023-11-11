@@ -541,10 +541,6 @@ insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('적
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('넉넉합니다~', 20);
 
 
-
-
-
-
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
 INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
@@ -635,6 +631,20 @@ insert into cart_tb (id, user_id, option_id, option_quantity) values (1, 1, 1, 2
                                                                      (2, 1, 7, 3),
                                                                      (5, 1, 9, 1),
                                                                      (6, 1, 10, 1);
+
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 1, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 2, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 3, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 4, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 5, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 6, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 7, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 8, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 9, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 10, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 11, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 12, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 13, 2);
 
 
 -- INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `seller_id`) VALUES ('1', '/images/1.jpg', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '20', '2023-10-29', 1,1);
