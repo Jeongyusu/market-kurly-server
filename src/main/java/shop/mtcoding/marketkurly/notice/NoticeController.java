@@ -66,7 +66,7 @@ public class NoticeController {
         return "redirect:/notice";
     }
 
-    @GetMapping("/notice/detail/{noticeId}")
+    @GetMapping("/notices/detail/{noticeId}")
     public String 공지상세보기(@PathVariable Integer noticeId, HttpServletRequest request) {
 
         Notice notice = noticeService.공지상세보기(noticeId);
@@ -75,7 +75,7 @@ public class NoticeController {
     }
 
     @GetMapping("/admin/notice")
-    public String noticeWrite() {
+    public String 공지작성페이지() {
         return "admin/noticeWrite";
     }
 }

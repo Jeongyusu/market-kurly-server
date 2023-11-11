@@ -16,7 +16,7 @@ public class NoticeRestController {
 
     private final NoticeService noticeService;
 
-    @GetMapping("/api/test/notices")
+    @GetMapping("/api/users/notices")
     public ResponseEntity<?> 공지목록() {
         NoticeMainDTO dto = noticeService.공지목록();
         return ResponseEntity.ok().body(ApiUtils.success(dto));

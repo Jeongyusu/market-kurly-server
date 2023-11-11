@@ -16,7 +16,7 @@ public class OptionRestController {
 
     private final OptionService optionService;
 
-    @GetMapping("/api/test/options")
+    @GetMapping("/api/product/options")
     public ResponseEntity<?> 상품옵션목록() {
         System.out.println("option 컨트롤러 호출");
         OptionSelectMainDTO dto = optionService.상품옵션목록();

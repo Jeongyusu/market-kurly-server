@@ -20,7 +20,7 @@ public class AddressRestController {
 
     private final AddressService addressService;
 
-    @GetMapping("/api/addresses")
+    @GetMapping("/api/users/addresses")
     public ResponseEntity<?> 모든주소찾기() {
         log.info("addressContoller 모든주소찾기 호출됨");
         Integer sessionUserId = 1;
@@ -28,7 +28,7 @@ public class AddressRestController {
         return ResponseEntity.ok().body(ApiUtils.success(addresses));
     }
 
-    @PostMapping("/api/test/save/address")
+    @PostMapping("/api/users/addresses/save")
     public ResponseEntity<?> 배송지저장(@RequestBody AddressSaveReqDTO addressSaveReqDTO) {
         log.info("addressContoller 배송지저장 호출됨");
         Address result = addressService.배송지저장(addressSaveReqDTO);

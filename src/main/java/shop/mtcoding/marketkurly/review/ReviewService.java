@@ -29,11 +29,10 @@ public class ReviewService {
     private final UserJPARepository userJPARepository;
     private final WriteableReviewJPARepository writeableReviewJPARepository;
 
-    public ReviewMainDTO 상품리뷰메인() {
+    public ReviewMainDTO 상품리뷰메인(Integer productId) {
 
         System.out.println("상품리뷰메인 호출");
-        // TODO findByProduct 매개변수 Product 타입이 아닌 ProductId 로 찾기
-        List<Review> reviews = reivewJPARepository.findByProductId(1);
+        List<Review> reviews = reivewJPARepository.findByProductId(productId);
         List<Notice> Notices = noticeJPARepository.findByNoticeType("공지");
 
         return new ReviewResponse.ReviewMainDTO(Notices, reviews);

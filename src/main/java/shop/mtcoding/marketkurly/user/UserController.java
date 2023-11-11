@@ -26,7 +26,7 @@ import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/webJoin")
+    @PostMapping("/users/join")
     public String 판매자회원가입(SellerJoinDTO sellerJoinDTO) {
         System.out.println("판매자 회원가입 호출");
         userService.판매자회원가입(sellerJoinDTO);
@@ -54,11 +54,4 @@ public class UserController {
 
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
-
-    @GetMapping("/seller")
-    public String sellerMain() {
-        System.out.println("테스트 : sellerMain 호출");
-        return "seller/sellerMain";
-    }
-
 }

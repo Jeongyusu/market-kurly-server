@@ -78,7 +78,7 @@ public class ProductRestController {
         return ResponseEntity.ok().body(ApiUtils.success(dto));
     }
 
-    @GetMapping("/api/test/product")
+    @GetMapping("/api/product/lists")
     public ResponseEntity<?> 메인상품리스트() {
 
         System.out.println("상품 검색 컨트롤러");
@@ -86,7 +86,7 @@ public class ProductRestController {
         return ResponseEntity.ok().body(ApiUtils.success(dto));
     }
 
-    @GetMapping("/api/test/product/search")
+    @GetMapping("/api/product/search")
     public ResponseEntity<?> 상품검색(@RequestParam("keyword") String keyword) {
         ProductResponse.SearchListDTO dto = productService.상품검색(keyword);
         return ResponseEntity.ok().body(ApiUtils.success(dto));

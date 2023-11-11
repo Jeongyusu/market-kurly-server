@@ -46,4 +46,8 @@ public class ProductController {
         return "seller/productDetail";
     }
 
+    @GetMapping("/seller")
+    public String 판매관리() {
+        return "seller/sellerMain";
+    }
 }

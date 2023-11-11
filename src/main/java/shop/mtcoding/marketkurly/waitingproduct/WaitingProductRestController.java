@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.waitingproduct;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import shop.mtcoding.marketkurly.waitingproduct.WaitingProductRequest.WProductDT
 public class WaitingProductRestController {
 
     private final WaitingProductService waitingProductService;
+    private final HttpSession session;
 
     @PostMapping("/seller/product/submit/save")
     public ResponseEntity<?> 상품승인요청(@ModelAttribute WProductDTO wProductDTO) {

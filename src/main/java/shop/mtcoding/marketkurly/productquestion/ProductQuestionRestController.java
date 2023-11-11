@@ -18,14 +18,14 @@ public class ProductQuestionRestController {
 
     private final ProductQuestionService ProductQuestionService;
 
-    @GetMapping("/api/test/ProductQuestionMain")
+    @GetMapping("/api/product/question/Main")
     public ResponseEntity<?> 상품문의메인() {
         log.info("상품문의메인 controller 호출");
         ProductQuestionResponse.ProductQuestionMainDTO productQuestionMainDTO = ProductQuestionService.상품문의메인();
         return ResponseEntity.ok().body(ApiUtils.success(productQuestionMainDTO));
     }
 
-    @PostMapping("/api/test/ProductQuestionSave")
+    @PostMapping("/api/users/product/question/save")
     public ResponseEntity<?> 상품문의작성(@RequestBody ProductQuestionSaveDTO productQuestionSaveDTO) {
         log.info("상품문의작성 controller 호출");
         ProductQuestionSaveDTO productQuestionMainDTO = ProductQuestionService

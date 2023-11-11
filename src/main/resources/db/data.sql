@@ -389,7 +389,7 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 47, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 48, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 49, now());
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 50, now());
+
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 51, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 52, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 53, now());

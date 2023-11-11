@@ -43,6 +43,16 @@ public class JwtAuthorizationFilter implements Filter {
             chain.doFilter(request, response);
             return;
         }
+        if (requestUri.equals("/users/join")) {
+            System.out.println("/users/join 요청 건너뜀");
+            chain.doFilter(request, response);
+            return;
+        }
+        if (requestUri.equals("/api/users/join")) {
+            System.out.println("/api/users/join 요청 건너뜀");
+            chain.doFilter(request, response);
+            return;
+        }
         if (requestUri.equals("/api/users/login")) {
             System.out.println("/api/users/login 요청 건너뜀");
             chain.doFilter(request, response);
