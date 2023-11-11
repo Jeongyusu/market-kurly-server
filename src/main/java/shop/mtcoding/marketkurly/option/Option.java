@@ -30,6 +30,7 @@ public class Option {
     private Integer optionStack;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Product product;
 
     @Builder

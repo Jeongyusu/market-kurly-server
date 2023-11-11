@@ -63,7 +63,7 @@ public class ProductResponse {
         private String seller;
         private List<Option> options;
 
-        public ProductDetailDTO(Product product, List<Option> options) {
+        public ProductDetailDTO(Product product) {
             this.productId = product.getId();
             this.productName = product.getProductName();
             this.productContent = product.getProductContent();
@@ -77,7 +77,7 @@ public class ProductResponse {
             this.productOrigin = product.getProductOrigin();
             this.productDetailImage = product.getProductDetailPic();
             this.seller = product.getSeller().getUsername();
-            this.options = options;
+            this.options = product.getOptions();
         }
     }
 
@@ -115,9 +115,9 @@ public class ProductResponse {
             this.sellerName = product.getSeller().getUsername();
             this.originPrice = option.getOptionPrice();
             this.discountRate = product.getDiscountRate();
-            this.discountedPrice = option.getOptionPrice() * (100 - product.getDiscountRate()) / 100;
+            this.discountedPrice = Math.round(originPrice * (100 - product.getDiscountRate()) / 1000) * 10;
             this.categoryId = product.getCategory().getId();
-            this.averageStarCount = averageStarCount;
+            this.averageStarCount = starCountRound(averageStarCount);
         }
     }
 
@@ -136,6 +136,7 @@ public class ProductResponse {
         public static class SellerProductDTO {
             private int productId;
             private String productName;
+            private Integer categoryId;
             private String categoryType;
             private Integer discountRate;
             private LocalDate discountExpiredAt;
@@ -144,6 +145,7 @@ public class ProductResponse {
             public SellerProductDTO(Product product) {
                 this.productId = product.getId();
                 this.productName = product.getProductName();
+                this.categoryId = product.getCategory().getId();
                 this.categoryType = product.getCategory().getCategoryType();
                 this.discountExpiredAt = product.getDiscountExpiredAt();
                 this.productUploadedAt = product.getProductUploadedAt();
@@ -219,6 +221,7 @@ public class ProductResponse {
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
+            private Integer categoryId;
             private Double avgStarCount;
 
             public ProductStarMainDTO(Product product, Double starCount) {
@@ -232,6 +235,7 @@ public class ProductResponse {
                         .orElse(0);
                 this.discountRate = product.getDiscountRate();
                 this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.categoryId = product.getCategory().getId();
                 this.avgStarCount = starCountRound(starCount);
             }
 
@@ -248,6 +252,7 @@ public class ProductResponse {
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
+            private Integer categoryId;
             private Double avgStarCount;
 
             public ProductDiscountMainDTO(Product product, Double starCount) {
@@ -261,6 +266,7 @@ public class ProductResponse {
                         .orElse(0);
                 this.discountRate = product.getDiscountRate();
                 this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.categoryId = product.getCategory().getId();
                 this.avgStarCount = starCountRound(starCount);
             }
         }
@@ -276,6 +282,7 @@ public class ProductResponse {
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
+            private Integer categoryId;
             private Double avgStarCount;
 
             public ProductRandomMainDTO(Product product, Double starCount) {
@@ -289,6 +296,7 @@ public class ProductResponse {
                         .orElse(0);
                 this.discountRate = product.getDiscountRate();
                 this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.categoryId = product.getCategory().getId();
                 this.avgStarCount = starCountRound(starCount);
             }
         }
@@ -318,6 +326,7 @@ public class ProductResponse {
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
+            private Integer categoryId;
             private Double avgStarCount;
 
             public ProductSearchDTO(Product product, Double starCount) {
@@ -330,6 +339,7 @@ public class ProductResponse {
                         .orElse(0);
                 this.discountRate = product.getDiscountRate();
                 this.discountedminOptionPrice = Math.round(minOptionPrice * (100 - discountRate) / 1000) * 10;
+                this.categoryId = product.getCategory().getId();
                 this.avgStarCount = starCountRound(starCount);
             }
 

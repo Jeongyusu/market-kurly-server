@@ -20,7 +20,6 @@ import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
-import shop.mtcoding.marketkurly.product.ProductResponse.ProductListDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductMainListsDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.review.Review;
@@ -40,13 +39,12 @@ public class ProductService {
         public ProductResponse.ProductDetailDTO 제품상세페이지(Integer productId) {
                 Product product = prodcutJPARepository.findById(productId)
                                 .orElseThrow(() -> new Exception404("해당 상품이 존재하지 않습니다:" + productId));
-                List<Option> options = optionJPARepository.findByProductId(productId);
-                return new ProductResponse.ProductDetailDTO(product, options);
+                return new ProductResponse.ProductDetailDTO(product);
         }
 
         // page: 0, 1, 2
         public ProductResponse.ProductListDTO 컬리추천(int page) {
-                Page<Product> products = prodcutJPARepository.findAll(PageRequest.of(page, 5));
+                Page<Product> products = prodcutJPARepository.findAll(PageRequest.of(page, 8));
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
                                         double averageStarCount = reviewJPARepository.findByProduct(product).stream()
@@ -72,7 +70,7 @@ public class ProductService {
                 // 한 달 이내의 상품만 가져오도록 쿼리 작성
                 Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo,
                                 LocalDate.now(),
-                                PageRequest.of(page, 5));
+                                PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -93,9 +91,37 @@ public class ProductService {
                                 productSummaryList);
         }
 
+        public ProductResponse.ProductListDTO 마감세일(int page) {
+                // 일주일 뒤 날짜 계산
+                LocalDate oneWeekAfter = LocalDate.now().plusDays(7);
+
+                // 할인 마감이 일주일 이내인 제품 가져옴
+                Page<Product> products = prodcutJPARepository.findByDiscountExpiredAtBetween(LocalDate.now(),
+                                oneWeekAfter,
+                                PageRequest.of(page, 8));
+
+                List<ProductResponse.ProductSummary> productSummaryList = products.stream()
+                                .map(product -> {
+                                        double averageStarCount = reviewJPARepository.findByProduct(product).stream()
+                                                        .mapToInt(Review::getStarCount)
+                                                        .average()
+                                                        .orElse(0);
+                                        Option option = optionJPARepository
+                                                        .findTopByProductOrderByOptionPriceAsc(product).orElseThrow();
+                                        return new ProductResponse.ProductSummary(product,
+                                                        Math.round(averageStarCount * 10) / 10.0,
+                                                        option);
+                                })
+                                .collect(Collectors.toList());
+
+                return new ProductResponse.ProductListDTO(
+                                prodcutJPARepository.countByProductUploadedAtBetween(LocalDate.now(), oneWeekAfter),
+                                productSummaryList);
+        }
+
         public ProductResponse.ProductListDTO 베스트(int page) {
                 // 판매량순
-                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 5));
+                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -117,7 +143,7 @@ public class ProductService {
         }
 
         public ProductResponse.ProductListDTO 카테고리필터링(int page, Integer categoryId) {
-                Page<Product> products = prodcutJPARepository.findByCategoryId(categoryId, PageRequest.of(page, 5));
+                Page<Product> products = prodcutJPARepository.findByCategoryId(categoryId, PageRequest.of(page, 8));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -136,11 +162,6 @@ public class ProductService {
                 int count = prodcutJPARepository.countByCategoryId(categoryId);
                 return new ProductResponse.ProductListDTO(count, productSummaryList);
 
-        }
-
-        public ProductListDTO 마감세일(int page) {
-
-                return null;
         }
 
         public SellerProductListDTO 판매상품목록(Integer userId) {
