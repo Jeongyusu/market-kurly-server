@@ -26,7 +26,7 @@ public class WaitingProductRestController {
         return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));
     }
 
-    @PostMapping("/auth/product/waiting/accept/{wProductId}")
+    @PostMapping("/admin/product/waiting/accept/{wProductId}")
     public ResponseEntity<?> 상품승인(@PathVariable Integer wProductId) {
 
         // TODO userId << sessionUserId로 바꿔야 함
@@ -35,7 +35,7 @@ public class WaitingProductRestController {
         return ResponseEntity.ok().body(ApiUtils.success(true));
     }
 
-    @PostMapping("/auth/product/waiting/reject/{wProductId}")
+    @PostMapping("/admin/product/waiting/reject/{wProductId}")
     public ResponseEntity<?> 상품거절(@PathVariable Integer wProductId) {
 
         // TODO userId << sessionUserId로 바꿔야 함

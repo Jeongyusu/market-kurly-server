@@ -16,17 +16,7 @@ public class JwtTokenUtils {
                 .withClaim("id", user.getId())
                 .withClaim("userEmail", user.getUserEmail())
                 .withClaim("role", user.getRole().toString())
-                .withExpiresAt(Instant.now().plusMillis(1000 * 60 * 60 * 24 * 7L))
-                .sign(Algorithm.HMAC512("meta"));
-        return jwt;
-    }
-
-    public static String createMockUser() {
-        String jwt = JWT.create()
-                .withSubject("metacoding-key")
-                .withClaim("id", 1)
-                .withClaim("email", "ssar@nate.com")
-                .withExpiresAt(Instant.now().plusMillis(1000 * 60 * 60 * 24 * 7L))
+                // .withExpiresAt(Instant.now().plusMillis(1000 * 60 * 60 * 24 * 7L))
                 .sign(Algorithm.HMAC512("meta"));
         return jwt;
     }

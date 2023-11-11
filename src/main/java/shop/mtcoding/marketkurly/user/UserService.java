@@ -55,7 +55,6 @@ public class UserService {
 
     public TokenDTO 로그인(LoginDTO loginDTO) {
 
-        System.out.println("로그인 서비스");
         String encPassword = BCrypt.hashpw(loginDTO.getUserPassword(), BCrypt.gensalt());
         System.out.println(encPassword);
         User user = userJPARepository.findByUserId(loginDTO.getUserId());

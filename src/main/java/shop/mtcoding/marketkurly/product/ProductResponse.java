@@ -61,8 +61,9 @@ public class ProductResponse {
         private String productOrigin;
         private String productDetailImage;
         private String seller;
+        private List<Option> options;
 
-        public ProductDetailDTO(Product product) {
+        public ProductDetailDTO(Product product, List<Option> options) {
             this.productId = product.getId();
             this.productName = product.getProductName();
             this.productContent = product.getProductContent();
@@ -76,6 +77,7 @@ public class ProductResponse {
             this.productOrigin = product.getProductOrigin();
             this.productDetailImage = product.getProductDetailPic();
             this.seller = product.getSeller().getUsername();
+            this.options = options;
         }
     }
 

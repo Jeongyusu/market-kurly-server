@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CookieValue;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
@@ -41,6 +40,11 @@ public class JwtAuthorizationFilter implements Filter {
 
         if (requestUri.equals("/users/login")) {
             System.out.println("/users/login 요청 건너뜀");
+            chain.doFilter(request, response);
+            return;
+        }
+        if (requestUri.equals("/api/users/login")) {
+            System.out.println("/api/users/login 요청 건너뜀");
             chain.doFilter(request, response);
             return;
         }
@@ -75,23 +79,25 @@ public class JwtAuthorizationFilter implements Filter {
 
         try {
             DecodedJWT decodedJWT = JwtTokenUtils.verify(jwt);
-            int userId = decodedJWT.getClaim("id").asInt();
+            int id = decodedJWT.getClaim("id").asInt();
             String userEmail = decodedJWT.getClaim("userEmail").asString();
             String role = decodedJWT.getClaim("role").asString();
-            Role userRole = Role.NORMAL;
+            Role userRole = null;
 
-            if (role == "NORMAL") {
+            if (role.equals("NORMAL")) {
                 userRole = Role.NORMAL;
+                System.out.println("토큰 : " + userRole + " 담김");
             }
-            if (role == "SELLER") {
+            if (role.equals("SELLER")) {
                 userRole = Role.SELLER;
+                System.out.println("토큰 : " + userRole + " 담김");
             }
-            if (role == "ADMIN") {
+            if (role.equals("ADMIN")) {
                 userRole = Role.ADMIN;
+                System.out.println("토큰 : " + userRole + " 담김");
             }
 
-            User sessionUser = User.builder().id(userId).userEmail(userEmail).role(userRole).build();
-
+            User sessionUser = User.builder().id(id).userEmail(userEmail).role(userRole).build();
             HttpSession session = request.getSession();
             session.setAttribute("sessionUser", sessionUser);
 

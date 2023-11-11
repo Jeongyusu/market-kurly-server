@@ -11,6 +11,7 @@
         </div>
 
         <ul class="nav">
+        {{#isAdmin}}
           <li>
             <a href="/admin">
               <i class="pe-7s-graph"></i>
@@ -35,6 +36,8 @@
               <p>공지 목록</p>
             </a>
           </li>
+        {{/isAdmin}}
+        {{#isSeller}}
           <li>
             <a href="/seller">
               <i class="pe-7s-graph"></i>
@@ -59,6 +62,7 @@
               <p>공지 목록</p>
             </a>
           </li>
+        {{/isSeller}}
           <li class="active-pro">
             <a href="https://github.com/Jeongyusu/market-kurly-server">
               <i class="pe-7s-rocket"></i>

@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly.notice.NoticeRequest.NoticeSaveDTO;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
+import shop.mtcoding.marketkurly.user.User;
 
 @Slf4j
 @Controller
@@ -21,27 +22,53 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    // private final HttpSession session;
+    private final HttpSession session;
+
+    private final HttpServletRequest request;
 
     @GetMapping("/notice")
-    public String 웹공지목록(HttpServletRequest request) {
+    public String 웹공지목록() {
         WebNoticeMainDTO dto = noticeService.웹공지목록();
-        Boolean isAdmin = true;
-        // System.out.println("sessionUser : " + session.getAttribute("sessionUser"));
+
+        User user = (User) session.getAttribute("sessionUser");
+        if (user.getRole().toString().equals("ADMIN")) {
+            request.setAttribute("isAdmin", true);
+        }
+        if (user.getRole().toString().equals("SELLER")) {
+            request.setAttribute("isSeller", true);
+        }
+
+        System.out.println("sessionUser id : " + user.getId());
+        System.out.println("sessionUser email : " + user.getUserEmail());
+        System.out.println("sessionUser role : " + user.getRole());
+        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
+        System.out.println("sessionUser DTO전 isAdmin : " + request.getAttribute("isAdmin"));
+        System.out.println("sessionUser DTO전 isSeller : " + request.getAttribute("isSeller"));
+        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
-        request.setAttribute("isAdmin", isAdmin);
+        System.out.println("sessionUser DTO 후 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         return "noticeList";
     }
 
     @PostMapping("/admin/notice/save")
     public String 공지등록(NoticeSaveDTO noticeSaveDTO) {
-        System.out.println("공지등록 호출");
+
+        User user = (User) session.getAttribute("sessionUser");
+        if (user.getRole().toString().equals("ADMIN")) {
+            request.setAttribute("isSeller", true);
+
+        }
+        if (user.getRole().toString().equals("SELLER")) {
+            request.setAttribute("isAdmin", true);
+        }
+
         noticeService.공지등록(noticeSaveDTO);
         return "redirect:/notice";
     }
 
     @GetMapping("/notice/detail/{noticeId}")
     public String 공지상세보기(@PathVariable Integer noticeId, HttpServletRequest request) {
+
         Notice notice = noticeService.공지상세보기(noticeId);
         request.setAttribute("notice", notice);
         return "noticeDetail";
