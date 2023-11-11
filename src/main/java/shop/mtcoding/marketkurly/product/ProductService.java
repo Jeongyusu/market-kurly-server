@@ -67,6 +67,7 @@ public class ProductService {
         public ProductResponse.ProductListDTO 신상품(int page) {
                 // 한 달 전의 날짜 계산
                 LocalDate oneMonthAgo = LocalDate.now().minusDays(30);
+                LocalDate oneWeekAfter = LocalDate.now().plusDays(7);
 
                 // 한 달 이내의 상품만 가져오도록 쿼리 작성
                 Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo,
@@ -89,6 +90,34 @@ public class ProductService {
 
                 return new ProductResponse.ProductListDTO(
                                 prodcutJPARepository.countByProductUploadedAtBetween(oneMonthAgo, LocalDate.now()),
+                                productSummaryList);
+        }
+
+        public ProductResponse.ProductListDTO 마감세일(int page) {
+                // 일주일 뒤 날짜 계산
+                LocalDate oneWeekAfter = LocalDate.now().plusDays(7);
+
+                // 할인 마감이 일주일 이내인 제품 가져옴
+                Page<Product> products = prodcutJPARepository.findByDiscountExpiredAtBetween(LocalDate.now(),
+                                oneWeekAfter,
+                                PageRequest.of(page, 8));
+
+                List<ProductResponse.ProductSummary> productSummaryList = products.stream()
+                                .map(product -> {
+                                        double averageStarCount = reviewJPARepository.findByProduct(product).stream()
+                                                        .mapToInt(Review::getStarCount)
+                                                        .average()
+                                                        .orElse(0);
+                                        Option option = optionJPARepository
+                                                        .findTopByProductOrderByOptionPriceAsc(product).orElseThrow();
+                                        return new ProductResponse.ProductSummary(product,
+                                                        Math.round(averageStarCount * 10) / 10.0,
+                                                        option);
+                                })
+                                .collect(Collectors.toList());
+
+                return new ProductResponse.ProductListDTO(
+                                prodcutJPARepository.countByProductUploadedAtBetween(LocalDate.now(), oneWeekAfter),
                                 productSummaryList);
         }
 
@@ -135,11 +164,6 @@ public class ProductService {
                 int count = prodcutJPARepository.countByCategoryId(categoryId);
                 return new ProductResponse.ProductListDTO(count, productSummaryList);
 
-        }
-
-        public ProductListDTO 마감세일(int page) {
-
-                return null;
         }
 
         public SellerProductListDTO 판매상품목록(Integer userId) {

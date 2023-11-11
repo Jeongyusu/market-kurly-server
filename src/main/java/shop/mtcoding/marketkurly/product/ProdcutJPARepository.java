@@ -13,16 +13,19 @@ import org.springframework.data.repository.query.Param;
 
 public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
-
     int countByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now);
 
+    int countByDiscountExpiredAtBetween(LocalDate now, LocalDate oneWeekAfter);
+
     Page<Product> findByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now, Pageable pageable);
+
+    Page<Product> findByDiscountExpiredAtBetween(LocalDate now, LocalDate oneWeekAfter, Pageable pageable);
 
     Page<Product> findByCategoryId(Integer categoryId, Pageable pageable);
 
     int countByCategoryId(Integer categoryId);
 
-    @EntityGraph(attributePaths = {"seller"})
+    @EntityGraph(attributePaths = { "seller" })
     Optional<Product> findById(Integer productId);
 
     List<Product> findBySellerId(Integer userId);
