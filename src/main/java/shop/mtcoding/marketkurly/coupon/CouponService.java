@@ -81,7 +81,9 @@ public class CouponService {
         return coupon;
     }
 
+    @Transactional
     public void 쿠폰삭제(Integer couponId) {
+        System.out.println("쿠폰 삭제 서비스");
         couponJPARepository.deleteById(couponId);
     }
 }

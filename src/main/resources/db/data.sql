@@ -398,66 +398,66 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 56, now());
 
 
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '교환(반품)진행 시, 배송비가 부과 되나요?', '취소/교환/환불', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '포장재를 회수하기도 하나요?', '포장', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '아이디,비밀번호를 잊어버렸습니다.', '회원', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리앱이 켜지지 않아요.', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '이벤트 문자는 오는데, 배송완료문자만 오지 않습니다.', '서비스 이용', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품불량인 경우, 교환(반품)기준이 궁금합니다.', '취소/교환/환불', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '집 앞이 아니라 공동현관/경비실 앞에 배송되었어요.', '배송', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, 'IOS 환경에서 컬리APP의 주문내역이 확인되지 않습니다.', '시스템오류.', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '(주류)성인인증이 자꾸 실패합니다.', '상품', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '최종 결제처리 후,[결제완료]창으로 넘어가지 않습니다.', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '셀프픽업 서비스는 무엇인가요?', '셀프픽업', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품은 어떻게 포장되나요?', '포장', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리는 어떤 회사인가요?', '서비스 이용', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '휴대폰 간편결제 중에"결제가 종료되었습니다"라는 문구가 발생합니다.', '시스템오류', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '(컬리패스)컬리패스 주문내역은 어디서 확인하나요?', '컬리패스/맴버스', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '주문 시 배송비가 부가되나요?', '주문/결제/대량주문', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '교환(반품)어떻게 진행 되나요?', '취소/교환/환불', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '친환경/유기농/무농약이 어떻게 다른가요?', '상품', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리 어플 최소 지원버전이 무엇인가요?', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품 문의는 어디서 작성할 수 있나요?', '서비스 이용', '자주하는 질문', 2);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('단순변심에 의한 교환/반품 시 배송비 6,000원을 고객님께서 부담하셔야합니다.', 1);
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '교환(반품)진행 시, 배송비가 부과 되나요?', '취소/교환/환불', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '포장재를 회수하기도 하나요?', '포장', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '아이디,비밀번호를 잊어버렸습니다.', '회원', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리앱이 켜지지 않아요.', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '이벤트 문자는 오는데, 배송완료문자만 오지 않습니다.', '서비스 이용', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '상품불량인 경우, 교환(반품)기준이 궁금합니다.', '취소/교환/환불', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '집 앞이 아니라 공동현관/경비실 앞에 배송되었어요.', '배송', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, 'IOS 환경에서 컬리APP의 주문내역이 확인되지 않습니다.', '시스템오류.', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '(주류)성인인증이 자꾸 실패합니다.', '상품', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '최종 결제처리 후,[결제완료]창으로 넘어가지 않습니다.', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '셀프픽업 서비스는 무엇인가요?', '셀프픽업', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '상품은 어떻게 포장되나요?', '포장', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리는 어떤 회사인가요?', '서비스 이용', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '휴대폰 간편결제 중에"결제가 종료되었습니다"라는 문구가 발생합니다.', '시스템오류', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '(컬리패스)컬리패스 주문내역은 어디서 확인하나요?', '컬리패스/맴버스', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '주문 시 배송비가 부가되나요?', '주문/결제/대량주문', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '교환(반품)어떻게 진행 되나요?', '취소/교환/환불', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '친환경/유기농/무농약이 어떻게 다른가요?', '상품', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리 어플 최소 지원버전이 무엇인가요?', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '상품 문의는 어디서 작성할 수 있나요?', '서비스 이용', '자주하는 질문', 2, now());
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('단순변심에 의한 교환/반품 시 배송비 6,000원을 고객님께서 부담하셔야합니다.', 1);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리는 수도권 지역에 한해서 일부 포자쟁의 회수 서비스를 진행하고 있습니다.', 2);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('-하기 경로를 통해 아이디 및 비밀번호 찾기가 가능하며, 임시 비밀번호의 경우 회원가입 시 등록한 이메일 주소로 발송 됩니다.', 3);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('-하기 경로를 통해 아이디 및 비밀번호 찾기가 가능하며, 임시 비밀번호의 경우 회원가입 시 등록한 이메일 주소로 발송 됩니다.', 3);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리APP의 최신 업데이트 버전 여부를 확인해주세요.', 4);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('보유 휴대폰 기기의 용량 초과(이벤트 문자와 다르게 배송완료 문자는 사진이 포함 됨)', 5);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 사품이 표시&광고 내용 또는 계약 내용과 다른 경우에는 상품을 받은 날부터 3개월이내 교환 및 환불을 요청하실 수 있습니다.', 6);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('공동현관 출입/자택 앞으로 배송 불가 한 경우 최대한 상품을 안전히 배송해드리고자 공동현관 앞/경비실 앞으로 대응배송을 진행하고 있습니다.', 7);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 8);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리몰 성인인증 시스템은 KCB 올크레딧에서 주관하므로, 성인인증 단계에서 실패/오류 방생 시에는 하기 연락처로 문의 부탁드립니다.', 9);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 10);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 10);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('셀프픽업 서비스는 컬리에서 상품을 구매(결제)한 후, 고객님께서 직접 지정한 매장으로 방문하여 상품을 픽업하는 형태의 서비스입니다..', 11);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('상품 보관방법별로 구분하여 포장됩니다.(상온/냉장/냉동).', 12);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리에서는 사람을 소중히 하는 마음으로, 산지에서 친환경 혹은 유기농 인증을 받은 제품들을 꼼꼼히 선택하여 판매합니다.', 13);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 오류는 결제PG사인 KG모빌리언스에서 정책관련 이슈로 확인됩니다.', 14);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리패스는 2023년 8월 1일부터 신규 가입이 중지 됩니다.', 15);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리패스는 2023년 8월 1일부터 신규 가입이 중지 됩니다.', 15);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('실 결제금액 기준으로 4만원 미만 구매 시, 배송비 3천원이 추가로 부과됩니다.', 16);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 상품을 교환 하실 경우, 교환 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.', 17);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 상품을 교환 하실 경우, 교환 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.', 17);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('친환경 농산물은 인체와 생태환경에 해로운 화학비료, 농약, 제초제 등을 최대한 사용하지 않고 재배한 농산물을 일컬으며 이 중, 화학비료와 농약 사용량에 따라 저농약, 무농약, 유기농으로 구분됩니다.', 18);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('IOS 13 이상 필요, Android 7.0 이상 필요.', 19);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
 
 insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)

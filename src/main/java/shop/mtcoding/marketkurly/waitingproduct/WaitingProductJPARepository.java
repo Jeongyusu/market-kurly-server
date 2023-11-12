@@ -14,4 +14,6 @@ public interface WaitingProductJPARepository extends JpaRepository<WaitingProduc
     @Modifying
     @Query(value = "update WAITING_PRODUCT_TB  set STATE = '거절됨'  where id = :wProductId", nativeQuery = true)
     void rejectProduct(@Param("wProductId") Integer wProductId);
+
+    List<WaitingProduct> findByState(String state);
 }

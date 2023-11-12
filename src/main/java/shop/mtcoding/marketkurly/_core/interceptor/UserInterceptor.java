@@ -72,7 +72,7 @@ public class UserInterceptor implements HandlerInterceptor {
                 System.out.println("유저인터셉터 : 웹 인증없음");
                 response.setHeader("Content-Type", "text/html; charset=utf-8");
                 PrintWriter out = response.getWriter();
-                out.println(Script.href("/loginForm", "인증이 필요합니다."));
+                out.println(Script.href("redirect:/login", "인증이 필요합니다."));
                 return false;
             }
             // 웹 요청에 권한이 X

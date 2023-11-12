@@ -10,10 +10,11 @@
 			<!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a href="http://www.creative-tim.com" class="simple-text"> 안녕 </a>
+					<a href="https://github.com/Jeongyusu/market-kurly-server" class="simple-text"> 마켓 컬리 </a>
 				</div>
 
 				<ul class="nav">
+				{{#isAdmin}}
 					<li>
 						<a href="/admin">
 							<i class="pe-7s-graph"></i>
@@ -38,6 +39,8 @@
 							<p>공지 목록</p>
 						</a>
 					</li>
+				{{/isAdmin}}
+				{{#isSeller}}
 					<li>
 						<a href="/seller">
 							<i class="pe-7s-graph"></i>
@@ -62,6 +65,7 @@
 							<p>공지 목록</p>
 						</a>
 					</li>
+				{{/isSeller}}
 					<li class="active-pro">
 						<a href="https://github.com/Jeongyusu/market-kurly-server">
 							<i class="pe-7s-rocket"></i>
@@ -113,7 +117,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#">
+								<a href="/logout">
 									<p>Log out</p>
 								</a>
 							</li>
