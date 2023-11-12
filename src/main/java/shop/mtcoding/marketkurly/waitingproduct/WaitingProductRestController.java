@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
+import shop.mtcoding.marketkurly.user.User;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProductRequest.WProductDTO;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class WaitingProductRestController {
@@ -22,18 +25,15 @@ public class WaitingProductRestController {
 
     @PostMapping("/seller/product/submit/save")
     public ResponseEntity<?> 상품승인요청(@ModelAttribute WProductDTO wProductDTO) {
-
-        // TODO userId << sessionUserId로 바꿔야 함
-        Integer userId = 7;
-        waitingProductService.상품승인요청(wProductDTO, userId);
+        User user = (User) session.getAttribute("sessionUser");
+        log.info("sessionUser number : " + user.getId());
+        waitingProductService.상품승인요청(wProductDTO, user.getId());
         return ResponseEntity.ok().body(ApiUtils.success("통신 성공"));
     }
 
     @PostMapping("/admin/product/waiting/accept/{wProductId}")
     public ResponseEntity<?> 상품승인(@PathVariable Integer wProductId) {
 
-        // TODO userId << sessionUserId로 바꿔야 함
-        Integer userId = 7;
         waitingProductService.상품승인(wProductId);
         return ResponseEntity.ok().body(ApiUtils.success(true));
     }
@@ -41,8 +41,6 @@ public class WaitingProductRestController {
     @PostMapping("/admin/product/waiting/reject/{wProductId}")
     public ResponseEntity<?> 상품거절(@PathVariable Integer wProductId) {
 
-        // TODO userId << sessionUserId로 바꿔야 함
-        Integer userId = 7;
         waitingProductService.상품거절(wProductId);
         return ResponseEntity.ok().body(ApiUtils.success(true));
     }

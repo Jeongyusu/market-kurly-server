@@ -5,7 +5,6 @@ import javax.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.order.Order;
 
@@ -19,6 +18,7 @@ public class OrderedOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String orderedProductName;
+    private Integer orderedProductSellerId;
     private String orderedProductSellerName;
     private String orderedProductThumbnail;
     private String orderedOptionName;
@@ -37,7 +37,7 @@ public class OrderedOption {
     @Builder
     public OrderedOption(Integer id, Integer orderedOptionQuantity, Integer orderedOptionPrice,
             String orderedProductName, String orderedProductThumbnail, String orderedOptionName,
-            String orderedProductSellerName,
+            String orderedProductSellerName, Integer orderedProductSellerId,
             Integer orderedDiscountRate, Option option, Order order) {
         this.id = id;
         this.orderedOptionQuantity = orderedOptionQuantity;
@@ -47,6 +47,7 @@ public class OrderedOption {
         this.orderedOptionPrice = orderedOptionPrice;
         this.orderedDiscountRate = orderedDiscountRate;
         this.orderedProductSellerName = orderedProductSellerName;
+        this.orderedProductSellerId = orderedProductSellerId;
         this.option = option;
         this.order = order;
     }

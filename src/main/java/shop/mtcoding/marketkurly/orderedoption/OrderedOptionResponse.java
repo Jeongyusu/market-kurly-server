@@ -1,5 +1,6 @@
 package shop.mtcoding.marketkurly.orderedoption;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -67,4 +68,49 @@ public class OrderedOptionResponse {
         }
     }
 
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class OrderedOptionListDTO {
+
+        private List<OrderedOptionDTO> orderedOptionDTOs;
+
+        public OrderedOptionListDTO(List<OrderedOption> orderedOptions) {
+            this.orderedOptionDTOs = orderedOptions.stream().map(t -> new OrderedOptionDTO(t))
+                    .collect(Collectors.toList());
+        }
+
+        @ToString
+        @Getter
+        @NoArgsConstructor
+        public class OrderedOptionDTO {
+
+            private Integer orderedOptionId;
+            private Integer productId;
+            private String productName;
+            private Integer optionId;
+            private String optionName;
+            private Integer optionQuantity;
+            private Integer optionPrice;
+            private String orderNumber;
+            private Integer userId;
+            private String username;
+            private String state;
+            private LocalDate orderAt;
+
+            public OrderedOptionDTO(OrderedOption t) {
+                this.orderedOptionId = t.getId();
+                this.productName = t.getOption().getProduct().getProductName();
+                this.optionName = t.getOption().getOptionName();
+                this.optionQuantity = t.getOrderedOptionQuantity();
+                this.optionPrice = t.getOrderedOptionPrice();
+                this.orderNumber = t.getOrder().getOrderNumber();
+                this.username = t.getOrder().getUser().getUsername();
+                this.userId = t.getOrder().getUser().getId();
+                this.state = "배송완료";
+                this.orderAt = t.getOrder().getOrderedAt().toLocalDateTime().toLocalDate();
+            };
+
+        }
+    }
 }

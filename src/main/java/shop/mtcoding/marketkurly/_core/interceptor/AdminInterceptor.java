@@ -11,11 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly._core.utils.Script;
 
 import shop.mtcoding.marketkurly.user.User;
 
+@Slf4j
 public class AdminInterceptor implements HandlerInterceptor {
     // return값이 boolean인 이유
     // ture 이면 컨트롤러 메서드 진입
@@ -25,6 +27,7 @@ public class AdminInterceptor implements HandlerInterceptor {
             throws Exception {
 
         // preHandle에 인증 안된 사용자는 팅
+        log.info("AdminInterceptor PreHandle");
         System.out.println("AdminInterceptor PreHandle");
         HttpSession session = request.getSession();
         User sessionUser = (User) session.getAttribute("sessionUser");

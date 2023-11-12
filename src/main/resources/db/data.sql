@@ -541,70 +541,98 @@ insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('적
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('넉넉합니다~', 20);
 
 
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, 4, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, 5, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, 6, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, 7, '2023-10-29', 1);
-
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (8, 1, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (9, 2, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (10, 3, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (11, 4, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (12, 5, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (13, 6, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (14, 7, '2023-10-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, '23020200001', '2023-02-02', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, '23030400002', '2023-03-04', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, '23051100003', '2023-05-11', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, '23081800004', '2023-08-18', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, '23091600005', '2023-09-16', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, '23100400006', '2023-10-04', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, '23110200007', '2023-11-02', 1);
 
 
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (15, 1, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (16, 2, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (17, 3, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (18, 4, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (19, 5, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (20, 6, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (21, 7, '2023-10-29', 29);
+
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (8, '23022000001', '2023-02-20', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (9, '23032900002', '2023-03-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (10, '23042900003', '2023-04-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (11, '23052900004', '2023-05-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (12, '23072900005', '2023-07-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (13, '23082900006', '2023-08-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (14, '23102900007', '2023-10-29', 2);
 
 
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (22, 1, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (23, 2, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (24, 3, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (25, 4, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (26, 5, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (27, 6, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (28, 7, '2023-10-29', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (15, '23062000001', '2023-06-20', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (16, '23070200002', '2023-07-02', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (17, '23071400003', '2023-07-14', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (18, '23072800004', '2023-07-28', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (19, '23081300005', '2023-08-13', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (20, '23091100006', '2023-09-11', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (21, '23102000007', '2023-10-20', 29);
 
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (1, 2, 1000, 10, 1, 1);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (2, 2, 1000, 10, 1, 2);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (3, 4, 2000, 20, 2, 1);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (4, 1, 1000, 10, 2, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (5, 3, 1000, 10, 2, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (6, 2, 1000, 10, 8, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (7, 1, 1000, 10, 10, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (8, 4, 2000, 20, 10, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (9, 4, 1000, 10, 15, 3);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (10, 3, 1000, 10, 15, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (11, 2, 1000, 10, 15, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (12, 2, 1000, 10, 15, 10);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (13, 3, 2000, 20, 19, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (14, 1, 1000, 10, 20, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (15, 3, 1000, 10, 22, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (16, 1, 1000, 10, 22, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (17, 4, 1000, 10, 25, 11);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (18, 4, 1000, 10, 27, 12);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (19, 1, 1000, 10, 30, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (20, 4, 1000, 10, 30, 22);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (21, 3, 1000, 10, 32, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (22, 4, 1000, 10, 33, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (23, 1, 1000, 10, 36, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (24, 4, 1000, 10, 37, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (25, 2, 1000, 10, 37, 23);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (26, 3, 1000, 10, 40, 18);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (27, 4, 1000, 10, 40, 12);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (28, 2, 1000, 10, 40, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (29, 4, 1000, 10, 40, 25);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (30, 2, 1000, 10, 41, 28);
+
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (22, '23022100001', '2023-02-21', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (23, '23022300002', '2023-02-23', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (24, '23032200003', '2023-03-22', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (25, '23032100004', '2023-03-21', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (26, '23042400005', '2023-04-24', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (27, '23052500006', '2023-05-25', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (28, '23062100007', '2023-06-21', 31);
+
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (1, 2, 1000, 10, 1, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (2, 2, 1000, 10, 1, 2, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (32, 3, 1000, 10, 1, 18, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (3, 4, 2000, 20, 2, 1, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (5, 3, 1000, 10, 2, 4, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (28, 2, 1000, 10, 2, 6, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (4, 1, 1000, 10, 2, 21, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (37, 2, 1000, 10, 3, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (38, 2, 1000, 10, 3, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (39, 2, 1000, 10, 4, 6, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (40, 2, 1000, 10, 5, 8, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (41, 2, 1000, 10, 5, 11, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (42, 2, 1000, 10, 5, 12, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (43, 2, 1000, 10, 6, 15, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (44, 2, 1000, 10, 7, 20, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (6, 2, 1000, 10, 8, 7, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (30, 2, 1000, 10, 8, 28, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (33, 4, 1000, 10, 9, 12, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (45, 2, 1000, 10, 9, 21, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (7, 1, 1000, 10, 10, 7, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (8, 4, 2000, 20, 10, 21, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (53, 4, 2000, 20, 10, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (54, 4, 2000, 20, 10, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (31, 2, 1000, 10, 10, 22, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (46, 2, 1000, 10, 11, 23, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (47, 2, 1000, 10, 11, 27, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (48, 2, 1000, 10, 11, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (49, 2, 1000, 10, 12, 9, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (50, 2, 1000, 10, 13, 16, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (51, 2, 1000, 10, 13, 27, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (52, 2, 1000, 10, 14, 22, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (9, 4, 1000, 10, 15, 3, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (10, 3, 1000, 10, 15, 4, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (11, 2, 1000, 10, 15, 7, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (12, 2, 1000, 10, 15, 10, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (13, 3, 2000, 20, 19, 6, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (14, 1, 1000, 10, 20, 6, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (15, 3, 1000, 10, 22, 4, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (16, 1, 1000, 10, 22, 13, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (17, 4, 1000, 10, 25, 11, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (18, 4, 1000, 10, 27, 12, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (19, 1, 1000, 10, 30, 13, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (20, 4, 1000, 10, 30, 22, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (21, 3, 1000, 10, 32, 21, 10);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (22, 4, 1000, 10, 33, 13, 22);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (23, 1, 1000, 10, 36, 21, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (24, 4, 1000, 10, 37, 13, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (25, 2, 1000, 10, 37, 23, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (34, 2, 1000, 10, 40, 6, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (35, 4, 1000, 10, 40, 9, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (26, 3, 1000, 10, 40, 18, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (27, 4, 1000, 10, 40, 12, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (29, 4, 1000, 10, 40, 25, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (36, 2, 1000, 10, 41, 28, 20);
+
+
 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1);
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1);

@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.user;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 public class UserRestController {
 
     private final UserService userService;
+    private final HttpSession session;
 
     @GetMapping("/test11")
     void test() {
@@ -68,8 +71,12 @@ public class UserRestController {
 
     @PostMapping("/api/users/update")
     public ResponseEntity<?> 회원정보수정(@RequestBody UserUpdateDTO userUpdateDTO) {
-        User user = userService.회원정보수정(userUpdateDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
+
+        User user = (User) session.getAttribute("sessionUser");
+        log.info("sessionUser number : " + user.getId());
+
+        User savedUser = userService.회원정보수정(userUpdateDTO, user.getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(savedUser));
     }
 
     @PostMapping("/api/check/update")
