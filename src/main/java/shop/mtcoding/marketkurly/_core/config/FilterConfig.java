@@ -4,7 +4,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import shop.mtcoding.marketkurly._core.filter.ApiJwtAuthorizationFilter;
 import shop.mtcoding.marketkurly._core.filter.JwtAuthorizationFilter;
 
 @Configuration
@@ -14,6 +13,7 @@ public class FilterConfig {
         FilterRegistrationBean<JwtAuthorizationFilter> bean = new FilterRegistrationBean<>(
                 new JwtAuthorizationFilter());
         bean.addUrlPatterns("/api/users/*");
+        bean.addUrlPatterns("/api/reviews/*");
         bean.addUrlPatterns("/api/carts/*");
         bean.addUrlPatterns("/seller/*");
         bean.addUrlPatterns("/admin/*");

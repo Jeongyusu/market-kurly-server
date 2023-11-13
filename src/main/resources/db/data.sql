@@ -389,7 +389,7 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 47, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 48, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 49, now());
-INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 50, now());
+
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 51, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 52, now());
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 53, now());
@@ -398,66 +398,66 @@ INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`
 INSERT INTO review_tb (`review_title`, `review_content`, `star_count`, `user_id`, `product_id`, review_created_at)VALUES ('괜찮네요', '4점 드립니다.', 4, 31, 56, now());
 
 
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '교환(반품)진행 시, 배송비가 부과 되나요?', '취소/교환/환불', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '포장재를 회수하기도 하나요?', '포장', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '아이디,비밀번호를 잊어버렸습니다.', '회원', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리앱이 켜지지 않아요.', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '이벤트 문자는 오는데, 배송완료문자만 오지 않습니다.', '서비스 이용', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품불량인 경우, 교환(반품)기준이 궁금합니다.', '취소/교환/환불', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '집 앞이 아니라 공동현관/경비실 앞에 배송되었어요.', '배송', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, 'IOS 환경에서 컬리APP의 주문내역이 확인되지 않습니다.', '시스템오류.', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '(주류)성인인증이 자꾸 실패합니다.', '상품', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '최종 결제처리 후,[결제완료]창으로 넘어가지 않습니다.', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '셀프픽업 서비스는 무엇인가요?', '셀프픽업', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품은 어떻게 포장되나요?', '포장', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리는 어떤 회사인가요?', '서비스 이용', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '휴대폰 간편결제 중에"결제가 종료되었습니다"라는 문구가 발생합니다.', '시스템오류', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '(컬리패스)컬리패스 주문내역은 어디서 확인하나요?', '컬리패스/맴버스', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '주문 시 배송비가 부가되나요?', '주문/결제/대량주문', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '교환(반품)어떻게 진행 되나요?', '취소/교환/환불', '자주하는 질문', 2);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '친환경/유기농/무농약이 어떻게 다른가요?', '상품', '자주하는 질문', 3);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '컬리 어플 최소 지원버전이 무엇인가요?', '시스템오류', '자주하는 질문', 1);
-insert into ADMIN_QUESTION_TB (IN_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID)
-values (true, false, '상품 문의는 어디서 작성할 수 있나요?', '서비스 이용', '자주하는 질문', 2);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('단순변심에 의한 교환/반품 시 배송비 6,000원을 고객님께서 부담하셔야합니다.', 1);
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '교환(반품)진행 시, 배송비가 부과 되나요?', '취소/교환/환불', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '포장재를 회수하기도 하나요?', '포장', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '아이디,비밀번호를 잊어버렸습니다.', '회원', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리앱이 켜지지 않아요.', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '이벤트 문자는 오는데, 배송완료문자만 오지 않습니다.', '서비스 이용', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '상품불량인 경우, 교환(반품)기준이 궁금합니다.', '취소/교환/환불', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '집 앞이 아니라 공동현관/경비실 앞에 배송되었어요.', '배송', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, 'IOS 환경에서 컬리APP의 주문내역이 확인되지 않습니다.', '시스템오류.', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '(주류)성인인증이 자꾸 실패합니다.', '상품', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '최종 결제처리 후,[결제완료]창으로 넘어가지 않습니다.', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '셀프픽업 서비스는 무엇인가요?', '셀프픽업', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '상품은 어떻게 포장되나요?', '포장', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리는 어떤 회사인가요?', '서비스 이용', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '휴대폰 간편결제 중에"결제가 종료되었습니다"라는 문구가 발생합니다.', '시스템오류', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '(컬리패스)컬리패스 주문내역은 어디서 확인하나요?', '컬리패스/맴버스', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '주문 시 배송비가 부가되나요?', '주문/결제/대량주문', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '교환(반품)어떻게 진행 되나요?', '취소/교환/환불', '자주하는 질문', 2, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '친환경/유기농/무농약이 어떻게 다른가요?', '상품', '자주하는 질문', 3, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (true, false, '컬리 어플 최소 지원버전이 무엇인가요?', '시스템오류', '자주하는 질문', 1, now());
+insert into ADMIN_QUESTION_TB (IS_ANSWERED, IS_EMAIL_ACCEPTED, ADMIN_QUESTION_CONTENT, ADMIN_QUESTION_TITLE, ADMIN_QUESTION_TYPE, USER_ID, ADMIN_QUESTION_CREATED_AT)
+values (false, false, '상품 문의는 어디서 작성할 수 있나요?', '서비스 이용', '자주하는 질문', 2, now());
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('단순변심에 의한 교환/반품 시 배송비 6,000원을 고객님께서 부담하셔야합니다.', 1);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리는 수도권 지역에 한해서 일부 포자쟁의 회수 서비스를 진행하고 있습니다.', 2);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('-하기 경로를 통해 아이디 및 비밀번호 찾기가 가능하며, 임시 비밀번호의 경우 회원가입 시 등록한 이메일 주소로 발송 됩니다.', 3);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('-하기 경로를 통해 아이디 및 비밀번호 찾기가 가능하며, 임시 비밀번호의 경우 회원가입 시 등록한 이메일 주소로 발송 됩니다.', 3);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리APP의 최신 업데이트 버전 여부를 확인해주세요.', 4);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('보유 휴대폰 기기의 용량 초과(이벤트 문자와 다르게 배송완료 문자는 사진이 포함 됨)', 5);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 사품이 표시&광고 내용 또는 계약 내용과 다른 경우에는 상품을 받은 날부터 3개월이내 교환 및 환불을 요청하실 수 있습니다.', 6);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('공동현관 출입/자택 앞으로 배송 불가 한 경우 최대한 상품을 안전히 배송해드리고자 공동현관 앞/경비실 앞으로 대응배송을 진행하고 있습니다.', 7);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 8);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리몰 성인인증 시스템은 KCB 올크레딧에서 주관하므로, 성인인증 단계에서 실패/오류 방생 시에는 하기 연락처로 문의 부탁드립니다.', 9);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 10);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 이슈들은 최근 개선되었으나 재발생 시 자체 점검하시어 고객센터로 문의 부탁드립니다.', 10);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('셀프픽업 서비스는 컬리에서 상품을 구매(결제)한 후, 고객님께서 직접 지정한 매장으로 방문하여 상품을 픽업하는 형태의 서비스입니다..', 11);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('상품 보관방법별로 구분하여 포장됩니다.(상온/냉장/냉동).', 12);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리에서는 사람을 소중히 하는 마음으로, 산지에서 친환경 혹은 유기농 인증을 받은 제품들을 꼼꼼히 선택하여 판매합니다.', 13);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('해당 오류는 결제PG사인 KG모빌리언스에서 정책관련 이슈로 확인됩니다.', 14);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리패스는 2023년 8월 1일부터 신규 가입이 중지 됩니다.', 15);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('컬리패스는 2023년 8월 1일부터 신규 가입이 중지 됩니다.', 15);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('실 결제금액 기준으로 4만원 미만 구매 시, 배송비 3천원이 추가로 부과됩니다.', 16);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 상품을 교환 하실 경우, 교환 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.', 17);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('받으신 상품을 교환 하실 경우, 교환 사유+문제가 발생한 부분을 확인할 수 있는 사진과 함께 고객센터로 문의 바랍니다.', 17);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('친환경 농산물은 인체와 생태환경에 해로운 화학비료, 농약, 제초제 등을 최대한 사용하지 않고 재배한 농산물을 일컬으며 이 중, 화학비료와 농약 사용량에 따라 저농약, 무농약, 유기농으로 구분됩니다.', 18);
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('IOS 13 이상 필요, Android 7.0 이상 필요.', 19);
-insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
+-- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
 
 insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
@@ -541,74 +541,98 @@ insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('적
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('넉넉합니다~', 20);
 
 
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, '23020200001', '2023-02-02', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, '23030400002', '2023-03-04', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, '23051100003', '2023-05-11', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, '23081800004', '2023-08-18', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, '23091600005', '2023-09-16', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, '23100400006', '2023-10-04', 1);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, '23110200007', '2023-11-02', 1);
 
 
 
-
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (1, 1, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (2, 2, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (3, 3, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (4, 4, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (5, 5, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (6, 6, '2023-10-29', 1);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (7, 7, '2023-10-29', 1);
-
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (8, 1, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (9, 2, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (10, 3, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (11, 4, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (12, 5, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (13, 6, '2023-10-29', 2);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (14, 7, '2023-10-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (8, '23022000001', '2023-02-20', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (9, '23032900002', '2023-03-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (10, '23042900003', '2023-04-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (11, '23052900004', '2023-05-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (12, '23072900005', '2023-07-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (13, '23082900006', '2023-08-29', 2);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (14, '23102900007', '2023-10-29', 2);
 
 
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (15, 1, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (16, 2, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (17, 3, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (18, 4, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (19, 5, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (20, 6, '2023-10-29', 29);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (21, 7, '2023-10-29', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (15, '23062000001', '2023-06-20', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (16, '23070200002', '2023-07-02', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (17, '23071400003', '2023-07-14', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (18, '23072800004', '2023-07-28', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (19, '23081300005', '2023-08-13', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (20, '23091100006', '2023-09-11', 29);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (21, '23102000007', '2023-10-20', 29);
 
 
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (22, 1, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (23, 2, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (24, 3, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (25, 4, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (26, 5, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (27, 6, '2023-10-29', 31);
-INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (28, 7, '2023-10-29', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (22, '23022100001', '2023-02-21', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (23, '23022300002', '2023-02-23', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (24, '23032200003', '2023-03-22', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (25, '23032100004', '2023-03-21', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (26, '23042400005', '2023-04-24', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (27, '23052500006', '2023-05-25', 31);
+INSERT INTO order_tb(`id`, `order_number`, `ordered_at`, `user_id`) VALUES (28, '23062100007', '2023-06-21', 31);
 
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (1, 2, 1000, 10, 1, 1);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (2, 2, 1000, 10, 1, 2);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (3, 4, 2000, 20, 2, 1);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (4, 1, 1000, 10, 2, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (5, 3, 1000, 10, 2, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (6, 2, 1000, 10, 8, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (7, 1, 1000, 10, 10, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (8, 4, 2000, 20, 10, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (9, 4, 1000, 10, 15, 3);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (10, 3, 1000, 10, 15, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (11, 2, 1000, 10, 15, 7);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (12, 2, 1000, 10, 15, 10);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (13, 3, 2000, 20, 19, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (14, 1, 1000, 10, 20, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (15, 3, 1000, 10, 22, 4);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (16, 1, 1000, 10, 22, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (17, 4, 1000, 10, 25, 11);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (18, 4, 1000, 10, 27, 12);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (19, 1, 1000, 10, 30, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (20, 4, 1000, 10, 30, 22);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (21, 3, 1000, 10, 32, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (22, 4, 1000, 10, 33, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (23, 1, 1000, 10, 36, 21);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (24, 4, 1000, 10, 37, 13);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (25, 2, 1000, 10, 37, 23);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (26, 3, 1000, 10, 40, 18);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (27, 4, 1000, 10, 40, 12);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (28, 2, 1000, 10, 40, 6);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (29, 4, 1000, 10, 40, 25);
-INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`) VALUES (30, 2, 1000, 10, 41, 28);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (1, 2, 1000, 10, 1, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (2, 2, 1000, 10, 1, 2, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (32, 3, 1000, 10, 1, 18, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (3, 4, 2000, 20, 2, 1, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (5, 3, 1000, 10, 2, 4, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (28, 2, 1000, 10, 2, 6, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (4, 1, 1000, 10, 2, 21, 26);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (37, 2, 1000, 10, 3, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (38, 2, 1000, 10, 3, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (39, 2, 1000, 10, 4, 6, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (40, 2, 1000, 10, 5, 8, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (41, 2, 1000, 10, 5, 11, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (42, 2, 1000, 10, 5, 12, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (43, 2, 1000, 10, 6, 15, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (44, 2, 1000, 10, 7, 20, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (6, 2, 1000, 10, 8, 7, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (30, 2, 1000, 10, 8, 28, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (33, 4, 1000, 10, 9, 12, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (45, 2, 1000, 10, 9, 21, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (7, 1, 1000, 10, 10, 7, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (8, 4, 2000, 20, 10, 21, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (53, 4, 2000, 20, 10, 1, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (54, 4, 2000, 20, 10, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (31, 2, 1000, 10, 10, 22, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (46, 2, 1000, 10, 11, 23, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (47, 2, 1000, 10, 11, 27, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (48, 2, 1000, 10, 11, 4, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (49, 2, 1000, 10, 12, 9, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (50, 2, 1000, 10, 13, 16, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (51, 2, 1000, 10, 13, 27, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (52, 2, 1000, 10, 14, 22, 7);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (9, 4, 1000, 10, 15, 3, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (10, 3, 1000, 10, 15, 4, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (11, 2, 1000, 10, 15, 7, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (12, 2, 1000, 10, 15, 10, 25);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (13, 3, 2000, 20, 19, 6, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (14, 1, 1000, 10, 20, 6, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (15, 3, 1000, 10, 22, 4, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (16, 1, 1000, 10, 22, 13, 24);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (17, 4, 1000, 10, 25, 11, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (18, 4, 1000, 10, 27, 12, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (19, 1, 1000, 10, 30, 13, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (20, 4, 1000, 10, 30, 22, 23);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (21, 3, 1000, 10, 32, 21, 10);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (22, 4, 1000, 10, 33, 13, 22);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (23, 1, 1000, 10, 36, 21, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (24, 4, 1000, 10, 37, 13, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (25, 2, 1000, 10, 37, 23, 21);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (34, 2, 1000, 10, 40, 6, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (35, 4, 1000, 10, 40, 9, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (26, 3, 1000, 10, 40, 18, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (27, 4, 1000, 10, 40, 12, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (29, 4, 1000, 10, 40, 25, 20);
+INSERT INTO ordered_option_tb(`id`, `ordered_option_quantity`, `ordered_option_price`, `ordered_discount_rate`, `option_id`, `order_id`, `ordered_product_seller_id`) VALUES (36, 2, 1000, 10, 41, 28, 20);
+
+
 
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('서울특별시 관악구 신길동 명동빌딩','2층',true,'강호동','01012345678',1);
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','3층',false,'김수미','01012345678',1);
@@ -635,6 +659,20 @@ insert into cart_tb (id, user_id, option_id, option_quantity) values (1, 1, 1, 2
                                                                      (2, 1, 7, 3),
                                                                      (5, 1, 9, 1),
                                                                      (6, 1, 10, 1);
+
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 1, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 2, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 3, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 4, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 5, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 6, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 7, 1);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 8, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 9, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 10, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 11, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 12, 2);
+insert into WRITEABLE_REVIEW_TB(ORDERED_AT ,PRODUCT_ID ,USER_ID )  values (now(), 13, 2);
 
 
 -- INSERT INTO product_tb (`id`, `product_thumbnail`, `product_name`, `discount_rate`, `product_uploaded_at`, `category_id`, `seller_id`) VALUES ('1', '/images/1.jpg', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '20', '2023-10-29', 1,1);

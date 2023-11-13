@@ -63,9 +63,8 @@ public class CouponService {
         if (couponOP.isEmpty()) {
             throw new Exception404("쿠폰을 찾을수 없습니다.");
         }
-        Coupon coupon = couponOP.get();
-        System.out.println("coupon" + coupon);
 
+        Coupon coupon = couponOP.get();
         User user = userJPARepository.findById(sessionUserId).get();
         UserCoupon userCoupon = UserCoupon.builder().coupon(coupon).user(user).build();
         UserCoupon savedUserCoupon = userCouponJPARepository.save(userCoupon);
@@ -81,7 +80,9 @@ public class CouponService {
         return coupon;
     }
 
+    @Transactional
     public void 쿠폰삭제(Integer couponId) {
+        System.out.println("쿠폰 삭제 서비스");
         couponJPARepository.deleteById(couponId);
     }
 }

@@ -24,7 +24,7 @@ public class OrderedOptionRestController {
 
     private final OrderedOptionService orderedOptionService;
 
-    @GetMapping("/api/test/selectoo")
+    @GetMapping("/api/carts/selectoo")
     public Page<Product> 주문옵션찾기() {
         Pageable pageable = PageRequest.of(0, 10, Sort.by(Order.desc("fieldName")));
 
@@ -33,7 +33,7 @@ public class OrderedOptionRestController {
         return products;
     }
 
-    @GetMapping("/api/order/detail")
+    @GetMapping("/api/carts/order/detail")
     public ResponseEntity<?> 주문상세보기() {
 
         // TODO 나중에 orderId 받아서 넣기

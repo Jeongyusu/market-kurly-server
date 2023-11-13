@@ -120,7 +120,8 @@ public class WaitingProductService {
     }
 
     public List<WaitingProduct> 대기상품전체() {
-        List<WaitingProduct> waitingProducts = waitingProductJPARepository.findAll();
+        String state = "대기중";
+        List<WaitingProduct> waitingProducts = waitingProductJPARepository.findByState(state);
         return waitingProducts;
     }
 
@@ -131,7 +132,6 @@ public class WaitingProductService {
 
         Integer wthumbIndex = waitingProduct.getWProductThumbnail().lastIndexOf("/") + 1;
         Integer wDetailInedex = waitingProduct.getWProductDetailPic().lastIndexOf("/") + 1;
-
 
         String wthumbFileName = waitingProduct.getWProductThumbnail().substring(wthumbIndex);
         String wDetailFileName = waitingProduct.getWProductDetailPic().substring(wDetailInedex);
@@ -157,9 +157,10 @@ public class WaitingProductService {
                 .discountRate(waitingProduct.getWDiscountRate())
                 .category(waitingProduct.getCategory())
                 .seller(waitingProduct.getSeller())
-                .productThumbnail((MyPath.PRODUCTDETAIL_PATH + wthumbFileName).substring(1))
+                .productThumbnail((MyPath.PRODUCTTHUMB_PATH + wthumbFileName).substring(1))
                 .productDetailPic((MyPath.PRODUCTDETAIL_PATH + wDetailFileName).substring(1))
                 .productUploadedAt(waitingProduct.getWProductUploadedAt().toLocalDateTime().toLocalDate())
+                .productOrigin("상품설명/상세정보 참고")
                 .build();
 
         prodcutJPARepository.save(product);

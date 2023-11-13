@@ -4,6 +4,7 @@ public class Script {
 
     // 뒤로가기(일반적으로 경고창과 함께 사용)
     public static String back(String msg) {
+        System.out.println("back 스크립트 발동");
         StringBuilder sb = new StringBuilder();
 
         sb.append("<script>");

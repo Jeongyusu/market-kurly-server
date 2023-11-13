@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface CartJPARepository extends JpaRepository<Cart, Integer> {
 
-    @EntityGraph(attributePaths = {"user", "option"})
+    @EntityGraph(attributePaths = { "user", "option" })
     List<Cart> findByUser_Id(Integer userId);
+
+    void deleteByIdAndUserId(Integer cartId, Integer userId);
 }

@@ -10,12 +10,13 @@
 
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
-                        Creative Tim
+                    <a href="https://github.com/Jeongyusu/market-kurly-server" class="simple-text">
+                       마켓 컬리
                     </a>
                 </div>
 
 	            <ul class="nav">
+                {{#isAdmin}}
 		            <li>
 			            <a href="/admin">
 				            <i class="pe-7s-graph"></i>
@@ -40,6 +41,8 @@
 				            <p>공지 목록</p>
 			            </a>
 		            </li>
+                    {{/isAdmin}}
+                    {{#isSeller}}
 		            <li class="active">
 			            <a href="/seller">
 				            <i class="pe-7s-graph"></i>
@@ -64,6 +67,7 @@
 				            <p>공지 목록</p>
 			            </a>
 		            </li>
+                    {{/isSeller}}
 		            <li class="active-pro">
 			            <a href="https://github.com/Jeongyusu/market-kurly-server">
 				            <i class="pe-7s-rocket"></i>
@@ -106,7 +110,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="/logout">
                                     <p>Log out</p>
                                 </a>
                             </li>
@@ -157,26 +161,18 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
+                                                                    {{#orders}}
                                                                         <tr class="odd gradeX">
-                                                                            <td>Trident</td>
-                                                                            <td>Internet Explorer 4.0</td>
-                                                                            <td>Win 95+</td>
-                                                                            <td class="center">4</td>
-                                                                            <td class="center">X</td>
-                                                                            <td class="center">X</td>
-                                                                            <td class="center">X</td>
-                                                                            <td class="center">X</td>
+                                                                            <td>{{productName}}</td>
+                                                                            <td>{{optionName}}</td>
+                                                                            <td>{{optionQuantity}}</td>
+                                                                            <td class="center">{{optionPrice}}</td>
+                                                                            <td class="center">{{orderNumber}}</td>
+                                                                            <td class="center">{{username}}</td>
+                                                                            <td class="center">{{state}}</td>
+                                                                            <td class="center">{{orderAt}}</td>
                                                                         </tr>
-                                                                        <tr class="even gradeC">
-                                                                            <td>Trident</td>
-                                                                            <td>Internet Explorer 5.0</td>
-                                                                            <td>Win 95+</td>
-                                                                            <td class="center">5</td>
-                                                                            <td class="center">C</td>
-                                                                            <td class="center">C</td>
-                                                                            <td class="center">C</td>
-                                                                            <td class="center">C</td>
-                                                                        </tr>
+                                                                    {{/orders}}
                                                                     </tbody>
                                                                 </table>
                                                             </div>

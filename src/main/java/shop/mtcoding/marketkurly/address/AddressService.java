@@ -26,10 +26,9 @@ public class AddressService {
     }
 
     @Transactional
-    public Address 배송지저장(AddressSaveReqDTO addressSaveReqDTO) {
+    public Address 배송지저장(AddressSaveReqDTO addressSaveReqDTO, Integer userId) {
 
-        Integer sessionUserId = 1;
-        User user = userJPARepository.findById(sessionUserId).get();
+        User user = userJPARepository.findById(userId).get();
         Address address = Address.builder()
                 .destination(addressSaveReqDTO.getDestination())
                 .destinationDetail(addressSaveReqDTO.getDestinationDetail())

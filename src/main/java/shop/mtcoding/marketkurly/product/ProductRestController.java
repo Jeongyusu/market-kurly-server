@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.TypedQuery;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductMainListsDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
+import shop.mtcoding.marketkurly.user.User;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -23,6 +25,8 @@ import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 public class ProductRestController {
 
     private final ProductService productService;
+
+    private final HttpSession session;
 
     @GetMapping("/api/products/{productId}")
     public ResponseEntity<?> 제품상세조회(@PathVariable Integer productId) {
@@ -73,12 +77,15 @@ public class ProductRestController {
 
     @GetMapping("/api/seller/product")
     public ResponseEntity<?> 판매상품목록() {
-        Integer userId = 7;
-        SellerProductListDTO dto = productService.판매상품목록(userId);
+
+        User user = (User) session.getAttribute("sessionUser");
+        log.info("sessionUser number : " + user.getId());
+
+        SellerProductListDTO dto = productService.판매상품목록(user.getId());
         return ResponseEntity.ok().body(ApiUtils.success(dto));
     }
 
-    @GetMapping("/api/test/product")
+    @GetMapping("/api/product/lists")
     public ResponseEntity<?> 메인상품리스트() {
 
         System.out.println("상품 검색 컨트롤러");
@@ -86,7 +93,7 @@ public class ProductRestController {
         return ResponseEntity.ok().body(ApiUtils.success(dto));
     }
 
-    @GetMapping("/api/test/product/search")
+    @GetMapping("/api/product/search")
     public ResponseEntity<?> 상품검색(@RequestParam("keyword") String keyword) {
         ProductResponse.SearchListDTO dto = productService.상품검색(keyword);
         return ResponseEntity.ok().body(ApiUtils.success(dto));

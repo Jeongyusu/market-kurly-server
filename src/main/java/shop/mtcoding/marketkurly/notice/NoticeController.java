@@ -75,7 +75,7 @@ public class NoticeController {
     }
 
     @GetMapping("/admin/notice")
-    public String noticeWrite() {
+    public String 공지작성페이지() {
         return "admin/noticeWrite";
     }
 }

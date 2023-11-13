@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.user;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 public class UserRestController {
 
     private final UserService userService;
+    private final HttpSession session;
 
     @GetMapping("/test11")
     void test() {
@@ -34,7 +37,7 @@ public class UserRestController {
 
     // Get 요청은 Body가 없다.
     // Json데이터는 @RequestBody 어노테이션을 사용해서 받기
-    @PostMapping("/api/users/userid")
+    @PostMapping("/api/find/userId")
     public ResponseEntity<?> 아이디찾기(@RequestBody UserRequest.UserFindUsernameDTO userFindUsernameDTO) {
         String userId = userService.아이디찾기(userFindUsernameDTO);
 
@@ -60,7 +63,7 @@ public class UserRestController {
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(null));
     }
 
-    @PostMapping("/api/users/samecheck")
+    @PostMapping("/api/check/join")
     public ResponseEntity<?> 중복확인(@RequestBody UserRequest.UserIdDuplicatedDTO request) {
         userService.중복확인(request.getUserId());
         return ResponseEntity.ok().body(ApiUtils.success(null));
@@ -68,11 +71,15 @@ public class UserRestController {
 
     @PostMapping("/api/users/update")
     public ResponseEntity<?> 회원정보수정(@RequestBody UserUpdateDTO userUpdateDTO) {
-        User user = userService.회원정보수정(userUpdateDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(user));
+
+        User user = (User) session.getAttribute("sessionUser");
+        log.info("sessionUser number : " + user.getId());
+
+        User savedUser = userService.회원정보수정(userUpdateDTO, user.getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(ApiUtils.success(savedUser));
     }
 
-    @PostMapping("/api/users/updateCheck")
+    @PostMapping("/api/check/update")
     public ResponseEntity<?> 회원수정체크(@RequestBody UpdateCheckDTO updateCheckDTO) {
         User user = userService.회원수정체크(updateCheckDTO);
         return ResponseEntity.ok().body(ApiUtils.success(user));

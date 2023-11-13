@@ -117,4 +117,12 @@ public class CartRequest {
         }
 
     }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    public static class CartDeleteListDTO {
+
+        private List<Integer> cartDeleteList;
+    }
 }

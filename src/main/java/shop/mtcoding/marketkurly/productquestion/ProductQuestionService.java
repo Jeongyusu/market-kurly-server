@@ -21,8 +21,8 @@ public class ProductQuestionService {
         private final ProdcutJPARepository productJPARepository;
         private final ProductQuestionJPARepository productQuestionJPARepository;
 
-        public ProductQuestionMainDTO 상품문의메인() {
-                Optional<Product> productOP = productJPARepository.findById(1);
+        public ProductQuestionMainDTO 상품문의메인(Integer productId) {
+                Optional<Product> productOP = productJPARepository.findById(productId);
                 Product product = productOP.orElseThrow(() -> new Exception404("옵션값을 찾을수 없습니다."));
                 List<ProductQuestion> productQuestions = productQuestionJPARepository.findByProductId(1);
 
@@ -30,10 +30,7 @@ public class ProductQuestionService {
         }
 
         public ProductQuestionSaveDTO 상품문의작성(ProductQuestionSaveDTO productQuestionSaveDTO) {
-                // TODO 원본 코드 << 테스트후 바꿔놓기
-                // Optional<Product> productOP =
-                // productJPARepository.findById(productQuestionSaveDTO.getProductId());
-                Optional<Product> productOP = productJPARepository.findById(1);
+                Optional<Product> productOP = productJPARepository.findById(productQuestionSaveDTO.getProductId());
                 Product product = productOP.orElseThrow(() -> new Exception404("상품을 찾을수 없습니다."));
                 ProductQuestion productQuestion = ProductQuestion.builder()
                                 .productQuestionTitle(productQuestionSaveDTO.getProductQuestionTitle())

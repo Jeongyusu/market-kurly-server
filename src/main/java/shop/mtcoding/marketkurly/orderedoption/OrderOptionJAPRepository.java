@@ -23,4 +23,6 @@ public interface OrderOptionJAPRepository extends JpaRepository<OrderedOption, I
         Integer countBestProducts();
 
         List<OrderedOption> findByOrderId(Integer orderId);
+
+        List<OrderedOption> findByOrderedProductSellerId(Integer sellerId);
 }

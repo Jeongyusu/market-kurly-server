@@ -208,7 +208,7 @@
 				let wproductId = $("#wproductId").val();
 				console.log(wproductId);
 
-				let response = await fetch("/auth/product/waiting/accept/" + wproductId, {
+				let response = await fetch("/admin/product/waiting/accept/" + wproductId, {
 					method: "post",
 				});
 
@@ -236,7 +236,7 @@
 				let wrejectId = $("#wproductId").val();
 				console.log(wproductId);
 
-				let response = await fetch("/auth/product/waiting/reject/" + wrejectId, {
+				let response = await fetch("/admin/product/waiting/reject/" + wrejectId, {
 					method: "post",
 				});
 

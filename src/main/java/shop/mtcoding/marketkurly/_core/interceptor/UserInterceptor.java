@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly._core.utils.Script;
@@ -19,6 +20,7 @@ import shop.mtcoding.marketkurly._core.utils.ApiUtils.ApiResult;
 
 import shop.mtcoding.marketkurly.user.User;
 
+@Slf4j
 public class UserInterceptor implements HandlerInterceptor {
     // return값이 boolean인 이유
     // ture 이면 컨트롤러 메서드 진입
@@ -28,6 +30,7 @@ public class UserInterceptor implements HandlerInterceptor {
             throws Exception {
 
         // preHandle에 인증 안된 사용자는 팅
+        log.info("UserInterceptor PreHandle");
         System.out.println("UserInterceptor PreHandle");
         HttpSession session = request.getSession();
         User sessionUser = (User) session.getAttribute("sessionUser");
@@ -69,7 +72,7 @@ public class UserInterceptor implements HandlerInterceptor {
                 System.out.println("유저인터셉터 : 웹 인증없음");
                 response.setHeader("Content-Type", "text/html; charset=utf-8");
                 PrintWriter out = response.getWriter();
-                out.println(Script.href("/loginForm", "인증이 필요합니다."));
+                out.println(Script.href("redirect:/login", "인증이 필요합니다."));
                 return false;
             }
             // 웹 요청에 권한이 X
@@ -83,14 +86,6 @@ public class UserInterceptor implements HandlerInterceptor {
         }
 
         return true;
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-            ModelAndView modelAndView) throws Exception {
-        HandlerInterceptor.super.postHandle(request, response, handler,
-                modelAndView);
-        System.out.println("LoginInterceptor PostHandle");
     }
 
 }

@@ -7,8 +7,8 @@ import java.net.URLEncoder;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,8 +25,9 @@ import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 @Controller
 public class UserController {
     private final UserService userService;
+    private final HttpSession session;
 
-    @PostMapping("/webJoin")
+    @PostMapping("/users/join")
     public String 판매자회원가입(SellerJoinDTO sellerJoinDTO) {
         System.out.println("판매자 회원가입 호출");
         userService.판매자회원가입(sellerJoinDTO);
@@ -55,10 +56,9 @@ public class UserController {
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 
-    @GetMapping("/seller")
-    public String sellerMain() {
-        System.out.println("테스트 : sellerMain 호출");
-        return "seller/sellerMain";
+    @GetMapping("/logout")
+    public String 로그아웃() {
+        session.invalidate();
+        return "redirect:/login";
     }
-
 }

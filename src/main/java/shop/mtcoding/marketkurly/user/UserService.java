@@ -108,12 +108,11 @@ public class UserService {
     }
 
     @Transactional
-    public User 회원정보수정(UserUpdateDTO userUpdateDTO) {
+    public User 회원정보수정(UserUpdateDTO userUpdateDTO, Integer userId) {
 
-        Integer sessionUserId = 1; // << TODO 현재 sessionUser의 id값 들어가야함
         String encPassword = BCrypt.hashpw(userUpdateDTO.getUserPassword(), BCrypt.gensalt());
         userUpdateDTO.setUserPassword(encPassword);
-        userUpdateDTO.setId(sessionUserId);
+        userUpdateDTO.setId(userId);
         User user = userJPARepository.save(userUpdateDTO.toIdEntity());
         return user;
     }

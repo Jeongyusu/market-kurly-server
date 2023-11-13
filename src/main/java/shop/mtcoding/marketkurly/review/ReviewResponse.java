@@ -2,6 +2,7 @@ package shop.mtcoding.marketkurly.review;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import shop.mtcoding.marketkurly.notice.Notice;
 import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
@@ -64,6 +65,51 @@ public class ReviewResponse {
             }
 
         }
+    }
+
+    @ToString
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    public static class SavedReviewListDTO {
+
+        private List<SavedReview> savedReviews;
+
+        public SavedReviewListDTO(List<Review> reviews) {
+            this.savedReviews = reviews.stream().map(t -> new SavedReview(t)).collect(Collectors.toList());
+        }
+
+        @ToString
+        @Getter
+        @Setter
+        @NoArgsConstructor
+        public class SavedReview {
+
+            private Integer reviewId;
+            private Integer userId;
+            private Integer productId;
+            private String productName;
+            private String productThumbnail;
+            private String reviewTitle;
+            private String reviewContent;
+            private Integer starCount;
+            private LocalDate reviewCreatedAt;
+            private List<ReviewPic> reviewPics = null;
+
+            public SavedReview(Review review) {
+                this.reviewId = review.getId();
+                this.userId = review.getUser().getId();
+                this.productId = review.getProduct().getId();
+                this.productName = review.getProduct().getProductName();
+                this.productThumbnail = review.getProduct().getProductThumbnail();
+                this.reviewTitle = review.getReviewTitle();
+                this.reviewContent = review.getReviewContent();
+                this.starCount = review.getStarCount();
+                this.reviewCreatedAt = review.getReviewCreatedAt().toLocalDateTime().toLocalDate();
+                this.reviewPics = review.getReviewPics();
+            }
+        }
+
     }
 
 }

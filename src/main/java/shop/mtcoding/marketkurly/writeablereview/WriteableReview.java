@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.writeablereview;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +35,9 @@ public class WriteableReview {
 
     @OneToOne(fetch = FetchType.LAZY)
     private Product product;
+
+    @CreationTimestamp
+    private Timestamp orderedAt;
 
     @Builder
     public WriteableReview(Integer id, User user, Product product) {
