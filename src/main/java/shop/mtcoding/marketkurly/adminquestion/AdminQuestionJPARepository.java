@@ -11,4 +11,8 @@ public interface AdminQuestionJPARepository extends JpaRepository<AdminQuestion,
     @Query(value = "UPDATE ADMIN_QUESTION_TB SET IS_ANSWERED = true WHERE id = :id", nativeQuery = true)
     void updateStateById(@Param("id") Integer adminQuestionId);
 
+    @Modifying
+    @Query(value = "update admin_question_tb set admin_reply_id = :id where id = :questionId", nativeQuery = true)
+    void saveProductReplyId(@Param("id") Integer id, @Param("questionId") Integer questionId);
+
 }

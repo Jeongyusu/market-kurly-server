@@ -20,15 +20,24 @@ public class AdminReplyService {
     public void 답변저장(AReplySaveDTO aReplySaveDTO) {
 
         AdminQuestion adminQuestion = adminQuestionJPARepository.findById(aReplySaveDTO.getAdminQuestionId()).get();
-        System.out.println("답변저장 Id : " + adminQuestion.getId());
-        AdminReply adminReply = AdminReply.builder()
-                .adminQuestion(adminQuestion)
-                .aReplyContent(aReplySaveDTO.getReplyContent())
-                .build();
+        AdminReply adminReply = null;
+        if (adminQuestion.getAdminReply() == null) {
+            adminReply = AdminReply.builder()
+                    .adminQuestion(adminQuestion)
+                    .aReplyContent(aReplySaveDTO.getReplyContent())
+                    .build();
+        } else {
+            adminReply = AdminReply.builder()
+                    .id(adminQuestion.getAdminReply().getId())
+                    .adminQuestion(adminQuestion)
+                    .aReplyContent(aReplySaveDTO.getReplyContent())
+                    .build();
+        }
         if (!adminQuestion.getIsAnswered()) {
             adminQuestionJPARepository.updateStateById(aReplySaveDTO.getAdminQuestionId());
         }
         adminReplyJPARepository.save(adminReply);
+        adminQuestionJPARepository.saveProductReplyId(adminReply.getId(), adminQuestion.getId());
     }
 
 }

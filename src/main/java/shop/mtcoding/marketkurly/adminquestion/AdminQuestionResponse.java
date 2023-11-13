@@ -65,12 +65,11 @@ public class AdminQuestionResponse {
     public static class AdminQuestionDetailDTO {
 
         AdminQuestionDTO adminQuestionDTO;
-        List<AdminReplyDTO> adminReplyDTOs;
+        AdminReplyDTO adminReplyDTO;
 
         public AdminQuestionDetailDTO(AdminQuestion adminQuestion) {
             this.adminQuestionDTO = new AdminQuestionDTO(adminQuestion);
-            this.adminReplyDTOs = adminQuestion.getAdminReplies().stream().map(t -> new AdminReplyDTO(t))
-                    .collect(Collectors.toList());
+            this.adminReplyDTO = new AdminReplyDTO(adminQuestion.getAdminReply());
         }
 
         @ToString
@@ -105,12 +104,14 @@ public class AdminQuestionResponse {
         @Setter
         public class AdminReplyDTO {
 
-            private Integer id;
-            private String aReplyContent;
+            private Integer id = 0;
+            private String aReplyContent = "댓글 없음";
 
             public AdminReplyDTO(AdminReply t) {
-                this.id = t.getId();
-                this.aReplyContent = t.getAReplyContent();
+                if (t != null) {
+                    this.id = t.getId();
+                    this.aReplyContent = t.getAReplyContent();
+                }
             }
 
         }

@@ -10,6 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
