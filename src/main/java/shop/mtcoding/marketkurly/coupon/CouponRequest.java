@@ -1,9 +1,5 @@
 package shop.mtcoding.marketkurly.coupon;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

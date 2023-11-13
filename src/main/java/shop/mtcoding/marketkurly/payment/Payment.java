@@ -13,7 +13,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.coupon.Coupon;
 import shop.mtcoding.marketkurly.order.Order;
 import shop.mtcoding.marketkurly.paymenttype.PaymentType;

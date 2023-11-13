@@ -1,18 +1,17 @@
 package shop.mtcoding.marketkurly.adminquestion;
 
 import java.sql.Timestamp;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.lang.Nullable;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,8 +39,9 @@ public class AdminQuestion {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @OneToMany(mappedBy = "adminQuestion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<AdminReply> AdminReplies;
+    @Nullable
+    @OneToOne(fetch = FetchType.LAZY)
+    private AdminReply AdminReply;
 
     @Builder
     public AdminQuestion(Integer id, String adminQuestionType, String adminQuestionTitle, String adminQuestionContent,

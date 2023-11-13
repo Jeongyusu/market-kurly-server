@@ -12,7 +12,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.productquestion.ProductQuestion;
 
 @Getter

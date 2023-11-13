@@ -5,11 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.NoticeMainDTO;
 
-@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class NoticeRestController {

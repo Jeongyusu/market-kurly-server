@@ -56,7 +56,7 @@ public class AdminQuestionController {
         request.setAttribute("isAdmin", isAdmin);
         AdminQuestionDetailDTO dto = adminQuestionService.관리자문의상세(questionId);
         request.setAttribute("adminQuestionDTO", dto.getAdminQuestionDTO());
-        request.setAttribute("replies", dto.getAdminReplyDTOs());
+        request.setAttribute("areplies", dto.getAdminReplyDTO());
         return "admin/questionDetail";
     }
 

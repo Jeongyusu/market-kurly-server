@@ -1,31 +1,21 @@
 package shop.mtcoding.marketkurly.cart;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import shop.mtcoding.marketkurly._core.errors.exception.Exception401;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.cart.CartRequest.CartDeleteListDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.CartSaveDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartListDTO;
-import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartProductDTO;
 import shop.mtcoding.marketkurly.user.User;
-import shop.mtcoding.marketkurly.usercoupon.UserCoupon;
-
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.websocket.server.PathParam;
 
 @Slf4j
 @RequiredArgsConstructor

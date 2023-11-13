@@ -459,66 +459,77 @@ insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('친환�
 insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('IOS 13 이상 필요, Android 7.0 이상 필요.', 19);
 -- insert into ADMIN_REPLY_TB (A_REPLY_CONTENT, ADMIN_QUESTION_ID) values('- 하기 경로를 통해 상품에 대해 궁금한 점을 남겨주시면, 영업일 기준 1~2일 내에 답변 드리겠습니다.', 20);
 
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '이번에 뉴스에 나온 방울토마토 구토 관련 건이랑은 상관 없나요..? 재배지도 궁금합니다.', '방울토마토 관련 문의드립니다.', 1, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '이번에 뉴스에 나온 방울토마토 구토 관련 건이랑은 상관 없나요..? 재배지도 궁금합니다.', '방울토마토 관련 문의드립니다.', 1, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '맵기가 어느정도인가요? 우리 아이들이 먹을만 한가요?', '춘천식 닭갈비 관련 문의드립니다.', 2, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '맵기가 어느정도인가요? 우리 아이들이 먹을만 한가요?', '춘천식 닭갈비 관련 문의드립니다.', 2, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '대부분의 팽이버섯은 안씻고 밑둥만 잘라서 먹어도 된다던데, 이것도 그런가요? 팽이버섯은 원래 농약 안뿌린다고 해서요', '팽이버섯 관련 질문있습니다', 3, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '대부분의 팽이버섯은 안씻고 밑둥만 잘라서 먹어도 된다던데, 이것도 그런가요? 팽이버섯은 원래 농약 안뿌린다고 해서요', '팽이버섯 관련 질문있습니다', 3, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '100g당 당이 얼만큼 들어 있나요?', '쭈꾸미 볶음 질문드립니다', 4, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '100g당 당이 얼만큼 들어 있나요?', '쭈꾸미 볶음 질문드립니다', 4, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '힘줄이 너무 질겨서 가위질도 미끄러져 튕기고 못씹고 뱉어낼정도인데요', '양념 소 붉고기 질문드립니다', 5, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '힘줄이 너무 질겨서 가위질도 미끄러져 튕기고 못씹고 뱉어낼정도인데요', '양념 소 붉고기 질문드립니다', 5, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '산간지역도 배송이 가능한가요?', '고소한 재래 도시락김 16개입 질문드립니다', 6, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '산간지역도 배송이 가능한가요?', '고소한 재래 도시락김 16개입 질문드립니다', 6, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '사육환경번호 궁금해요', '1+등급 무항생제 특란 20구 질문드립니다', 7, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '사육환경번호 궁금해요', '1+등급 무항생제 특란 20구 질문드립니다', 7, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '22개월아기도 먹을수있나요?', '한돈 떡갈비 1kg 질문드립니다', 8, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '22개월아기도 먹을수있나요?', '한돈 떡갈비 1kg 질문드립니다', 8, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '두장씩 뜯어쓰면 어떻게되나요?', '한장씩 뜯어쓰는 위생롤백 4종 질문드립니다', 9, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '두장씩 뜯어쓰면 어떻게되나요?', '한장씩 뜯어쓰는 위생롤백 4종 질문드립니다', 9, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '몇개 들어있나요?', '새콤달콤 제주 하우스 감귤 1.5kg 질문드립니다', 10, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '몇개 들어있나요?', '새콤달콤 제주 하우스 감귤 1.5kg 질문드립니다', 10, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '유통기한이 언제까지인가요?', '국산 손질 꽃게 500g 질문드립니다', 11, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '유통기한이 언제까지인가요?', '국산 손질 꽃게 500g 질문드립니다', 11, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '생지는 유통키한이 얼마나 되죠?', '크로아상 냉동 생지 2종 질문 드립니다', 12, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '생지는 유통키한이 얼마나 되죠?', '크로아상 냉동 생지 2종 질문 드립니다', 12, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '전자레인지두 가능한가요?', '냉동 생지 2종', 13, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '전자레인지두 가능한가요?', '냉동 생지 2종', 13, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '한세트시켰는데 두세트가왔어요~ 어떻게 하면 될까요?', '드레싱 4종 질문드립니다', 14, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '한세트시켰는데 두세트가왔어요~ 어떻게 하면 될까요?', '드레싱 4종 질문드립니다', 14, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '스프가 왜 묽은가요?', '컵수푸 4종 질문드립니다', 15, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '스프가 왜 묽은가요?', '컵수푸 4종 질문드립니다', 15, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '오늘 제품을 받아보니까 깨져있네요 ㅡㅡ', '드레싱 4종 질문드립니다', 16, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '오늘 제품을 받아보니까 깨져있네요 ㅡㅡ', '드레싱 4종 질문드립니다', 16, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '혹시 강아지 발 씻길때도 이제품을 써도 괜찮을까요?', '프리미엄 모이스처 핸드솝 힐링 코튼 2종 질문드립니다', 17, null, 2);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '혹시 강아지 발 씻길때도 이제품을 써도 괜찮을까요?', '프리미엄 모이스처 핸드솝 힐링 코튼 2종 질문드립니다', 17, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '오늘 주문했는데 언제 도착하나요?', '모둠나물 진실 3종(고사리&도라지&취나물)', 18, null, 3);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '오늘 주문했는데 언제 도착하나요?', '모둠나물 진실 3종(고사리&도라지&취나물)', 18, null, 3);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '많이 단가요?', '갈색설탕 3종', 19, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
+values (true, true, now(), '많이 단가요?', '갈색설탕 3종', 19, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED, IS_SECRETED,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT, PRODUCT_QUESTION_TITLE, PRODUCT_ID,
                                  PRODUCT_REPLY_ID, USER_ID)
-values (false, true, '유통기한은 넉넉한가요? 추석에 선물 드릴려고 하는데.', '국수 3종', 20, null, 2);
+values (true, true, now(), '유통기한은 넉넉한가요? 추석에 선물 드릴려고 하는데.', '국수 3종', 20, null, 2);
+
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
+values (false,true, now(), '스튜로 만들어도 되나유?', '요리 재료 질문', 1, null, 1);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
+values (false,true, now(), '금쪽이들도 먹을수 있나요', '맛있나요?', 8, null, 29);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
+values (false,true, now(), '교통법규를 잘 지키면서 배달해야 합니다.', '배달은 어떻게 되나요?', 3, null, 2);
+insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,  PRODUCT_QUESTION_CREATED_AT, PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
+values (false,true, now(), '강아지도 먹어도 됩니까?', '꽃게 껍데기 때문에요', 11, null, 31);
+
+
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 이번 뉴스와는 상관없이 믿고 드셔도 됩니다!', 1);
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('영유아기를 제외한 어린이들은 충분히 먹을 수 있습니다!', 2);
 insert into PRODUCT_REPLY_TB (P_REPLY_CONTENT, PRODUCT_QUESTION_ID) values ('네 하지만 위생을 위해 한 번 씻고 드시는걸 추천드립니다.', 3);
@@ -641,14 +652,6 @@ insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECE
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('부산광역시 부산진구 부전동 혜도빌딩','5층',false,'김수미','01012345678',1);
 insert into address_tb(DESTINATION ,DESTINATION_DETAIL ,IS_DEFAULT_ADDRESS ,RECEIVER_NAME ,RECEIVER_TEL ,USER_ID ) values ('경상남도 창원시 의창구 XX동 OO아파트','112-1',false,'이동국','01012345678',1);
 
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
-values (false,true, '상품질문 내용1', '상품질문 제목1', 1, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
-values (false,true, '상품질문 내용2', '상품질문 제목2', 1, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
-values (false,true, '상품질문 내용3', '상품질문 제목3', 1, null, 1);
-insert into PRODUCT_QUESTION_TB (IS_ANSWERED ,IS_SECRETED ,PRODUCT_QUESTION_CONTENT ,PRODUCT_QUESTION_TITLE ,PRODUCT_ID ,PRODUCT_REPLY_ID ,USER_ID  )
-values (false,true, '상품질문 내용4', '상품질문 제목4', 1, null, 1);
 
 insert into coupon_tb (COUPON_CONTENT ,COUPON_COUNT ,COUPON_CREATED_AT ,COUPON_EXPIRED_AT ,COUPON_NAME ,COUPON_NUMBER ,IS_EXPIRED ,REDUCE_AMOUNT ) values ('마켓컬리 가입을 축하합니다.', 0, now(), now(), '가입축하 쿠폰', 123456, false, 2000);
 insert into user_coupon_tb (coupon_id, user_id) values (1,1);

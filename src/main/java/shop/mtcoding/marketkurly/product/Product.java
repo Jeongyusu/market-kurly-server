@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 import shop.mtcoding.marketkurly.category.Category;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.review.Review;
-import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter
@@ -66,8 +65,8 @@ public class Product {
 
     @Builder
     public Product(Integer id, String productThumbnail, String productDetailPic, String productName,
-                   String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
-                   LocalDate productUploadedAt, Category category, String productOrigin, List<Review> reviews) {
+            String productContent, Integer discountRate, LocalDate discountExpiredAt, User seller,
+            LocalDate productUploadedAt, Category category, String productOrigin, List<Review> reviews) {
         this.id = id;
         this.productThumbnail = productThumbnail;
         this.productDetailPic = productDetailPic;

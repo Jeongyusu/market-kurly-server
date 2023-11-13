@@ -14,7 +14,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.coupon.Coupon;
 import shop.mtcoding.marketkurly.user.User;
 

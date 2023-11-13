@@ -1,8 +1,6 @@
 package shop.mtcoding.marketkurly.order;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,10 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import shop.mtcoding.marketkurly.address.Address;
-import shop.mtcoding.marketkurly.orderedoption.OrderedOption;
-import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
 import shop.mtcoding.marketkurly.user.User;
 
 @Getter

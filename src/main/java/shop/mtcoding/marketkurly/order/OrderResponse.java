@@ -8,29 +8,29 @@ import lombok.ToString;
 
 public class OrderResponse {
 
-    // // 나중에 작성용 복붙
-    // @ToString
-    // @Getter
-    // @NoArgsConstructor
-    // public static class OptionSelectMainDTO {
+    // 나중에 작성용 복붙
+    @ToString
+    @Getter
+    @NoArgsConstructor
+    public static class OptionSelectMainDTO {
 
-    // private Integer productId;
-    // private String productSellerName;
-    // private Integer productSellerId;
-    // private String productName;
-    // private List<OptionMainDTO> optionMainDTOs;
+        private Integer productId;
+        private String productSellerName;
+        private Integer productSellerId;
+        private String productName;
+        private List<OptionMainDTO> optionMainDTOs;
 
-    // @ToString
-    // @Getter
-    // @NoArgsConstructor
-    // public class OptionMainDTO {
+        @ToString
+        @Getter
+        @NoArgsConstructor
+        public class OptionMainDTO {
 
-    // private Integer optionId;
-    // private String productSellerName;
-    // private String optionName;
-    // private Integer optionPrice;
+            private Integer optionId;
+            private String productSellerName;
+            private String optionName;
+            private Integer optionPrice;
 
-    // }
-    // }
+        }
+    }
 
 }

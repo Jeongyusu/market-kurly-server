@@ -9,8 +9,6 @@ import shop.mtcoding.marketkurly.cart.CartRequest.CartSaveDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartListDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartProductDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedOptionDTO;
-import shop.mtcoding.marketkurly.coupon.Coupon;
-import shop.mtcoding.marketkurly.coupon.CouponJPARepository;
 import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.option.OptionJPARepository;
 import shop.mtcoding.marketkurly.user.User;
@@ -20,9 +18,7 @@ import shop.mtcoding.marketkurly.usercoupon.UserCouponJPARepository;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

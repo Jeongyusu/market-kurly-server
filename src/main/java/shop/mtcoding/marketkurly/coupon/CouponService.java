@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.coupon.CouponRequest.CouponSaveDTO;
 import shop.mtcoding.marketkurly.coupon.CouponRequest.CouponSaveDTO.CouponRegisterDTO;
@@ -21,7 +20,6 @@ import shop.mtcoding.marketkurly.user.UserJPARepository;
 import shop.mtcoding.marketkurly.usercoupon.UserCoupon;
 import shop.mtcoding.marketkurly.usercoupon.UserCouponJPARepository;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class CouponService {

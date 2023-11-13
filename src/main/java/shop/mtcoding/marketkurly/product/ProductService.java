@@ -1,14 +1,11 @@
 package shop.mtcoding.marketkurly.product;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import javax.persistence.TypedQuery;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

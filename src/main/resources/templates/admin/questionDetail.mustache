@@ -84,10 +84,10 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>Reply</label>
-										{{#replies}}
+										{{#areplies}}
 										<input type="text" id="" class="form-control mt-5" name="" placeholder="문의 답변"
 											value="{{aReplyContent}}" disabled />
-										{{/replies}}
+										{{/areplies}}
 										<input type="text" id="reply" class="form-control mt-5" name="" placeholder="답변 작성하기"
 											value="" {{^isAdmin}}disabled{{/isAdmin}} />
 									</div>
@@ -112,7 +112,6 @@
     let replyContent = $("#reply").val();
     let adminQuestionId = $("#adminQuestionId").val();
 
-
     let data = {
       	adminQuestionId: adminQuestionId,
 		replyContent : replyContent,
@@ -129,7 +128,7 @@
     let responseBody = await response.json();
     if (responseBody.success) {
 
-      alert("성공");
+      alert("답변 등록 성공");
 	location.reload();
 
     } else {

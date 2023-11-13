@@ -1,6 +1,5 @@
 package shop.mtcoding.marketkurly.coupon;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

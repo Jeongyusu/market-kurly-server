@@ -16,6 +16,6 @@ public class OrderService {
     String current = dateFormat.format(now);
     Integer numberCode = 1000000;
 
-    private String orderNumber = current + numberCode;
+    // private String orderNumber = current + numberCode;
 
 }
