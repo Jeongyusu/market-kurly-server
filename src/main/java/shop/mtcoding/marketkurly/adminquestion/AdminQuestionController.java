@@ -26,12 +26,15 @@ public class AdminQuestionController {
 
         System.out.println("문의 컨트롤러");
         AdminQuestionListDTO dto = adminQuestionService.관리자문의목록();
+
         User user = (User) session.getAttribute("sessionUser");
         log.info("sessionUser number : " + user.getId());
+
         Boolean isAdmin = false;
         if (user.getRole().toString().equals("ADMIN")) {
             isAdmin = true;
         }
+
         request.setAttribute("isAdmin", isAdmin);
         request.setAttribute("anwseredAQ", dto.getAdminQuestionAnsweredDTOs());
         request.setAttribute("noAnwseredAQ", dto.getAdminQuestionWaitingDTOs());
@@ -44,10 +47,12 @@ public class AdminQuestionController {
 
         User user = (User) session.getAttribute("sessionUser");
         log.info("sessionUser number : " + user.getId());
+
         Boolean isAdmin = false;
         if (user.getRole().toString().equals("ADMIN")) {
             isAdmin = true;
         }
+
         request.setAttribute("isAdmin", isAdmin);
         AdminQuestionDetailDTO dto = adminQuestionService.관리자문의상세(questionId);
         request.setAttribute("adminQuestionDTO", dto.getAdminQuestionDTO());

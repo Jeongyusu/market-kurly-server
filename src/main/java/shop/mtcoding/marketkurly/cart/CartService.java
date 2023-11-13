@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.address.Address;
 import shop.mtcoding.marketkurly.address.AddressJPARepository;
+import shop.mtcoding.marketkurly.cart.CartRequest.CartDeleteListDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.CartSaveDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartListDTO;
 import shop.mtcoding.marketkurly.cart.CartRequest.SelectedCartProductDTO;
@@ -96,6 +97,18 @@ public class CartService {
                     .build();
 
             cartJPARepository.save(cart);
+        }
+    }
+
+    @Transactional
+    public void 장바구니삭제(Integer cartId) {
+        cartJPARepository.deleteById(cartId);
+    }
+
+    @Transactional
+    public void 장바구니선택삭제(CartDeleteListDTO cartDeleteListDTO, Integer userId) {
+        for (Integer cartId : cartDeleteListDTO.getCartDeleteList()) {
+            cartJPARepository.deleteByIdAndUserId(cartId, userId);
         }
     }
 }

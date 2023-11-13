@@ -31,7 +31,7 @@ public class AdminQuestion {
     private String adminQuestionType;
     private String adminQuestionTitle;
     private String adminQuestionContent;
-    private Boolean inAnswered;
+    private Boolean isAnswered;
     private Boolean isEmailAccepted;
 
     @CreationTimestamp
@@ -45,12 +45,12 @@ public class AdminQuestion {
 
     @Builder
     public AdminQuestion(Integer id, String adminQuestionType, String adminQuestionTitle, String adminQuestionContent,
-            Boolean inAnswered, Boolean isEmailAccepted, Timestamp adminQuestionCreatedAt, User user) {
+            Boolean isAnswered, Boolean isEmailAccepted, Timestamp adminQuestionCreatedAt, User user) {
         this.id = id;
         this.adminQuestionType = adminQuestionType;
         this.adminQuestionTitle = adminQuestionTitle;
         this.adminQuestionContent = adminQuestionContent;
-        this.inAnswered = inAnswered;
+        this.isAnswered = isAnswered;
         this.isEmailAccepted = isEmailAccepted;
         this.adminQuestionCreatedAt = adminQuestionCreatedAt;
         this.user = user;

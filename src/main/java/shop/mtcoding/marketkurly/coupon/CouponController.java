@@ -30,6 +30,7 @@ public class CouponController {
         User user = (User) session.getAttribute("sessionUser");
         log.info("sessionUser number : " + user.getId());
         Boolean isAdmin = false;
+
         if (user.getRole().toString().equals("ADMIN")) {
             isAdmin = true;
         }

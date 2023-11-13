@@ -32,12 +32,12 @@ public class AdminQuestionResponse {
 
         public AdminQuestionListDTO(List<AdminQuestion> adminQuestions) {
             this.adminQuestionAnsweredDTOs = adminQuestions.stream()
-                    .filter(adminQuestion -> Boolean.TRUE.equals(adminQuestion.getInAnswered()))
+                    .filter(adminQuestion -> Boolean.TRUE.equals(adminQuestion.getIsAnswered()))
                     .map(t -> new AdminQuestionDTO(t))
                     .collect(Collectors.toList());
 
             this.adminQuestionWaitingDTOs = adminQuestions.stream()
-                    .filter(adminQuestion -> Boolean.FALSE.equals(adminQuestion.getInAnswered()))
+                    .filter(adminQuestion -> Boolean.FALSE.equals(adminQuestion.getIsAnswered()))
                     .map(t -> new AdminQuestionDTO(t))
                     .collect(Collectors.toList());
         }
@@ -52,7 +52,7 @@ public class AdminQuestionResponse {
             private String adminQuestionType;
             private String username;
             private String adminQuestionTitle;
-            private Boolean inAnswered;
+            private Boolean isAnswered;
             private Boolean isEmailAccepted;
             private LocalDate adminQuestionCreatedAt;
 
@@ -62,7 +62,7 @@ public class AdminQuestionResponse {
                 this.adminQuestionType = t.getAdminQuestionType();
                 this.username = t.getUser().getUsername();
                 this.adminQuestionTitle = t.getAdminQuestionTitle();
-                this.inAnswered = t.getInAnswered();
+                this.isAnswered = t.getIsAnswered();
                 this.isEmailAccepted = t.getIsEmailAccepted();
                 this.adminQuestionCreatedAt = t.getAdminQuestionCreatedAt().toLocalDateTime().toLocalDate();
             }
@@ -94,7 +94,7 @@ public class AdminQuestionResponse {
             private String username;
             private String adminQuestionTitle;
             private String adminQuestionContent;
-            private Boolean inAnswered;
+            private Boolean isAnswered;
             private Boolean isEmailAccepted;
             private LocalDate adminQuestionCreatedAt;
 
@@ -104,7 +104,7 @@ public class AdminQuestionResponse {
                 this.username = t.getUser().getUsername();
                 this.adminQuestionTitle = t.getAdminQuestionTitle();
                 this.adminQuestionContent = t.getAdminQuestionContent();
-                this.inAnswered = t.getInAnswered();
+                this.isAnswered = t.getIsAnswered();
                 this.isEmailAccepted = t.getIsEmailAccepted();
                 this.adminQuestionCreatedAt = t.getAdminQuestionCreatedAt().toLocalDateTime().toLocalDate();
             }

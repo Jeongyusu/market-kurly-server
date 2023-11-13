@@ -19,8 +19,6 @@ public class AdminReplyRestController {
 
     @PostMapping("/admin/question/reply/save")
     public ResponseEntity<?> 답변저장(@RequestBody AReplySaveDTO aReplySaveDTO) {
-        System.out.println("aReplyDTO : " + aReplySaveDTO.getReplyContent());
-        System.out.println("aReplyDTO : " + aReplySaveDTO.getAdminQuestionId());
         adminReplyService.답변저장(aReplySaveDTO);
         return ResponseEntity.ok().body(ApiUtils.success(aReplySaveDTO));
     }

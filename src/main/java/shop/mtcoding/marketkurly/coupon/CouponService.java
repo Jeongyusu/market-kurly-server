@@ -63,9 +63,8 @@ public class CouponService {
         if (couponOP.isEmpty()) {
             throw new Exception404("쿠폰을 찾을수 없습니다.");
         }
-        Coupon coupon = couponOP.get();
-        System.out.println("coupon" + coupon);
 
+        Coupon coupon = couponOP.get();
         User user = userJPARepository.findById(sessionUserId).get();
         UserCoupon userCoupon = UserCoupon.builder().coupon(coupon).user(user).build();
         UserCoupon savedUserCoupon = userCouponJPARepository.save(userCoupon);
