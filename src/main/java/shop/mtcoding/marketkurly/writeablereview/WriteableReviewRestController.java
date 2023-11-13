@@ -1,7 +1,5 @@
 package shop.mtcoding.marketkurly.writeablereview;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.http.ResponseEntity;

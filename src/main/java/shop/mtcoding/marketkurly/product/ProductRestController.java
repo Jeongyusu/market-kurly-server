@@ -3,7 +3,6 @@ package shop.mtcoding.marketkurly.product;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.http.ResponseEntity;

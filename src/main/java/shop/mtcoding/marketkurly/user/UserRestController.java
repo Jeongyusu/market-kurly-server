@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.ApiUtils;
-import shop.mtcoding.marketkurly.user.UserRequest.SellerJoinDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UpdateCheckDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserUpdateDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;

@@ -1,16 +1,12 @@
 package shop.mtcoding.marketkurly.productquestion;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.lang.Nullable;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import shop.mtcoding.marketkurly.option.Option;
 import shop.mtcoding.marketkurly.product.Product;
 
 public class ProductQuestionResponse {

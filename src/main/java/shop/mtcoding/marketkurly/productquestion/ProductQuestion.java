@@ -15,7 +15,6 @@ import org.springframework.lang.Nullable;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Builder.Default;
 import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.productreply.ProductReply;
 import shop.mtcoding.marketkurly.user.User;

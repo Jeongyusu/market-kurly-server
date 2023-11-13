@@ -1,24 +1,13 @@
 package shop.mtcoding.marketkurly.adminquestion;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import shop.mtcoding.marketkurly.adminreply.AdminReply;
-import shop.mtcoding.marketkurly.user.User;
 
 public class AdminQuestionResponse {
 

@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception404;
 import shop.mtcoding.marketkurly.product.ProdcutJPARepository;
@@ -13,7 +12,6 @@ import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.productquestion.ProductQuestionRequest.ProductQuestionSaveDTO;
 import shop.mtcoding.marketkurly.productquestion.ProductQuestionResponse.ProductQuestionMainDTO;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ProductQuestionService {

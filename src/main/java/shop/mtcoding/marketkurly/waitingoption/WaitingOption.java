@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import shop.mtcoding.marketkurly.product.Product;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProduct;
 
 @Getter

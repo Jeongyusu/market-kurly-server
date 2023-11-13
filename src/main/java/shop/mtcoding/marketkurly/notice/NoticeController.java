@@ -4,18 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly.notice.NoticeRequest.NoticeSaveDTO;
 import shop.mtcoding.marketkurly.notice.NoticeResponse.WebNoticeMainDTO;
 import shop.mtcoding.marketkurly.user.User;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class NoticeController {
@@ -37,16 +34,7 @@ public class NoticeController {
         if (user.getRole().toString().equals("SELLER")) {
             request.setAttribute("isSeller", true);
         }
-
-        System.out.println("sessionUser id : " + user.getId());
-        System.out.println("sessionUser email : " + user.getUserEmail());
-        System.out.println("sessionUser role : " + user.getRole());
-        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
-        System.out.println("sessionUser DTO전 isAdmin : " + request.getAttribute("isAdmin"));
-        System.out.println("sessionUser DTO전 isSeller : " + request.getAttribute("isSeller"));
-        System.out.println("sessionUser DTO전 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         request.setAttribute("webNoticeDTO", dto.getWebNoticeDTOs());
-        System.out.println("sessionUser DTO 후 : " + dto.getWebNoticeDTOs().get(0).getNoticeTypeAndTitle());
         return "noticeList";
     }
 

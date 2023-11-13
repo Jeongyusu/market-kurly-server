@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly.option.OptionService;
-import shop.mtcoding.marketkurly.orderedoption.OrderOptionJAPRepository;
 import shop.mtcoding.marketkurly.orderedoption.OrderedOptionResponse.OrderedOptionListDTO;
 import shop.mtcoding.marketkurly.orderedoption.OrderedOptionService;
 import shop.mtcoding.marketkurly.product.ProductResponse.ProductDetailListDTO;
 import shop.mtcoding.marketkurly.product.ProductResponse.SellerProductListDTO;
 import shop.mtcoding.marketkurly.user.User;
-import shop.mtcoding.marketkurly.waitingoption.WaitingOptionResponse.WOptionListDTO;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProductResponse.WaitingProductListDTO;
 import shop.mtcoding.marketkurly.waitingproduct.WaitingProductService;
 

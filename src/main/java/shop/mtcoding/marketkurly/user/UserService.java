@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import shop.mtcoding.marketkurly._core.errors.exception.Exception400;
 import shop.mtcoding.marketkurly._core.utils.JwtTokenUtils;
 import shop.mtcoding.marketkurly.user.UserRequest.LoginDTO;
@@ -17,7 +16,6 @@ import shop.mtcoding.marketkurly.user.UserRequest.UserFindUsernameDTO;
 import shop.mtcoding.marketkurly.user.UserRequest.UserUpdateDTO;
 import shop.mtcoding.marketkurly.user.UserResponse.TokenDTO;
 
-@Slf4j
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

@@ -3,10 +3,6 @@ package shop.mtcoding.marketkurly.notice;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import shop.mtcoding.marketkurly.notice.Notice;
-import shop.mtcoding.marketkurly.reviewpic.ReviewPic;
-
-import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;

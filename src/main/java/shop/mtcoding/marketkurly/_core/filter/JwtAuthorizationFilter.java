@@ -2,7 +2,6 @@ package shop.mtcoding.marketkurly._core.filter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 import javax.servlet.Filter;
