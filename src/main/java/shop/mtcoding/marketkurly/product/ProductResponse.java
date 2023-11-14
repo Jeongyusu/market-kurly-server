@@ -323,6 +323,7 @@ public class ProductResponse {
             private Integer productId;
             private String sellerName;
             private String productName;
+            private String productThumbnail;
             private Integer minOptionPrice;
             private Integer discountedminOptionPrice;
             private Integer discountRate;
@@ -333,6 +334,7 @@ public class ProductResponse {
                 this.productId = product.getId();
                 this.sellerName = product.getSeller().getUsername();
                 this.productName = product.getProductName();
+                this.productThumbnail = product.getProductThumbnail();
                 this.minOptionPrice = product.getOptions().stream()
                         .mapToInt(Option::getOptionPrice)
                         .min()
