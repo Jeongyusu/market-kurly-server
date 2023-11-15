@@ -92,6 +92,13 @@ public class ProductController {
     @GetMapping("/seller/product/submit")
     public String 상품등록(HttpServletRequest request) {
         List<Category> categorys = categoryService.모든카테고리찾기();
+        User user = (User) session.getAttribute("sessionUser");
+        log.info("sessionUser number : " + user.getId());
+        Boolean isSeller = false;
+        if (user.getRole().toString().equals("SELLER")) {
+            isSeller = true;
+        }
+        request.setAttribute("isSeller", isSeller);
         request.setAttribute("categorys", categorys);
         return "seller/sellerProductSubmit";
     }
