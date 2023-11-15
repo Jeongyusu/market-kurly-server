@@ -28,7 +28,7 @@ public class ProductRepository {
                                                 "JOIN Review r ON r.product = p " +
                                                 "GROUP BY p " +
                                                 "ORDER BY AVG(r.starCount) DESC",
-                                ProductStarDTO.class).setMaxResults(8);
+                                ProductStarDTO.class).setMaxResults(32);
 
                 List<ProductStarDTO> productDTOs = query.getResultList();
                 return productDTOs;
@@ -42,7 +42,7 @@ public class ProductRepository {
                                                 "JOIN Review r ON r.product = p " +
                                                 "GROUP BY p " +
                                                 "ORDER BY p.discountRate DESC",
-                                ProductDiscountDTO.class).setMaxResults(8);
+                                ProductDiscountDTO.class).setMaxResults(32);
                 List<ProductDiscountDTO> productDTOs = query.getResultList();
 
                 return productDTOs;
