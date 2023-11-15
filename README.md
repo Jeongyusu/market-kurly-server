@@ -17,6 +17,26 @@
 ### DataBase
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699941741948?alt=media&token=7ec6f7e8-ca8a-48d7-93a0-907d8044efa6)](https://github.com/msdio/stackticon)
 
+
+## DB, 인증/권한 검사
+* 1. DB
+- DB설계시 일반회원(구매자), 판매자, 관리자가 요구하는 필드가 유사하기 때문에 유저엔티티를 분리하지 않았음 (Role 속성으로 구분)
+- 엔티티의 속성을 정의하는 방식으로 Enum과 코드테이블이 있음
+- Gender와 Role은 거의 변화하지 않는 속성이기 때문에 Enum으로 정의
+- Category는 추가와 변동의 가능성이 존재하므로 테이블로 정의 하였음
+- 주로 JPA Repository인터페이스의 기본 메소드 사용
+- 기본 메소드로 요청되지않는 쿼리문은 JPQL(객체지향쿼리)로 요청
+
+* 2. 스프링 인증 권한
+- JWT
+- 스프링 진입 전에 필터로 인증 검사
+- 컨트롤러 진입 전에 인터셉터로 권한 검사
+- 특정 페이지 ex)로그인 의 경우 예외적으로 접근을 허용하는 로직을 작성
+
+* 3. 스프링 클래스
+- Response, Request DTO 클래스를 분리
+- RestController와 Controller를 분리해서 Web과, api요청을 따로 관리했음
+
 ## 📓 기능설명
 식품 판매를 전문으로 하는 온라인 쇼핑몰 사이트로써 이 페이지를 클론 코딩했습니다.
 
