@@ -59,16 +59,4 @@ public class MainController {
     // return "seller/sellerProduct";
     // }
 
-    @GetMapping("/seller/product/submit")
-    public String sellerProductSubmit(HttpServletRequest request) {
-        List<Category> categorys = categoryService.모든카테고리찾기();
-        request.setAttribute("categorys", categorys);
-        return "seller/sellerProductSubmit";
-    }
-
-    @GetMapping("/seller/product/detail")
-    public String sellerProductDetail(HttpServletRequest request) {
-        return "seller/ProductDetail";
-    }
-
 }

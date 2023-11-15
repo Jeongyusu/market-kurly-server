@@ -65,9 +65,10 @@ public class ProductService {
                 LocalDate oneMonthAgo = LocalDate.now().minusDays(30);
 
                 // 한 달 이내의 상품만 가져오도록 쿼리 작성
-                Page<Product> products = prodcutJPARepository.findByProductUploadedAtBetween(oneMonthAgo,
-                                LocalDate.now(),
-                                PageRequest.of(page, 8));
+                Page<Product> products = prodcutJPARepository
+                                .findByProductUploadedAtBetweenOrderByProductUploadedAtDesc(oneMonthAgo,
+                                                LocalDate.now(),
+                                                PageRequest.of(page, 12));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {

@@ -17,7 +17,8 @@ public interface ProdcutJPARepository extends JpaRepository<Product, Integer> {
 
     int countByDiscountExpiredAtBetween(LocalDate now, LocalDate oneWeekAfter);
 
-    Page<Product> findByProductUploadedAtBetween(LocalDate monthAgo, LocalDate now, Pageable pageable);
+    Page<Product> findByProductUploadedAtBetweenOrderByProductUploadedAtDesc(LocalDate monthAgo, LocalDate now,
+            Pageable pageable);
 
     Page<Product> findByDiscountExpiredAtBetween(LocalDate now, LocalDate oneWeekAfter, Pageable pageable);
 

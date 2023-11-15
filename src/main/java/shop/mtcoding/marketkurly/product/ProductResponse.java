@@ -44,7 +44,7 @@ public class ProductResponse {
         if (0.75 >= starCount && starCount > 0.25) {
             return 0.5;
         }
-        return 0.5;
+        return 0.0;
     }
 
     @Getter
