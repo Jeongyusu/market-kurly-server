@@ -34,8 +34,10 @@
 - 특정 페이지 ex)로그인 의 경우 예외적으로 접근을 허용하는 로직을 작성
 
 * 스프링 클래스
+- DI : 필드 주입 vs 생성자 주입(RequiredArgsConstructor)
 - Response, Request DTO 클래스를 분리
 - RestController와 Controller를 분리해서 Web과, api요청을 따로 관리했음
+- 상품 요청은 FORMDATA를 이용해서 전송, @ModelAttribute라는 객체를 이용해서 사진파일과 OptionList를 받았음
 
 ## 📓 기능설명
 식품 판매를 전문으로 하는 온라인 쇼핑몰 사이트로써 이 페이지를 클론 코딩했습니다.
