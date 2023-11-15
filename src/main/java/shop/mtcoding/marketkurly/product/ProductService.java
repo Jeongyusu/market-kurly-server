@@ -68,7 +68,7 @@ public class ProductService {
                 Page<Product> products = prodcutJPARepository
                                 .findByProductUploadedAtBetweenOrderByProductUploadedAtDesc(oneMonthAgo,
                                                 LocalDate.now(),
-                                                PageRequest.of(page, 12));
+                                                PageRequest.of(page, 32));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -96,7 +96,7 @@ public class ProductService {
                 // 할인 마감이 일주일 이내인 제품 가져옴
                 Page<Product> products = prodcutJPARepository.findByDiscountExpiredAtBetween(LocalDate.now(),
                                 oneWeekAfter,
-                                PageRequest.of(page, 8));
+                                PageRequest.of(page, 32));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -119,7 +119,7 @@ public class ProductService {
 
         public ProductResponse.ProductListDTO 베스트(int page) {
                 // 판매량순
-                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 8));
+                Page<Product> products = orderOptionJAPRepository.findBestProducts(PageRequest.of(page, 32));
 
                 List<ProductResponse.ProductSummary> productSummaryList = products.stream()
                                 .map(product -> {
@@ -171,7 +171,7 @@ public class ProductService {
 
                 Integer productCount = productRepository.allProductCount().intValue();
                 Integer min = 1;
-                Integer count = 8;
+                Integer count = 32;
 
                 Set<Integer> randomNumberSet = new HashSet<>();
 
