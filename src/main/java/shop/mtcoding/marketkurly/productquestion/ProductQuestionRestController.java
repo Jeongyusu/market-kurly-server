@@ -19,7 +19,7 @@ public class ProductQuestionRestController {
 
     private final ProductQuestionService ProductQuestionService;
 
-    @GetMapping("/api/product/question/Main/{productId}")
+    @GetMapping("/api/product/question/main/{productId}")
     public ResponseEntity<?> 상품문의메인(@PathVariable Integer productId) {
         log.info("상품문의메인 controller 호출");
         ProductQuestionResponse.ProductQuestionMainDTO productQuestionMainDTO = ProductQuestionService
