@@ -39,7 +39,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 registry.addInterceptor(new UserInterceptor())
                                 // addPathPatterns( "해당 주소로 갈때" )
                                 .addPathPatterns("/api/users/**")
-                                .excludePathPatterns("/api/users/login");
+                                .excludePathPatterns("/api/users/login", "/api/users/join");
                 // .excludePathPatterns ( "해당주소로 갈때는 예외적 허용" )
                 // .excludePathPatterns("/board/{id:[0-9]+}");
 
