@@ -1,5 +1,7 @@
 package shop.mtcoding.marketkurly.product;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import shop.mtcoding.marketkurly.category.Category;
+import shop.mtcoding.marketkurly.category.CategoryService;
 import shop.mtcoding.marketkurly.option.OptionService;
 import shop.mtcoding.marketkurly.orderedoption.OrderedOptionResponse.OrderedOptionListDTO;
 import shop.mtcoding.marketkurly.orderedoption.OrderedOptionService;
@@ -28,6 +32,7 @@ public class ProductController {
     private final WaitingProductService waitingProductService;
     private final HttpSession session;
     private final OrderedOptionService orderedOptionService;
+    private final CategoryService categoryService;
 
     @GetMapping("/seller/product")
     public String 판매상품메인(HttpServletRequest request) {
@@ -82,5 +87,17 @@ public class ProductController {
         OrderedOptionListDTO dto = orderedOptionService.판매된상품찾기(user.getId());
         request.setAttribute("orders", dto.getOrderedOptionDTOs());
         return "seller/sellerMain";
+    }
+
+    @GetMapping("/seller/product/submit")
+    public String 상품등록(HttpServletRequest request) {
+        List<Category> categorys = categoryService.모든카테고리찾기();
+        request.setAttribute("categorys", categorys);
+        return "seller/sellerProductSubmit";
+    }
+
+    @GetMapping("/seller/product/detail")
+    public String 상품상세정보(HttpServletRequest request) {
+        return "seller/ProductDetail";
     }
 }
