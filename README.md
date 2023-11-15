@@ -11,9 +11,6 @@
 ### Backend  
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699941393734?alt=media&token=d230a868-64f1-433b-8ad0-6de2b3258c44)](https://github.com/msdio/stackticon)
 
-### Frontend  
-[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699941519067?alt=media&token=0a4e5d84-1dc1-46ba-890a-cb8342c4e2b2)](https://github.com/msdio/stackticon)
-
 ### Collaboration tools
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699941657108?alt=media&token=f9366757-a334-48ca-936a-2cea3d95b44f)](https://github.com/msdio/stackticon)
 
